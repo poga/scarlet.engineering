@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="4" fill="#1A1A1A"/>
+  <!-- Calligraphic S with varying stroke width -->
+  <path d="M21 8.5c-1.5-1.2-3.5-2-6-2-4 0-6.5 2-6.5 4.5 0 2.2 1.5 3.5 4.5 4.5l3 1c2.8 1 4.5 2.2 4.5 4.5 0 3-2.8 5-7 5-2.8 0-5-1-6.5-2.2"
+        fill="none"
+        stroke="#7B1818"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
