@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scarlet Engineering Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-alizarin: #7B1818;
+      --color-claret: #6E2233;
+      --color-madder: #A04040;
+      --color-oxblood: #4A0000;
+      --color-ink: #1A1A1A;
+      --color-soot: #3D3D3D;
+      --color-fog: #9A9A8E;
+      --color-parchment: #E8E0D0;
+      --color-gaslight: #D4A857;
+      --color-verdigris: #4A766E;
+      --color-tobacco: #6E5A40;
+      --font-heading: 'Playfair Display', 'Baskerville', serif;
+      --font-body: 'Source Serif 4', 'Georgia', serif;
+      --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--color-ink);
+      color: var(--color-parchment);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    header {
+      text-align: center;
+      padding: 64px 24px;
+      border-bottom: 1px solid var(--color-soot);
+    }
+
+    header h1 {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+
+    header h1 span {
+      color: var(--color-alizarin);
+    }
+
+    header p {
+      color: var(--color-fog);
+      font-style: italic;
+    }
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--color-soot);
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+      color: var(--color-gaslight);
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      margin-top: 32px;
+      color: var(--color-parchment);
+    }
+
+    h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    .color-card {
+      background: var(--color-soot);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .color-swatch {
+      height: 80px;
+    }
+
+    .color-info {
+      padding: 12px;
+    }
+
+    .color-name {
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 4px;
+    }
+
+    .color-hex {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-fog);
+    }
+
+    .type-sample {
+      margin-bottom: 24px;
+    }
+
+    .type-sample .label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-fog);
+      margin-bottom: 8px;
+    }
+
+    .type-heading-1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .type-heading-2 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .type-heading-3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .type-body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+    }
+
+    .type-small {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--color-fog);
+    }
+
+    .type-mono {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+    }
+
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .spacing-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-fog);
+      width: 60px;
+    }
+
+    .spacing-bar {
+      height: 16px;
+      background: var(--color-alizarin);
+      border-radius: 2px;
+    }
+
+    .spacing-value {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-fog);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 12px 24px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--color-alizarin);
+      color: var(--color-parchment);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-madder);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-parchment);
+      border: 1px solid var(--color-fog);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-gaslight);
+      color: var(--color-gaslight);
+    }
+
+    .card {
+      background: var(--color-soot);
+      border: 1px solid #4A4A4A;
+      border-radius: 4px;
+      padding: 24px;
+      max-width: 400px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--color-fog);
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+    }
+
+    .card a {
+      color: var(--color-gaslight);
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      color: var(--color-madder);
+    }
+
+    .link-demo a {
+      color: var(--color-gaslight);
+      text-decoration: none;
+      margin-right: 24px;
+    }
+
+    .link-demo a:hover {
+      color: var(--color-madder);
+    }
+
+    .link-demo a:visited {
+      color: var(--color-claret);
+    }
+
+    .code-block {
+      background: var(--color-soot);
+      border-radius: 4px;
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+
+    .code-block .comment {
+      color: var(--color-fog);
+    }
+
+    .code-block .property {
+      color: var(--color-verdigris);
+    }
+
+    .code-block .value {
+      color: var(--color-gaslight);
+    }
+
+    footer {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--color-fog);
+      font-size: 0.875rem;
+    }
+
+    footer span {
+      color: var(--color-alizarin);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><span>Scarlet</span> Engineering</h1>
+    <p>Design System · Inspired by A Study in Scarlet (1887)</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>Color Palette</h2>
+
+      <h3>Primary</h3>
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #7B1818;"></div>
+          <div class="color-info">
+            <div class="color-name">Alizarin Crimson</div>
+            <div class="color-hex">#7B1818</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #6E2233;"></div>
+          <div class="color-info">
+            <div class="color-name">Claret</div>
+            <div class="color-hex">#6E2233</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #A04040;"></div>
+          <div class="color-info">
+            <div class="color-name">Madder Red</div>
+            <div class="color-hex">#A04040</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #4A0000;"></div>
+          <div class="color-info">
+            <div class="color-name">Oxblood</div>
+            <div class="color-hex">#4A0000</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Neutral</h3>
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #1A1A1A; border-bottom: 1px solid #3D3D3D;"></div>
+          <div class="color-info">
+            <div class="color-name">Ink Black</div>
+            <div class="color-hex">#1A1A1A</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #3D3D3D;"></div>
+          <div class="color-info">
+            <div class="color-name">Soot</div>
+            <div class="color-hex">#3D3D3D</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #9A9A8E;"></div>
+          <div class="color-info">
+            <div class="color-name">London Fog</div>
+            <div class="color-hex">#9A9A8E</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #E8E0D0;"></div>
+          <div class="color-info">
+            <div class="color-name">Parchment</div>
+            <div class="color-hex">#E8E0D0</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Accent</h3>
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #D4A857;"></div>
+          <div class="color-info">
+            <div class="color-name">Gaslight</div>
+            <div class="color-hex">#D4A857</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #4A766E;"></div>
+          <div class="color-info">
+            <div class="color-name">Verdigris</div>
+            <div class="color-hex">#4A766E</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #6E5A40;"></div>
+          <div class="color-info">
+            <div class="color-name">Tobacco</div>
+            <div class="color-hex">#6E5A40</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Typography</h2>
+
+      <div class="type-sample">
+        <div class="label">Heading 1 · Playfair Display 700 · 2.5rem</div>
+        <div class="type-heading-1">The Game is Afoot</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="label">Heading 2 · Playfair Display 600 · 2rem</div>
+        <div class="type-heading-2">A Study in Scarlet</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="label">Heading 3 · Playfair Display 600 · 1.5rem</div>
+        <div class="type-heading-3">221B Baker Street</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="label">Body · Source Serif 4 · 1rem</div>
+        <div class="type-body">There is nothing more deceptive than an obvious fact. The world is full of obvious things which nobody by any chance ever observes.</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="label">Small · Source Serif 4 · 0.875rem</div>
+        <div class="type-small">London, November 1887</div>
+      </div>
+
+      <div class="type-sample">
+        <div class="label">Monospace · JetBrains Mono · 0.875rem</div>
+        <div class="type-mono">const detective = "Sherlock Holmes";</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Spacing</h2>
+
+      <div class="spacing-row">
+        <div class="spacing-label">xs</div>
+        <div class="spacing-bar" style="width: 4px;"></div>
+        <div class="spacing-value">4px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">sm</div>
+        <div class="spacing-bar" style="width: 8px;"></div>
+        <div class="spacing-value">8px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">md</div>
+        <div class="spacing-bar" style="width: 16px;"></div>
+        <div class="spacing-value">16px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">lg</div>
+        <div class="spacing-bar" style="width: 24px;"></div>
+        <div class="spacing-value">24px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">xl</div>
+        <div class="spacing-bar" style="width: 32px;"></div>
+        <div class="spacing-value">32px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">2xl</div>
+        <div class="spacing-bar" style="width: 48px;"></div>
+        <div class="spacing-value">48px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">3xl</div>
+        <div class="spacing-bar" style="width: 64px;"></div>
+        <div class="spacing-value">64px</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Components</h2>
+
+      <h3>Buttons</h3>
+      <div class="button-row">
+        <button class="btn btn-primary">Primary Button</button>
+        <button class="btn btn-secondary">Secondary Button</button>
+      </div>
+
+      <h3>Card</h3>
+      <div class="card">
+        <h4>Case File #221</h4>
+        <p>A singular investigation requiring the utmost discretion and analytical precision.</p>
+        <a href="#">View Details →</a>
+      </div>
+
+      <h3>Links</h3>
+      <div class="link-demo">
+        <a href="#">Default Link</a>
+        <a href="#" style="color: var(--color-claret);">Visited Link</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>CSS Variables</h2>
+
+      <div class="code-block">
+        <span class="comment">/* Primary */</span><br>
+        <span class="property">--color-alizarin:</span> <span class="value">#7B1818</span>;<br>
+        <span class="property">--color-claret:</span> <span class="value">#6E2233</span>;<br>
+        <span class="property">--color-madder:</span> <span class="value">#A04040</span>;<br>
+        <span class="property">--color-oxblood:</span> <span class="value">#4A0000</span>;<br><br>
+        <span class="comment">/* Neutral */</span><br>
+        <span class="property">--color-ink:</span> <span class="value">#1A1A1A</span>;<br>
+        <span class="property">--color-soot:</span> <span class="value">#3D3D3D</span>;<br>
+        <span class="property">--color-fog:</span> <span class="value">#9A9A8E</span>;<br>
+        <span class="property">--color-parchment:</span> <span class="value">#E8E0D0</span>;<br><br>
+        <span class="comment">/* Accent */</span><br>
+        <span class="property">--color-gaslight:</span> <span class="value">#D4A857</span>;<br>
+        <span class="property">--color-verdigris:</span> <span class="value">#4A766E</span>;<br>
+        <span class="property">--color-tobacco:</span> <span class="value">#6E5A40</span>;<br><br>
+        <span class="comment">/* Typography */</span><br>
+        <span class="property">--font-heading:</span> <span class="value">'Playfair Display', serif</span>;<br>
+        <span class="property">--font-body:</span> <span class="value">'Source Serif 4', serif</span>;<br>
+        <span class="property">--font-mono:</span> <span class="value">'JetBrains Mono', monospace</span>;
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <span>Scarlet</span> Engineering · Design System v1.0
+  </footer>
+
+</body>
+</html>
