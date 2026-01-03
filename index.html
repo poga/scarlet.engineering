@@ -155,6 +155,45 @@
             fill: currentColor;
         }
 
+        .corner-ornament {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .corner-ornament svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--color-ornament);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        .corner-top-left {
+            top: -20px;
+            left: -20px;
+        }
+
+        .corner-top-right {
+            top: -20px;
+            right: -20px;
+            transform: scaleX(-1);
+        }
+
+        .corner-bottom-left {
+            bottom: -20px;
+            left: -20px;
+            transform: scaleY(-1);
+        }
+
+        .corner-bottom-right {
+            bottom: -20px;
+            right: -20px;
+            transform: scale(-1, -1);
+        }
+
         /* Responsive styles */
         @media (max-width: 480px) {
             body {
@@ -220,6 +259,106 @@
     </style>
 </head>
 <body>
+    <!-- Corner Ornaments -->
+    <div class="corner-ornament corner-top-left">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Concentric arcs -->
+            <path d="M 20 180 A 160 160 0 0 1 180 20" />
+            <path d="M 20 140 A 120 120 0 0 1 140 20" />
+            <path d="M 20 100 A 80 80 0 0 1 100 20" />
+            <!-- Radial lines -->
+            <line x1="20" y1="20" x2="20" y2="60" />
+            <line x1="20" y1="20" x2="60" y2="20" />
+            <line x1="20" y1="80" x2="50" y2="80" />
+            <line x1="80" y1="20" x2="80" y2="50" />
+            <!-- Measurement marks -->
+            <line x1="35" y1="20" x2="35" y2="30" />
+            <line x1="50" y1="20" x2="50" y2="25" />
+            <line x1="20" y1="35" x2="30" y2="35" />
+            <line x1="20" y1="50" x2="25" y2="50" />
+            <!-- Circle detail -->
+            <circle cx="60" cy="60" r="8" />
+            <circle cx="60" cy="60" r="3" />
+            <!-- Cross marks -->
+            <line x1="100" y1="95" x2="100" y2="105" />
+            <line x1="95" y1="100" x2="105" y2="100" />
+            <line x1="140" y1="55" x2="140" y2="65" />
+            <line x1="135" y1="60" x2="145" y2="60" />
+            <!-- Diagonal -->
+            <line x1="120" y1="20" x2="180" y2="80" />
+            <line x1="20" y1="120" x2="80" y2="180" />
+        </svg>
+    </div>
+    <div class="corner-ornament corner-top-right">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 20 180 A 160 160 0 0 1 180 20" />
+            <path d="M 20 140 A 120 120 0 0 1 140 20" />
+            <path d="M 20 100 A 80 80 0 0 1 100 20" />
+            <line x1="20" y1="20" x2="20" y2="60" />
+            <line x1="20" y1="20" x2="60" y2="20" />
+            <line x1="20" y1="80" x2="50" y2="80" />
+            <line x1="80" y1="20" x2="80" y2="50" />
+            <line x1="35" y1="20" x2="35" y2="30" />
+            <line x1="50" y1="20" x2="50" y2="25" />
+            <line x1="20" y1="35" x2="30" y2="35" />
+            <line x1="20" y1="50" x2="25" y2="50" />
+            <circle cx="60" cy="60" r="8" />
+            <circle cx="60" cy="60" r="3" />
+            <line x1="100" y1="95" x2="100" y2="105" />
+            <line x1="95" y1="100" x2="105" y2="100" />
+            <line x1="140" y1="55" x2="140" y2="65" />
+            <line x1="135" y1="60" x2="145" y2="60" />
+            <line x1="120" y1="20" x2="180" y2="80" />
+            <line x1="20" y1="120" x2="80" y2="180" />
+        </svg>
+    </div>
+    <div class="corner-ornament corner-bottom-left">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 20 180 A 160 160 0 0 1 180 20" />
+            <path d="M 20 140 A 120 120 0 0 1 140 20" />
+            <path d="M 20 100 A 80 80 0 0 1 100 20" />
+            <line x1="20" y1="20" x2="20" y2="60" />
+            <line x1="20" y1="20" x2="60" y2="20" />
+            <line x1="20" y1="80" x2="50" y2="80" />
+            <line x1="80" y1="20" x2="80" y2="50" />
+            <line x1="35" y1="20" x2="35" y2="30" />
+            <line x1="50" y1="20" x2="50" y2="25" />
+            <line x1="20" y1="35" x2="30" y2="35" />
+            <line x1="20" y1="50" x2="25" y2="50" />
+            <circle cx="60" cy="60" r="8" />
+            <circle cx="60" cy="60" r="3" />
+            <line x1="100" y1="95" x2="100" y2="105" />
+            <line x1="95" y1="100" x2="105" y2="100" />
+            <line x1="140" y1="55" x2="140" y2="65" />
+            <line x1="135" y1="60" x2="145" y2="60" />
+            <line x1="120" y1="20" x2="180" y2="80" />
+            <line x1="20" y1="120" x2="80" y2="180" />
+        </svg>
+    </div>
+    <div class="corner-ornament corner-bottom-right">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 20 180 A 160 160 0 0 1 180 20" />
+            <path d="M 20 140 A 120 120 0 0 1 140 20" />
+            <path d="M 20 100 A 80 80 0 0 1 100 20" />
+            <line x1="20" y1="20" x2="20" y2="60" />
+            <line x1="20" y1="20" x2="60" y2="20" />
+            <line x1="20" y1="80" x2="50" y2="80" />
+            <line x1="80" y1="20" x2="80" y2="50" />
+            <line x1="35" y1="20" x2="35" y2="30" />
+            <line x1="50" y1="20" x2="50" y2="25" />
+            <line x1="20" y1="35" x2="30" y2="35" />
+            <line x1="20" y1="50" x2="25" y2="50" />
+            <circle cx="60" cy="60" r="8" />
+            <circle cx="60" cy="60" r="3" />
+            <line x1="100" y1="95" x2="100" y2="105" />
+            <line x1="95" y1="100" x2="105" y2="100" />
+            <line x1="140" y1="55" x2="140" y2="65" />
+            <line x1="135" y1="60" x2="145" y2="60" />
+            <line x1="120" y1="20" x2="180" y2="80" />
+            <line x1="20" y1="120" x2="80" y2="180" />
+        </svg>
+    </div>
+
     <div class="form-container">
         <img src="logo.png" alt="Scarlet" class="logo">
         <h2 class="form-title">Join our newsletter</h2>
