@@ -37,6 +37,8 @@
             --color-ornament: #C5B8A5;
             --color-verdigris: #4A766E;
             --color-verdigris-hover: #5A867E;
+            --color-itch: #FA5C5C;
+            --color-itch-hover: #E54545;
             --color-bluesky: #0085FF;
             --color-bluesky-hover: #0073E6;
             --color-instagram: #E1306C;
@@ -65,6 +67,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed;
             font-family: var(--font-body);
             font-size: 16px;
             line-height: 1.6;
@@ -199,6 +202,69 @@
             margin-top: 40px;
         }
 
+        .games-section {
+            margin-top: 96px;
+            width: 100%;
+        }
+
+        .games-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-alizarin);
+            margin-bottom: 16px;
+        }
+
+        .game-card {
+            background: var(--color-cream);
+            border: 1px solid var(--color-ornament);
+            border-radius: 2px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .game-name {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            margin-bottom: 8px;
+        }
+
+        .game-description {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            color: var(--color-soot);
+            margin-bottom: 12px;
+        }
+
+        .game-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px 20px;
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--color-parchment);
+            background: var(--color-itch);
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .game-link:hover {
+            background: var(--color-itch-hover);
+        }
+
         /* Responsive styles */
         @media (max-width: 480px) {
             body {
@@ -232,6 +298,30 @@
                 font-size: 0.9375rem;
             }
 
+            .games-section {
+                margin-top: 80px;
+            }
+
+            .games-title {
+                font-size: 1.25rem;
+            }
+
+            .game-card {
+                padding: 14px;
+            }
+
+            .game-name {
+                font-size: 1.125rem;
+            }
+
+            .game-description {
+                font-size: 0.8125rem;
+            }
+
+            .game-link {
+                padding: 10px 16px;
+                font-size: 0.875rem;
+            }
         }
 
         @media (max-width: 360px) {
@@ -254,6 +344,14 @@
 
             .form-description {
                 font-size: 0.75rem;
+            }
+
+            .games-title {
+                font-size: 1.125rem;
+            }
+
+            .game-name {
+                font-size: 1rem;
             }
         }
 
@@ -299,6 +397,15 @@
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
             Email us
         </a>
+        <section class="games-section">
+            <h3 class="games-title">Our Games</h3>
+            <div class="game-card">
+                <img src="blocks10-thumb.png" alt="BLOCKS 10" class="game-thumbnail" width="315" height="250">
+                <h4 class="game-name">BLOCKS 10</h4>
+                <p class="game-description">Select numbers that add to ten.</p>
+                <a href="https://devpoga.itch.io/blocks" target="_blank" class="game-link">Play on itch.io</a>
+            </div>
+        </section>
     </div>
 </body>
 </html>
