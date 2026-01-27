@@ -13,38 +13,36 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://scarlet.engineering/">
     <meta property="og:title" content="scarlet.engineering - engineering emergence">
-    <meta property="og:image" content="https://scarlet.engineering/logo.png">
+    <meta property="og:image" content="https://scarlet.engineering/new-logo.png">
 
     <!-- Preload critical images -->
-    <link rel="preload" href="bg2.webp" as="image" type="image/webp">
-    <link rel="preload" href="logo-385.webp" as="image" type="image/webp">
+    <link rel="preload" href="new-logo.png" as="image" type="image/png">
 
     <!-- Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet"></noscript>
 
     <style>
         :root {
             --color-alizarin: #7B1818;
+            --color-claret: #6E2233;
             --color-madder: #A04040;
+            --color-oxblood: #4A0000;
             --color-ink: #1A1A1A;
             --color-soot: #3D3D3D;
             --color-fog: #9A9A8E;
             --color-parchment: #E8E0D0;
-            --color-cream: #F5F0E6;
-            --color-ornament: #C5B8A5;
+            --color-gaslight: #D4A857;
             --color-verdigris: #4A766E;
             --color-verdigris-hover: #5A867E;
             --color-itch: #FA5C5C;
             --color-itch-hover: #E54545;
             --color-bluesky: #0085FF;
             --color-bluesky-hover: #0073E6;
-            --color-instagram: #E1306C;
-            --color-instagram-hover: #C13584;
             --font-heading: 'Playfair Display', 'Baskerville', serif;
-            --font-body: 'Source Serif 4', 'Georgia', serif;
+            --font-body: 'Cormorant Garamond', 'Georgia', serif;
         }
         * {
             margin: 0;
@@ -62,15 +60,11 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: var(--color-parchment);
-            background-image: url('bg2.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-color: var(--color-ink);
             font-family: var(--font-body);
             font-size: 16px;
             line-height: 1.6;
+            color: var(--color-parchment);
         }
 
         .form-container {
@@ -91,14 +85,14 @@
             font-family: var(--font-heading);
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--color-alizarin);
+            color: var(--color-parchment);
             margin-bottom: 12px;
         }
 
         .form-description {
             font-family: var(--font-body);
             font-size: 0.875rem;
-            color: var(--color-ink);
+            color: var(--color-fog);
             line-height: 1.6;
             margin-bottom: 24px;
         }
@@ -108,9 +102,9 @@
             padding: 14px 16px;
             font-family: var(--font-body);
             font-size: 1rem;
-            color: var(--color-ink);
-            background: var(--color-cream);
-            border: 2px solid var(--color-fog);
+            color: var(--color-parchment);
+            background: var(--color-soot);
+            border: 1px solid var(--color-fog);
             border-radius: 2px;
             outline: none;
             transition: border-color 0.2s;
@@ -191,11 +185,13 @@
         }
 
         .email-link {
-            background: var(--color-soot);
+            background: #4A4A4A;
+            border: 1px solid var(--color-fog);
         }
 
         .email-link:hover {
-            background: var(--color-ink);
+            background: var(--color-soot);
+            border-color: var(--color-parchment);
         }
 
         .embeddable-buttondown-form + .social-link {
@@ -211,16 +207,17 @@
             font-family: var(--font-heading);
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--color-alizarin);
+            color: var(--color-gaslight);
             margin-bottom: 16px;
         }
 
         .game-card {
-            background: var(--color-cream);
-            border: 1px solid var(--color-ornament);
+            background: var(--color-soot);
+            border: 1px solid #4A4A4A;
             border-radius: 2px;
             padding: 16px;
             margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .game-thumbnail {
@@ -234,14 +231,14 @@
             font-family: var(--font-heading);
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--color-ink);
+            color: var(--color-parchment);
             margin-bottom: 8px;
         }
 
         .game-description {
             font-family: var(--font-body);
             font-size: 0.875rem;
-            color: var(--color-soot);
+            color: var(--color-fog);
             margin-bottom: 12px;
         }
 
@@ -271,7 +268,6 @@
                 padding: 16px;
                 align-items: flex-start;
                 padding-top: 10vh;
-                background-size: 100% 100%;
             }
 
             .form-container {
@@ -327,7 +323,6 @@
         @media (max-width: 360px) {
             body {
                 padding: 12px;
-                background-size: 100% 100%;
             }
 
             .form-container {
@@ -365,12 +360,7 @@
 </head>
 <body>
     <div class="form-container">
-        <picture>
-            <source srcset="logo-180.webp 180w, logo-280.webp 280w, logo-385.webp 385w"
-                    sizes="(max-width: 360px) 180px, (max-width: 480px) 280px, 385px"
-                    type="image/webp">
-            <img src="logo.png" alt="Scarlet" class="logo" fetchpriority="high" width="385" height="202">
-        </picture>
+        <img src="new-logo.png" alt="スカーレット (Scarlet)" class="logo" fetchpriority="high">
         <h2 class="form-title">Join our newsletter</h2>
         <p class="form-description">Enter your e-mail to get notified about the latest news, special offers, game updates, tips and tricks, and much more.</p>
         <form
