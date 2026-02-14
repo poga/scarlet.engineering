@@ -1,0 +1,16 @@
+---
+layout: blog-base.njk
+ogType: article
+---
+<nav class="blog-nav">
+    <a href="/blog/">&larr; Back to blog</a>
+</nav>
+<article>
+    <header>
+        <h1>{{ title }}</h1>
+        <time style="color: var(--color-fog); font-size: 0.9rem;">{{ date | dateDisplay }}</time>
+    </header>
+    <div style="margin-top: 32px;">
+        {{ content | safe }}
+    </div>
+</article>
