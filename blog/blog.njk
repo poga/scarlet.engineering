@@ -1,0 +1,22 @@
+---
+layout: blog-base.njk
+title: Blog
+permalink: /blog/
+---
+<nav class="blog-nav">
+    <a href="/">&larr; Home</a>
+</nav>
+<h1>Blog</h1>
+<div style="margin-top: 32px;">
+    {%- for post in collections.posts %}
+    <article style="margin-bottom: 32px;">
+        <a href="{{ post.url }}" style="text-decoration: none;">
+            <h2 style="margin-top: 0; font-size: 1.25rem;">{{ post.data.title }}</h2>
+        </a>
+        <time style="color: var(--color-fog); font-size: 0.85rem;">{{ post.date | dateDisplay }}</time>
+    </article>
+    {%- endfor %}
+    {%- if collections.posts.length == 0 %}
+    <p style="color: var(--color-fog);">No posts yet.</p>
+    {%- endif %}
+</div>

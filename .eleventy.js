@@ -17,6 +17,14 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("blog/posts/**/*.md").sort((a, b) => b.date - a.date);
   });
 
+  eleventyConfig.addFilter("dateDisplay", (date) => {
+    return new Date(date).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  });
+
   return {
     // Only process Markdown, Nunjucks, and Liquid templates
     // This prevents existing HTML files from being processed as templates
