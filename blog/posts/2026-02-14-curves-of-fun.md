@@ -53,4 +53,4 @@ You can see the pacing of the game, the difficulty spikes, the efficiency of dif
 
 ---
 
-None of this is hard rules. but they're handy.
+All of these are over-simplifications, of course. Pretty handy tho.
