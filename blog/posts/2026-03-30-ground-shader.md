@@ -13,6 +13,8 @@ The ground fills 80% of the screen in a top-down survival game. If it looks bad,
 
 Take a 512x512 dirt texture, put it on a 200x200 unit mesh, tile it 40x.
 
+<img src="/blog/images/ground-shader-base-texture.png" alt="Base 512x512 ground texture" style="max-width: 256px;" />
+
 <img src="/blog/images/ground-shader-naive.png" alt="First attempt - visible grid" style="max-width: 100%;" />
 
 The grid is immediately visible. Every 5 units, the exact same pattern repeats. Your brain picks up on it and can't unsee it.
