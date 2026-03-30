@@ -92,16 +92,6 @@ color = mix(color, color * (detail / avg_brightness), 0.3);
 
 <img src="/blog/images/ground-shader-final.png" alt="Final result - organic terrain" style="max-width: 100%;" />
 
-## Lessons Learned
-
-1. **Warping a grid still looks like a grid.** UV distortion treats the symptom (straight lines), not the cause (visible repetition). Attack the repetition itself.
-
-2. **Two rotations aren't enough.** With two samples, one grid axis always dominates. Three samples at 60-degree intervals is the minimum where no direction wins.
-
-3. **Smooth blending destroys detail.** Naive `mix(a, b, weight)` averages textures into blur. Sharpening blend weights with a power function preserves the crispness of individual samples while keeping organic transitions.
-
-4. **Multi-octave noise is non-negotiable.** Single-frequency noise creates its own visible pattern. FBM gives variation at every scale, from broad landscape-level patches down to fine local detail.
-
-The entire shader is about 60 lines and uses zero additional texture assets. Everything comes from re-sampling one 512x512 image at different scales and rotations. Sometimes the best solution is smarter math, not more art.
+About 60 lines of shader, zero additional texture assets. Just re-sampling one 512x512 image at different scales and rotations.
 
 <br />Poga
