@@ -1,4 +1,8 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   // Ignore docs directory from template processing (plans, not blog content)
   eleventyConfig.ignores.add("docs/**");
 
