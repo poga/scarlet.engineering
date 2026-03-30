@@ -92,6 +92,75 @@ color = mix(color, color * (detail / avg_brightness), 0.3);
 
 <img src="/blog/images/ground-shader-final.png" alt="Final result - organic terrain" style="max-width: 100%;" />
 
-About 60 lines of shader, zero additional texture assets. Just re-sampling one 512x512 image at different scales and rotations.
+Here's the complete shader. About 60 lines, zero additional texture assets.
+
+```glsl
+shader_type spatial;
+
+uniform sampler2D ground_texture : source_color, filter_linear_mipmap, repeat_enable;
+uniform float texture_scale : hint_range(1.0, 100.0) = 40.0;
+uniform float color_variation : hint_range(0.0, 0.2) = 0.05;
+
+float hash(vec2 p) {
+	vec3 p3 = fract(vec3(p.xyx) * 0.1031);
+	p3 += dot(p3, p3.yzx + 33.33);
+	return fract((p3.x + p3.y) * p3.z);
+}
+
+float noise(vec2 p) {
+	vec2 i = floor(p);
+	vec2 f = fract(p);
+	f = f * f * (3.0 - 2.0 * f);
+
+	float a = hash(i);
+	float b = hash(i + vec2(1.0, 0.0));
+	float c = hash(i + vec2(0.0, 1.0));
+	float d = hash(i + vec2(1.0, 1.0));
+
+	return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+}
+
+float fbm(vec2 p) {
+	float value = 0.0;
+	float amplitude = 0.5;
+	for (int i = 0; i < 4; i++) {
+		value += amplitude * noise(p);
+		p *= 2.0;
+		amplitude *= 0.5;
+	}
+	return value;
+}
+
+vec2 rotate_uv(vec2 uv, float angle) {
+	float s = sin(angle);
+	float c = cos(angle);
+	return vec2(uv.x * c - uv.y * s, uv.x * s + uv.y * c);
+}
+
+void fragment() {
+	vec3 s1 = texture(ground_texture, UV * texture_scale).rgb;
+	vec3 s2 = texture(ground_texture, rotate_uv(UV, 1.0472) * texture_scale * 0.93).rgb;
+	vec3 s3 = texture(ground_texture, rotate_uv(UV, 2.0944) * texture_scale * 1.07).rgb;
+
+	float w1 = pow(fbm(UV * 6.0), 3.0);
+	float w2 = pow(fbm(UV * 6.0 + vec2(5.2, 1.3)), 3.0);
+	float w3 = pow(fbm(UV * 6.0 + vec2(1.7, 9.1)), 3.0);
+
+	float total = w1 + w2 + w3;
+	w1 /= total;
+	w2 /= total;
+	w3 /= total;
+
+	vec3 color = s1 * w1 + s2 * w2 + s3 * w3;
+
+	vec3 detail = texture(ground_texture, rotate_uv(UV, 0.5) * texture_scale * 2.1).rgb;
+	color = mix(color, color * (detail / max(dot(detail, vec3(0.333)), 0.01)), 0.3);
+
+	float variation = (fbm(UV * 3.0) - 0.5) * color_variation;
+	color += vec3(variation, variation * 0.5, -variation);
+
+	ALBEDO = color;
+}
+```
 
 <br />Poga
