@@ -102,6 +102,7 @@ shader_type spatial;
 uniform sampler2D ground_texture : source_color, filter_linear_mipmap, repeat_enable;
 uniform float texture_scale : hint_range(1.0, 100.0) = 40.0;
 uniform float color_variation : hint_range(0.0, 0.2) = 0.05;
+uniform float detail_strength : hint_range(0.0, 2.0) = 0.8;
 
 float hash(vec2 p) {
 	vec3 p3 = fract(vec3(p.xyx) * 0.1031);
@@ -140,23 +141,24 @@ vec2 rotate_uv(vec2 uv, float angle) {
 }
 
 void fragment() {
-	vec3 s1 = texture(ground_texture, UV * texture_scale).rgb;
+	vec2 uv_scaled = UV * texture_scale;
+
+	vec3 s1 = texture(ground_texture, uv_scaled).rgb;
 	vec3 s2 = texture(ground_texture, rotate_uv(UV, 1.0472) * texture_scale * 0.93).rgb;
 	vec3 s3 = texture(ground_texture, rotate_uv(UV, 2.0944) * texture_scale * 1.07).rgb;
 
-	float w1 = pow(fbm(UV * 6.0), 3.0);
-	float w2 = pow(fbm(UV * 6.0 + vec2(5.2, 1.3)), 3.0);
-	float w3 = pow(fbm(UV * 6.0 + vec2(1.7, 9.1)), 3.0);
+	float w1 = pow(fbm(UV * 8.0), 3.0);
+	float w2 = pow(fbm(UV * 8.0 + vec2(5.2, 1.3)), 3.0);
+	float w3 = pow(fbm(UV * 8.0 + vec2(1.7, 9.1)), 3.0);
+	float total = w1 + w2 + w3 + 0.001;
+	w1 /= total; w2 /= total; w3 /= total;
 
-	float total = w1 + w2 + w3;
-	w1 /= total;
-	w2 /= total;
-	w3 /= total;
+	vec3 base = s1 * w1 + s2 * w2 + s3 * w3;
 
-	vec3 color = s1 * w1 + s2 * w2 + s3 * w3;
+	vec3 raw_blur = textureLod(ground_texture, uv_scaled, 3.0).rgb;
+	vec3 detail = s1 - raw_blur;
 
-	vec3 detail = texture(ground_texture, rotate_uv(UV, 0.5) * texture_scale * 2.1).rgb;
-	color = mix(color, color * (detail / max(dot(detail, vec3(0.333)), 0.01)), 0.3);
+	vec3 color = base + detail * detail_strength;
 
 	float variation = (fbm(UV * 3.0) - 0.5) * color_variation;
 	color += vec3(variation, variation * 0.5, -variation);
@@ -164,5 +166,30 @@ void fragment() {
 	ALBEDO = color;
 }
 ```
+
+## Update: Preserving Hand-Drawn Detail
+
+The shader above solved tiling but had a problem: the hand-drawn strokes in the original texture were gone. Blending three rotated copies of a texture with directional line work averages the lines out — lines at different angles cancel each other.
+
+The fix is **frequency separation**. Use the blended samples only for low-frequency base color (tiling-free), then extract the hand-drawn strokes from a single unrotated sample and layer them back on top.
+
+```glsl
+// Blended base — smooth, tiling-free, but no line detail
+vec3 base = s1 * w1 + s2 * w2 + s3 * w3;
+
+// High-pass: textureLod at mip 3 gives a blurred version of the same area.
+// Subtracting it isolates fine strokes.
+vec3 raw_blur = textureLod(ground_texture, uv_scaled, 3.0).rgb;
+vec3 detail = s1 - raw_blur;
+
+// Combine: organic base + crisp hand-drawn lines
+vec3 color = base + detail * detail_strength;
+```
+
+The key insight: `textureLod(sampler, uv, 3.0)` reads the texture at mip level 3 — effectively an 8x downsampled blur. Subtracting it from the sharp sample leaves only high-frequency information: the pen strokes, grain, and scratches. Since these are added on top of the already tiling-free base, the lines are visible but don't reintroduce the tiling grid.
+
+`detail_strength` (exported to the Inspector) controls how much the strokes come through. At 0 you get the smooth blended result; at 0.8 (default) the hand-drawn character is clearly visible.
+
+<img src="/blog/images/ground-shader-detail-preserved.png" alt="After frequency separation - hand-drawn strokes preserved" style="max-width: 100%;" />
 
 <br />Poga
