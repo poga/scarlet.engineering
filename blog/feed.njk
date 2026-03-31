@@ -1,0 +1,28 @@
+---json
+{
+  "permalink": "blog/feed.xml",
+  "eleventyExcludeFromCollections": true
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Scarlet Engineering - Devlog</title>
+  <subtitle>Game development devlog from Scarlet Engineering</subtitle>
+  <link href="https://scarlet.engineering/blog/feed.xml" rel="self"/>
+  <link href="https://scarlet.engineering/blog/"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>https://scarlet.engineering/blog/</id>
+  <author>
+    <name>Scarlet Engineering</name>
+  </author>
+  {%- for post in collections.posts | reverse %}
+  {% set absolutePostUrl = post.url | htmlBaseUrl("https://scarlet.engineering") %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
