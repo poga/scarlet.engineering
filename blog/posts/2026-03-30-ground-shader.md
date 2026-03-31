@@ -191,5 +191,3 @@ The key insight: `textureLod(sampler, uv, 3.0)` reads the texture at mip level 3
 `detail_strength` (exported to the Inspector) controls how much the strokes come through. At 0 you get the smooth blended result; at 0.8 (default) the hand-drawn character is clearly visible.
 
 <img src="/blog/images/ground-shader-detail-preserved.png" alt="After frequency separation - hand-drawn strokes preserved" style="max-width: 100%;" />
-
-<br />Poga
