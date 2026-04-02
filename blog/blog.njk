@@ -6,12 +6,12 @@ permalink: /blog/
 <nav class="blog-nav">
     <a href="/">&larr; Home</a>
 </nav>
-<h1>Scarlet Engineering - Devlog</h1>
-<div style="margin-top: 32px;">
+<h1 class="blog-eyebrow">Scarlet Engineering - Devlog</h1>
+<div class="blog-list" style="margin-top: 32px;">
     {%- for post in collections.posts %}
     <article style="margin-bottom: 32px;">
         <a href="{{ post.url }}" style="text-decoration: none;">
-            <h2 style="margin-top: 0; font-size: 1.25rem;">{{ post.data.title }}</h2>
+            <h2>{{ post.data.title }}</h2>
         </a>
         <time style="color: var(--color-fog); font-size: 0.85rem;">{{ post.date | dateDisplay }}</time>
     </article>
