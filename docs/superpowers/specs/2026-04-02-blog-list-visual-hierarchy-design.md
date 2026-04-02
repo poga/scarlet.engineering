@@ -38,7 +38,11 @@ Eyebrow label for page title + enlarged post titles. Pure typographic solution �
 - Mobile responsive breakpoint at 480px (scales proportionally)
 - Overall page structure and layout
 
+## Scoping note
+
+The eyebrow styling applies only to the blog list page h1, not to individual post pages (which also use h1 for the post title via `blog/post.njk`). This can be achieved by adding a CSS class to the h1 in `blog/blog.njk` rather than changing the global h1 rule.
+
 ## Files to modify
 
-1. `blog/blog.njk` — remove inline styles from h2, restyle h1
-2. `_includes/blog-base.njk` — add CSS for eyebrow label style, update h2 styles for blog list context
+1. `blog/blog.njk` — add class to h1, remove inline styles from h2
+2. `_includes/blog-base.njk` — add CSS for the eyebrow class and blog-list h2 styling
