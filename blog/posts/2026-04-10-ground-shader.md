@@ -2,10 +2,12 @@
 title: One Shader, One Mesh, One Island
 date: 2026-04-10
 description: How we built organic islands with tidal water using SDFs and noise
-image: https://scarlet.engineering/blog/images/ground_hero.gif
+image: https://scarlet.engineering/blog/images/ground_sdf_viz.png
 ---
 
-![](/blog/images/ground_hero.gif)
+<video autoplay loop muted playsinline>
+  <source src="/blog/images/ground_hero.mp4" type="video/mp4">
+</video>
 
 This is one shader on a flat mesh. No hand-painted terrain, no tile maps. Just math. Here's how it works.
 
@@ -39,7 +41,9 @@ But the real trick is that we don't draw the water boundary where the SDF says i
 
 ## Breathing Tides
 
-![](/blog/images/ground_tides.gif)
+<video autoplay loop muted playsinline>
+  <source src="/blog/images/ground_hero.mp4" type="video/mp4">
+</video>
 
 We actually bake *two* SDF textures — one for low tide, one for high tide. Each represents a different polygon shape (the high-tide polygon is larger, eating into the land). At runtime, the shader just lerps between the two based on a tide level value.
 
