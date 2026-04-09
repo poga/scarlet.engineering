@@ -5,11 +5,36 @@ description: How we built organic islands with tidal water using SDFs and noise
 image: https://scarlet.engineering/blog/images/ground_sdf_viz.png
 ---
 
-<video autoplay loop muted playsinline>
+<video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
   <source src="/blog/images/ground_hero.mp4" type="video/mp4">
 </video>
 
 This is one shader on a flat mesh. No hand-painted terrain, no tile maps. Just math. Here's how it works.
+
+<pre style="font-size: 0.75em; line-height: 1.4; overflow-x: auto;">
+Polygon Regions (water, meadow)
+        │
+        ▼
+┌─────────────────┐
+│  GPU SDF Baking  │  Each polygon → SubViewport → signed distance field
+└────────┬────────┘
+         ▼
+┌─────────────────┐
+│  Pack into RGBA  │  R,G,B = water regions │ A = meadow
+└────────┬────────┘
+         ▼
+┌─────────────────┐
+│  Zone Blending   │  SDF distance → smoothstep → ground/meadow/forest
+└────────┬────────┘
+         ▼
+┌─────────────────┐
+│  Water Overlay   │  FBM-distorted shoreline → foam/shallow/medium/deep
+└────────┬────────┘
+         ▼
+┌─────────────────┐
+│  Tidal Animation │  lerp(low SDF, high SDF, tide) + per-point wobble
+└─────────────────┘
+</pre>
 
 ---
 
@@ -41,7 +66,7 @@ But the real trick is that we don't draw the water boundary where the SDF says i
 
 ## Breathing Tides
 
-<video autoplay loop muted playsinline>
+<video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
   <source src="/blog/images/ground_hero.mp4" type="video/mp4">
 </video>
 
@@ -52,5 +77,3 @@ Each water region has its own tide level, so different coastlines can flood inde
 ---
 
 Pretty happy with how this turned out. One flat mesh, a couple of baked textures, and a lot of noise functions go a surprisingly long way.
-
-<br />Poga
