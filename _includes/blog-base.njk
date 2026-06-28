@@ -208,6 +208,56 @@
             .blog-eyebrow { font-size: 0.7rem; }
             .blog-list h2 { font-size: 1.25rem; }
         }
+
+        .post-subscribe { margin-top: 24px; }
+
+        .post-subscribe hr { margin: 0 0 32px; }
+
+        .post-subscribe-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+
+        .post-subscribe-form input[type="email"] {
+            width: 100%;
+            padding: 14px 16px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-parchment);
+            background: var(--color-soot);
+            border: 1px solid var(--color-fog);
+            border-radius: 2px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .post-subscribe-form input[type="email"]:focus {
+            border-color: var(--color-alizarin);
+        }
+
+        .post-subscribe-form input[type="submit"] {
+            width: 100%;
+            padding: 14px 24px;
+            margin-top: 12px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-parchment);
+            background: var(--color-alizarin);
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .post-subscribe-form input[type="submit"]:hover {
+            background: var(--color-madder);
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .post-subscribe-form input[type="email"] { font-size: 16px; }
+        }
     </style>
 </head>
 <body>
