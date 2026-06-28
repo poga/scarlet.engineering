@@ -15,7 +15,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("*.png");
   eleventyConfig.addPassthroughCopy("*.webp");
   eleventyConfig.addPassthroughCopy("*.svg");
-  eleventyConfig.addPassthroughCopy("docs");
+  // publish design plans only; keep internal superpowers specs off the site
+  eleventyConfig.addPassthroughCopy("docs/plans");
   eleventyConfig.addPassthroughCopy("blog/images");
 
   // Blog post collection sorted by date descending

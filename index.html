@@ -24,6 +24,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></noscript>
 
+    <!-- Icon font (non-render-blocking) -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"></noscript>
+
     <style>
         :root {
             --color-alizarin: #7B1818;
@@ -163,6 +168,10 @@
         .link-button:hover {
             background: #4A4A4A;
             border-color: var(--color-fog);
+        }
+
+        .link-button i {
+            margin-right: 8px;
         }
 
         .games-section {
@@ -346,9 +355,9 @@
             <input type="submit" value="Subscribe" />
         </form>
         <nav class="link-stack">
-            <a href="/blog/" class="link-button" title="Devlog">Devlog</a>
-            <a href="https://discord.gg/FFymAKhRzD" target="_blank" class="link-button" title="Join our Discord">Discord</a>
-            <a href="mailto:hi@scarlet.engineering" class="link-button" title="Email us">Email</a>
+            <a href="/blog/" class="link-button" title="Devlog"><i class="fa-solid fa-book" aria-hidden="true"></i>Devlog</a>
+            <a href="https://discord.gg/FFymAKhRzD" target="_blank" class="link-button" title="Join our Discord"><i class="fa-brands fa-discord" aria-hidden="true"></i>Discord</a>
+            <a href="mailto:hi@scarlet.engineering" class="link-button" title="Email us"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email</a>
         </nav>
         <section class="games-section">
             <h3 class="games-title">Our Games</h3>
