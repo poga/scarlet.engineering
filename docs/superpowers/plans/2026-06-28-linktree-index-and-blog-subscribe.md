@@ -130,8 +130,8 @@ Expected: `we engineer emergence`
 Run: `grep -c 'class="form-title"' _site/index.html`
 Expected: `0` (old heading removed)
 
-Run: `grep -c 'games-section' _site/index.html`
-Expected: `1` (game cards still present)
+Run: `grep -c 'class="game-card"' _site/index.html`
+Expected: `2` (both game cards still present)
 
 - [ ] **Step 5: Commit**
 
@@ -232,13 +232,18 @@ In `_includes/blog/post.njk`, after the closing `</article>` tag, add:
 Run: `npm run build`
 Expected: build completes with no errors.
 
-Run: `grep -c 'post-subscribe-form' _site/blog/2026-04-10-ground-shader/index.html`
-Expected: `1`
+Note: Eleventy strips the leading `YYYY-MM-DD-` date prefix from `fileSlug`,
+so the post at `blog/posts/2026-04-10-ground-shader.md` builds to
+`_site/blog/ground-shader/index.html` (not the dated path).
 
-Run: `grep -o 'Enjoyed this? Get the next devlog in your inbox.' _site/blog/2026-04-10-ground-shader/index.html`
+Run: `grep -c 'class="post-subscribe-form"' _site/blog/ground-shader/index.html`
+Expected: `1` (the form markup; the bare string `post-subscribe-form` also
+matches the 5 inlined CSS rules, so assert on the class attribute)
+
+Run: `grep -o 'Enjoyed this? Get the next devlog in your inbox.' _site/blog/ground-shader/index.html`
 Expected: `Enjoyed this? Get the next devlog in your inbox.`
 
-Run: `grep -c 'embed-subscribe/scarlet.engineering' _site/blog/2026-02-14-curves-of-fun/index.html`
+Run: `grep -c 'embed-subscribe/scarlet.engineering' _site/blog/curves-of-fun/index.html`
 Expected: `1` (confirms the form reaches every post via the shared layout)
 
 - [ ] **Step 4: Commit**
