@@ -14,3 +14,15 @@ ogType: article
         {{ content | safe }}
     </div>
 </article>
+<aside class="post-subscribe">
+    <hr>
+    <h3 class="post-subscribe-title">Enjoyed this? Get the next devlog in your inbox.</h3>
+    <form
+        action="https://buttondown.com/api/emails/embed-subscribe/scarlet.engineering"
+        method="post"
+        class="post-subscribe-form"
+    >
+        <input type="email" name="email" placeholder="you@example.com" />
+        <input type="submit" value="Subscribe" />
+    </form>
+</aside>
