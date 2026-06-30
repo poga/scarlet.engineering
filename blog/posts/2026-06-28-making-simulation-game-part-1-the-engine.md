@@ -21,7 +21,7 @@ The first reference is the GlassBox engine behind SimCity. Here's a 14-year-old 
 
 It's old (from 2012!), but most of the ideas still hold up:
 
-1. Everything on the map is a building (unit).
+1. Everything on the map is a building: actual buildings, houses, water sources, forests,... etc.
     1. Buildings store resources.
     2. Buildings run rules. Rules trigger effects and animations.
 2. A map defines resources and building distributions.
