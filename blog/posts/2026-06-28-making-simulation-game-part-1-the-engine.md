@@ -1,6 +1,6 @@
 ---
 title: "Making a Simulation game - Part 1: The Engine"
-date: 2026-07-01
+date: 2026-06-30
 description: How does a simulation game actually work?
 image: https://scarlet.engineering/blog/images/brews_and_kings_building_menu.png
 ---
@@ -46,7 +46,13 @@ The key concept is **Physicality**. A persistent actor that exists in world spac
 
 Abstract agents from a SimCity-style engine are one-shot, ephemeral, interchangeable flow events. They do their job (move a resource from A to B) and then disappear. This lets the game scale while keeping good performance.
 
-Physical Agents have needs that flow events don't: positioning (dispatch_move), stationary labor (dispatch_work), state across many ticks, and view-layer interpolation along a path. Modeling them with bare Agents is fragile. We end up bolting motion, animation, and persistent state onto a primitive built to be a one-shot event, and the resource ledger absorbs what is really view state.
+Physical Agents have needs that flow events don't:
+- positioning (dispatch_move),
+- stationary labor (dispatch_work),
+- state across many ticks,
+- and view-layer interpolation along a path.
+
+Modeling them with bare Agents is fragile. We end up bolting motion, animation, and persistent state onto a primitive built to be a one-shot event, and the resource ledger absorbs what is really view state.
 
 Physical Agents also make the game more intuitive. The player sees them moving around the map. All of these are natural:
 
@@ -63,15 +69,14 @@ My implementation mostly follows their ideas.
 
 **Everything is agents moving resources between buildings**. That's the only verb the engine knows.
 
-Wood reaching a construction site, beer reaching a town order, water filling a well, power lighting a district, pollution drifting downwind, happiness radiating from a park — all the same shape: an agent ferries a resource bundle from one Building to another.
+Wood reaching a construction site, beer reaching a town order, water filling a well, power lighting a district, pollution drifting downwind, happiness radiating from a park. All the same shape: an agent ferries a resource bundle from one Building to another.
 
 While doing so, a few more benefits emerged:
 
 1. Clean engine/content separation:
     - The engine focuses on simulating agents efficiently.
     - The content side can focus on design: what the buildings/resources/agents are, how they flow, and how it should be fun.
-    - Each building is an isolated scene (in Godot's terms). They compose and interact with each other cleanly.
+    - Each building is an isolated scene tree (in Godot's terms). They compose and interact with each other cleanly.
 2. The model is basically double-entry bookkeeping. Every resource movement is a transaction that can be verified to keep the books balanced. This lets me catch subtle simulation bugs easily and debug game sessions via logs.
 3. Determinism: the whole engine can be made deterministic if you want.
-
 
