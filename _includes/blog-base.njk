@@ -44,12 +44,16 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* Guarantee nothing ever forces sideways scroll */
+        html, body { overflow-x: hidden; }
+
         body {
             background-color: var(--color-ink);
             font-family: var(--font-body);
             font-size: 18px;
             line-height: 1.8;
             color: var(--color-parchment);
+            overflow-wrap: break-word;
         }
 
         .blog-container {
@@ -212,6 +216,19 @@
             height: auto;
             border-radius: 2px;
             margin: 1.5em 0;
+        }
+
+        /* Fixed-width embeds must stay inside the column */
+        iframe, video, embed, object {
+            max-width: 100%;
+            margin: 1.5em 0;
+        }
+
+        /* Keep 16:9 video embeds responsive instead of fixed pixels */
+        iframe[src*="youtube"] {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
         }
 
         hr {
