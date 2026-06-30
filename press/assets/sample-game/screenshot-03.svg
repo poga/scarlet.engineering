@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#1A1A1A"/>
+  <rect x="0" y="0" width="1280" height="720" fill="#D4A857" opacity="0.08"/>
+  <rect x="24" y="24" width="1232" height="672" fill="none" stroke="#3D3D3D" stroke-width="2"/>
+  <text x="640" y="350" text-anchor="middle" font-family="Georgia, serif" font-size="56" fill="#E8E0D0">Screenshot 03</text>
+  <text x="640" y="410" text-anchor="middle" font-family="monospace" font-size="24" fill="#D4A857" letter-spacing="3">1280 × 720 — REPLACE WITH A REAL CAPTURE</text>
+</svg>

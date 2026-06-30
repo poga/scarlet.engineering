@@ -1,0 +1,153 @@
+---
+pagination:
+  data: presskits
+  size: 1
+  alias: kit
+layout: press-base.njk
+permalink: "/press/{{ kit.slug }}/"
+eleventyComputed:
+  title: "{{ kit.title }} — Press Kit"
+  description: "{{ kit.tagline or kit.descriptionShort }}"
+  image: "{{ kit.keyArt and ('https://scarlet.engineering/press/assets/' + kit.slug + '/' + kit.keyArt) or 'https://scarlet.engineering/logo-v2.png' }}"
+---
+{%- set base = "/press/assets/" + kit.slug %}
+<nav class="press-nav"><a href="/press/">&larr; All press kits</a></nav>
+
+<header>
+    {%- if kit.developer %}<div class="eyebrow">{{ kit.developer }} press kit</div>{% endif %}
+    <h1>{{ kit.title }}</h1>
+    {%- if kit.tagline %}<p class="tagline">{{ kit.tagline }}</p>{% endif %}
+    {%- if kit.keyArt %}<img class="hero-art" src="{{ base }}/{{ kit.keyArt }}" alt="{{ kit.title }} key art">{% endif %}
+    <div class="actions">
+        <a class="btn btn-primary" href="{{ base }}.zip" download>&#8595; Download all assets (.zip)</a>
+        {%- if kit.website %}<a class="btn" href="{{ kit.website }}" target="_blank" rel="noopener">Official site</a>{% endif %}
+        {%- for link in kit.buyLinks %}<a class="btn" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% endfor %}
+    </div>
+</header>
+
+<section class="section">
+    <h2>Fact sheet</h2>
+    <dl class="fact-sheet">
+        {%- if kit.developer %}<dt>Developer</dt><dd>{{ kit.developer }}</dd>{% endif %}
+        {%- if kit.basedIn %}<dt>Based in</dt><dd>{{ kit.basedIn }}</dd>{% endif %}
+        {%- if kit.releaseDate %}<dt>Release date</dt><dd>{{ kit.releaseDate }}</dd>{% endif %}
+        {%- if kit.platforms %}<dt>Platforms</dt><dd>{{ kit.platforms | join(", ") }}</dd>{% endif %}
+        {%- if kit.price %}<dt>Price</dt><dd>{{ kit.price }}</dd>{% endif %}
+        {%- if kit.languages %}<dt>Languages</dt><dd>{{ kit.languages | join(", ") }}</dd>{% endif %}
+        {%- if kit.website %}<dt>Website</dt><dd><a href="{{ kit.website }}" target="_blank" rel="noopener">{{ kit.website }}</a></dd>{% endif %}
+        {%- if kit.pressContact %}<dt>Press contact</dt><dd><a href="mailto:{{ kit.pressContact }}">{{ kit.pressContact }}</a></dd>{% endif %}
+    </dl>
+</section>
+
+{%- if kit.descriptionShort or kit.descriptionLong %}
+<section class="section">
+    <h2>Description</h2>
+    {%- if kit.descriptionShort %}
+    <div class="copy-block">
+        <button class="copy-btn" data-copy-target="#desc-short">Copy</button>
+        <div class="copy-body" id="desc-short"><p>{{ kit.descriptionShort }}</p></div>
+    </div>
+    {%- endif %}
+    {%- if kit.descriptionLong %}
+    <div class="copy-block">
+        <button class="copy-btn" data-copy-target="#desc-long">Copy</button>
+        <div class="copy-body" id="desc-long">{% for para in kit.descriptionLong %}<p>{{ para }}</p>{% endfor %}</div>
+    </div>
+    {%- endif %}
+</section>
+{%- endif %}
+
+{%- if kit.features %}
+<section class="section">
+    <h2>Features</h2>
+    <ul class="feature-list">{% for f in kit.features %}<li>{{ f }}</li>{% endfor %}</ul>
+</section>
+{%- endif %}
+
+{%- if kit.trailer and (kit.trailer.youtube or kit.trailer.embedUrl or kit.trailer.file) %}
+<section class="section">
+    <h2>Trailer</h2>
+    <div class="video-wrap">
+        {%- if kit.trailer.youtube %}<iframe src="https://www.youtube.com/embed/{{ kit.trailer.youtube }}" title="{{ kit.title }} trailer" allowfullscreen></iframe>
+        {%- elif kit.trailer.embedUrl %}<iframe src="{{ kit.trailer.embedUrl }}" title="{{ kit.title }} trailer" allowfullscreen></iframe>
+        {%- elif kit.trailer.file %}<video controls preload="metadata" src="{{ base }}/{{ kit.trailer.file }}"></video>{% endif %}
+    </div>
+    {%- if kit.trailer.download %}<a class="btn" href="{{ kit.trailer.download }}" download>&#8595; Download trailer</a>
+    {%- elif kit.trailer.file %}<a class="btn" href="{{ base }}/{{ kit.trailer.file }}" download>&#8595; Download trailer</a>{% endif %}
+</section>
+{%- endif %}
+
+{%- if kit.screenshots %}
+<section class="section">
+    <h2>Screenshots</h2>
+    <p style="color: var(--color-fog); font-size: 0.9rem;">Click any image for full resolution, or grab everything in the .zip above.</p>
+    <div class="asset-grid">
+        {%- for shot in kit.screenshots %}
+        <a href="{{ base }}/{{ shot }}" target="_blank" download><img src="{{ base }}/{{ shot }}" alt="{{ kit.title }} screenshot" loading="lazy"></a>
+        {%- endfor %}
+    </div>
+</section>
+{%- endif %}
+
+{%- if kit.logos %}
+<section class="section">
+    <h2>Logo &amp; icon</h2>
+    <div class="logo-grid">
+        {%- for logo in kit.logos %}
+        <a href="{{ base }}/{{ logo }}" target="_blank" download><img src="{{ base }}/{{ logo }}" alt="{{ kit.title }} logo"></a>
+        {%- endfor %}
+    </div>
+</section>
+{%- endif %}
+
+{%- if kit.awards %}
+<section class="section">
+    <h2>Awards &amp; recognition</h2>
+    <ul class="award-list">{% for a in kit.awards %}<li>{{ a.title }}{% if a.source %} — {{ a.source }}{% endif %}{% if a.year %}, {{ a.year }}{% endif %}</li>{% endfor %}</ul>
+</section>
+{%- endif %}
+
+{%- if kit.quotes %}
+<section class="section">
+    <h2>Selected quotes</h2>
+    {%- for q in kit.quotes %}
+    <blockquote class="quote">
+        <p>&ldquo;{{ q.text }}&rdquo;</p>
+        <cite>— {{ q.author }}{% if q.outlet %}, {% if q.url %}<a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.outlet }}</a>{% else %}{{ q.outlet }}{% endif %}{% endif %}</cite>
+    </blockquote>
+    {%- endfor %}
+</section>
+{%- endif %}
+
+{%- if kit.additionalLinks %}
+<section class="section">
+    <h2>Additional links</h2>
+    <ul>{% for link in kit.additionalLinks %}<li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% if link.note %} — {{ link.note }}{% endif %}</li>{% endfor %}</ul>
+</section>
+{%- endif %}
+
+{%- if kit.about %}
+<section class="section">
+    <h2>About {{ kit.developer or "the studio" }}</h2>
+    {%- for para in kit.about %}<p>{{ para }}</p>{% endfor %}
+</section>
+{%- endif %}
+
+{%- if kit.credits %}
+<section class="section">
+    <h2>Credits</h2>
+    <dl class="fact-sheet">{% for c in kit.credits %}<dt>{{ c.role }}</dt><dd>{{ c.name }}</dd>{% endfor %}</dl>
+</section>
+{%- endif %}
+
+<section class="section">
+    <h2>Contact</h2>
+    <dl class="fact-sheet">
+        {%- if kit.pressContact %}<dt>Press</dt><dd><a href="mailto:{{ kit.pressContact }}">{{ kit.pressContact }}</a></dd>{% endif %}
+        {%- for label, url in kit.social %}{% if url %}<dt>{{ label }}</dt><dd><a href="{{ url }}" target="_blank" rel="noopener">{{ url }}</a></dd>{% endif %}{% endfor %}
+    </dl>
+</section>
+
+{%- if kit.monetizationNote %}
+<p class="press-footer">{{ kit.monetizationNote }}</p>
+{%- endif %}
