@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - scarlet.engineering</title>
+    <meta name="description" content="{{ description or 'Press kit' }}">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scarlet.engineering{{ page.url }}">
+    <meta property="og:title" content="{{ title }} - scarlet.engineering">
+    <meta property="og:description" content="{{ description or 'Press kit' }}">
+    <meta property="og:image" content="{{ image or 'https://scarlet.engineering/logo-v2.png' }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+        :root {
+            --color-alizarin: #7B1818;
+            --color-claret: #6E2233;
+            --color-madder: #A04040;
+            --color-oxblood: #4A0000;
+            --color-ink: #1A1A1A;
+            --color-soot: #3D3D3D;
+            --color-fog: #9A9A8E;
+            --color-parchment: #E8E0D0;
+            --color-gaslight: #D4A857;
+            --color-verdigris: #4A766E;
+            --font-heading: 'Roboto Slab', 'Rockwell', serif;
+            --font-body: 'Lora', 'Georgia', serif;
+            --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--color-ink);
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--color-parchment);
+        }
+
+        .press-container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 24px 96px;
+        }
+
+        .press-nav { margin-bottom: 40px; }
+        .press-nav a {
+            color: var(--color-gaslight);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s ease;
+        }
+        .press-nav a:hover { color: var(--color-parchment); }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            color: var(--color-parchment);
+            line-height: 1.3;
+        }
+        h1 { font-size: 2.25rem; margin-bottom: 8px; }
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--color-soot);
+        }
+
+        a { color: var(--color-gaslight); transition: color 0.2s ease; }
+        a:hover { color: var(--color-parchment); }
+        p { margin-bottom: 1.2em; }
+        ul { margin-bottom: 1.2em; padding-left: 1.4em; }
+        li { margin-bottom: 0.4em; }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-fog);
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--color-fog);
+            margin-bottom: 28px;
+        }
+
+        .hero-art {
+            width: 100%;
+            border-radius: 2px;
+            margin-bottom: 28px;
+            border: 1px solid var(--color-soot);
+        }
+
+        .section { margin-top: 56px; }
+
+        /* Action buttons */
+        .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        .btn {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 2px;
+            border: 1px solid var(--color-gaslight);
+            color: var(--color-gaslight);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn:hover { background: var(--color-gaslight); color: var(--color-ink); }
+        .btn-primary {
+            background: var(--color-alizarin);
+            border-color: var(--color-alizarin);
+            color: var(--color-parchment);
+        }
+        .btn-primary:hover {
+            background: var(--color-madder);
+            border-color: var(--color-madder);
+            color: var(--color-parchment);
+        }
+
+        /* Fact sheet */
+        .fact-sheet {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 8px 24px;
+            font-size: 0.95rem;
+        }
+        .fact-sheet dt {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-fog);
+            padding-top: 3px;
+        }
+        .fact-sheet dd { color: var(--color-parchment); }
+
+        /* Copyable text block */
+        .copy-block {
+            position: relative;
+            background: var(--color-soot);
+            border: 1px solid #4A4A4A;
+            border-radius: 2px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+        }
+        .copy-block .copy-body { font-size: 0.95rem; }
+        .copy-block .copy-body p:last-child { margin-bottom: 0; }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-gaslight);
+            background: var(--color-ink);
+            border: 1px solid var(--color-soot);
+            border-radius: 2px;
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover { color: var(--color-parchment); border-color: var(--color-gaslight); }
+
+        /* Asset grid */
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .asset-grid a {
+            display: block;
+            border: 1px solid var(--color-soot);
+            border-radius: 2px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .asset-grid a:hover { border-color: var(--color-gaslight); }
+        .asset-grid img { display: block; width: 100%; height: auto; }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+        }
+        .logo-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            padding: 20px;
+            border: 1px solid var(--color-soot);
+            border-radius: 2px;
+            background: repeating-conic-gradient(#262626 0% 25%, #1f1f1f 0% 50%) 50% / 24px 24px;
+        }
+        .logo-grid img { max-width: 100%; max-height: 100px; }
+
+        .video-wrap {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-bottom: 16px;
+            border: 1px solid var(--color-soot);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .video-wrap iframe, .video-wrap video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+
+        .quote {
+            border-left: 3px solid var(--color-alizarin);
+            padding-left: 20px;
+            margin: 1.5em 0;
+        }
+        .quote p { font-style: italic; margin-bottom: 6px; }
+        .quote cite { font-style: normal; color: var(--color-fog); font-size: 0.9rem; }
+
+        .award-list { list-style: none; padding-left: 0; }
+        .award-list li::before { content: "\2605  "; color: var(--color-gaslight); }
+
+        .feature-list li::marker { color: var(--color-gaslight); }
+
+        .press-footer {
+            margin-top: 72px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-soot);
+            color: var(--color-fog);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 480px) {
+            body { font-size: 16px; }
+            .press-container { padding: 32px 16px 64px; }
+            h1 { font-size: 1.6rem; }
+            .fact-sheet { grid-template-columns: 1fr; gap: 2px 0; }
+            .fact-sheet dt { padding-top: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="press-container">
+        {{ content | safe }}
+    </div>
+
+    <script>
+        // Copy the linked element's text to the clipboard; flash confirmation.
+        document.querySelectorAll("[data-copy-target]").forEach(btn => {
+            btn.addEventListener("click", async () => {
+                const el = document.querySelector(btn.dataset.copyTarget);
+                if (!el) return;
+                try {
+                    await navigator.clipboard.writeText(el.innerText.trim());
+                    const prev = btn.textContent;
+                    btn.textContent = "Copied";
+                    setTimeout(() => { btn.textContent = prev; }, 1500);
+                } catch (e) {}
+            });
+        });
+    </script>
+</body>
+</html>

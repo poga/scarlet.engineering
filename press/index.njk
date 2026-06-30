@@ -1,0 +1,24 @@
+---
+layout: press-base.njk
+title: Press Kits
+permalink: /press/
+---
+<nav class="press-nav"><a href="/">&larr; Home</a></nav>
+<div class="eyebrow">Scarlet Engineering</div>
+<h1>Press kits</h1>
+<p class="tagline">Everything press, streamers, and creators need — assets, facts, and copy in one place.</p>
+
+<div class="asset-grid" style="margin-top: 40px;">
+    {%- for kit in presskits %}
+    <a href="/press/{{ kit.slug }}/" style="text-decoration: none; color: inherit;">
+        {%- if kit.keyArt %}<img src="/press/assets/{{ kit.slug }}/{{ kit.keyArt }}" alt="{{ kit.title }}">{% endif %}
+        <div style="padding: 14px 16px;">
+            <strong style="font-family: var(--font-heading);">{{ kit.title }}</strong>
+            {%- if kit.tagline %}<div style="color: var(--color-fog); font-size: 0.85rem; margin-top: 4px;">{{ kit.tagline }}</div>{% endif %}
+        </div>
+    </a>
+    {%- endfor %}
+    {%- if presskits.length == 0 %}<p style="color: var(--color-fog);">No press kits yet.</p>{% endif %}
+</div>
+
+<p class="press-footer">For interviews or anything not covered here, email <a href="mailto:press@scarlet.engineering">press@scarlet.engineering</a>.</p>

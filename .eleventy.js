@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+const { execFileSync } = require("child_process");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
 
@@ -7,6 +10,8 @@ module.exports = function(eleventyConfig) {
 
   // Ignore docs directory from template processing (plans, not blog content)
   eleventyConfig.ignores.add("docs/**");
+  // Authoring guide, not a page
+  eleventyConfig.ignores.add("press/README.md");
 
   // Pass through existing static files untouched
   eleventyConfig.addPassthroughCopy("index.html");
@@ -18,6 +23,7 @@ module.exports = function(eleventyConfig) {
   // publish design plans only; keep internal superpowers specs off the site
   eleventyConfig.addPassthroughCopy("docs/plans");
   eleventyConfig.addPassthroughCopy("blog/images");
+  eleventyConfig.addPassthroughCopy("press/assets");
 
   // Blog post collection sorted by date descending
   eleventyConfig.addCollection("posts", function(collectionApi) {
@@ -30,6 +36,27 @@ module.exports = function(eleventyConfig) {
       month: "long",
       day: "numeric"
     });
+  });
+
+  // Bundle each kit's assets into a downloadable .zip (static host can't zip live)
+  eleventyConfig.on("eleventy.after", () => {
+    const dataDir = path.join(__dirname, "press", "data");
+    const assetsRoot = path.join(__dirname, "press", "assets");
+    const outRoot = path.join(__dirname, "_site", "press", "assets");
+    if (!fs.existsSync(dataDir)) return;
+    for (const file of fs.readdirSync(dataDir)) {
+      if (!file.endsWith(".json")) continue;
+      const slug = file.replace(/\.json$/, "");
+      if (!fs.existsSync(path.join(assetsRoot, slug))) continue;
+      const outZip = path.join(outRoot, `${slug}.zip`);
+      fs.mkdirSync(outRoot, { recursive: true });
+      fs.rmSync(outZip, { force: true });
+      try {
+        execFileSync("zip", ["-r", "-q", "-X", outZip, slug], { cwd: assetsRoot });
+      } catch (err) {
+        console.warn(`[press] skipped ${slug}.zip — is the 'zip' binary installed?`);
+      }
+    }
   });
 
   return {
