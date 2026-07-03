@@ -80,3 +80,11 @@ While doing so, a few more benefits emerged:
 2. The model is basically [double-entry bookkeeping](https://en.wikipedia.org/wiki/Double-entry_bookkeeping). Every resource movement is a transaction that can be verified to keep the books balanced. This lets me catch subtle simulation bugs easily and debug game sessions via logs.
 3. Determinism: the whole engine can be made deterministic if you want.
 
+---
+
+## Brews & Kings
+
+This engine powers **Brews & Kings**, a roguelike medieval city builder where your whole city feeds one sprawling brewing operation — and kings rise or fall on the strength of your beer. Wishlist it on Steam to follow along.
+
+<iframe src="https://store.steampowered.com/widget/4845040/" frameborder="0" width="646" height="190"></iframe>
+
