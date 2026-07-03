@@ -5,7 +5,7 @@ plus a folder of assets — Eleventy builds a polished, press-ready page per gam
 
 ## Add a new game
 
-1. **Copy the data file.** Duplicate `data/sample-game.json` to
+1. **Copy the data file.** Duplicate `data/brews-and-kings.json` to
    `data/<your-slug>.json`. The filename is the URL: `data/witchwater.json`
    becomes `/press/witchwater/`.
 
