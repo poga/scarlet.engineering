@@ -6,8 +6,8 @@ pagination:
 layout: press-base.njk
 permalink: "/press/{{ kit.slug }}/"
 eleventyComputed:
-  title: "{{ kit.title }} — Press Kit"
-  description: "{{ kit.tagline or kit.descriptionShort }}"
+  title: "{{ kit.title | safe }} — Press Kit"
+  description: "{{ (kit.tagline or kit.descriptionShort) | safe }}"
   image: "{{ kit.keyArt and ('https://scarlet.engineering/press/assets/' + kit.slug + '/' + kit.keyArt) or 'https://scarlet.engineering/logo-v2.png' }}"
 ---
 {%- set base = "/press/assets/" + kit.slug %}
