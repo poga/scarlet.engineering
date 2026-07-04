@@ -5,7 +5,10 @@ description: How does a simulation game actually work?
 image: https://scarlet.engineering/blog/images/brews_and_kings_building_menu.png
 ---
 
-![](/blog/images/brews_and_kings_building_menu.png)
+<figure>
+  <img src="/blog/images/brews_and_kings_building_menu.png" alt="Brews & Kings building menu">
+  <figcaption>Brews &amp; Kings — the simulation game I'm building.</figcaption>
+</figure>
 
 Before I knew much about game development, I already knew I wanted to make simulation/strategy games.
 
