@@ -161,6 +161,13 @@
             border: 1px solid #4A4A4A;
         }
 
+        .mermaid {
+            margin-bottom: 1.5em;
+            overflow-x: auto;
+        }
+
+        .mermaid svg { max-width: 100%; height: auto; }
+
         pre code {
             background: none;
             padding: 0;
@@ -318,5 +325,20 @@
     <div class="blog-container">
         {{ content | safe }}
     </div>
+    <script type="module">
+      // Render ```mermaid fences as diagrams; loads mermaid only when needed
+      const blocks = document.querySelectorAll('pre > code.language-mermaid');
+      if (blocks.length) {
+        const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+        for (const code of blocks) {
+          const holder = document.createElement('div');
+          holder.className = 'mermaid';
+          holder.textContent = code.textContent;
+          code.closest('pre').replaceWith(holder);
+        }
+        await mermaid.run();
+      }
+    </script>
 </body>
 </html>
