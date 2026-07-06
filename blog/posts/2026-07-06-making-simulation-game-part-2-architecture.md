@@ -11,7 +11,7 @@ image: https://scarlet.engineering/blog/images/post2.png
 
 In [part 1](/blog/making-simulation-game-part-1-the-engine/) I said everything is agents moving resources between buildings.
 
-This post is what happens when you take that literally: the engine that runs my game does not know what beer is. It routes agents and balances books. Every noun lives somewhere else.
+This post is what happens when you take that literally: **the engine that runs my game does not know what beer is**. It routes agents and balances books. Every noun lives somewhere else.
 
 ---
 
