@@ -12,6 +12,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("docs/**");
   // Authoring guide, not a page
   eleventyConfig.ignores.add("press/README.md");
+  // Post template for authors to copy, not a page
+  eleventyConfig.ignores.add("blog/posts/_template.md");
 
   // Pass through existing static files untouched
   eleventyConfig.addPassthroughCopy("index.html");
