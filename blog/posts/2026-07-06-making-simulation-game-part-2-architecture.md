@@ -9,7 +9,7 @@ image: https://scarlet.engineering/blog/images/post2.png
   <source src="/blog/images/post2.mp4" type="video/mp4">
 </video>
 
-In part 1 I said everything is agents moving resources between buildings.
+In [part 1](/blog/making-simulation-game-part-1-the-engine/) I said everything is agents moving resources between buildings.
 This post is what happens when you take that literally: the engine that runs my game does not know what beer is. It routes agents and balances books. Every noun lives somewhere else.
 
 ---
