@@ -161,6 +161,31 @@
             border: 1px solid #4A4A4A;
         }
 
+        .mermaid {
+            margin-bottom: 1.5em;
+            overflow-x: auto;
+            cursor: zoom-in;
+        }
+
+        .mermaid svg { max-width: 100%; height: auto; }
+
+        .mermaid-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(26, 26, 26, 0.96);
+            display: flex;
+            overflow: auto;
+            padding: 32px;
+            cursor: zoom-out;
+        }
+
+        /* margin:auto centers small diagrams and lets big ones scroll */
+        .mermaid-overlay svg {
+            flex-shrink: 0;
+            margin: auto;
+        }
+
         pre code {
             background: none;
             padding: 0;
@@ -318,5 +343,48 @@
     <div class="blog-container">
         {{ content | safe }}
     </div>
+    <script type="module">
+      // Render ```mermaid fences as diagrams; loads mermaid only when needed
+      const blocks = document.querySelectorAll('pre > code.language-mermaid');
+      if (blocks.length) {
+        const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+        for (const code of blocks) {
+          const holder = document.createElement('div');
+          holder.className = 'mermaid';
+          holder.textContent = code.textContent;
+          code.closest('pre').replaceWith(holder);
+        }
+        await mermaid.run();
+
+        // Click a diagram to view it full size; click again or Esc to close
+        const openOverlay = (svg) => {
+          const overlay = document.createElement('div');
+          overlay.className = 'mermaid-overlay';
+          const clone = svg.cloneNode(true);
+          const vb = svg.viewBox.baseVal;
+          const fit = Math.min(
+            (window.innerWidth - 64) / vb.width,
+            (window.innerHeight - 64) / vb.height
+          );
+          clone.style.maxWidth = 'none';
+          clone.style.width = vb.width * Math.max(fit, 1) + 'px';
+          clone.style.height = 'auto';
+          overlay.appendChild(clone);
+          const close = () => {
+            overlay.remove();
+            document.removeEventListener('keydown', onKey);
+          };
+          const onKey = (e) => { if (e.key === 'Escape') close(); };
+          overlay.addEventListener('click', close);
+          document.addEventListener('keydown', onKey);
+          document.body.appendChild(overlay);
+        };
+        for (const holder of document.querySelectorAll('div.mermaid')) {
+          const svg = holder.querySelector('svg');
+          if (svg) holder.addEventListener('click', () => openOverlay(svg));
+        }
+      }
+    </script>
 </body>
 </html>
