@@ -1,5 +1,5 @@
 ---
-title: "Making a Simulation Game - Part 2: The Engine doesn't know what beer is"
+title: "Making a Simulation Game - Part 2: The Engine Doesn't Know What Beer is"
 date: 2026-07-06
 description: How does my simulation game work?
 image: https://scarlet.engineering/blog/images/post2.png
@@ -10,6 +10,7 @@ image: https://scarlet.engineering/blog/images/post2.png
 </video>
 
 In [part 1](/blog/making-simulation-game-part-1-the-engine/) I said everything is agents moving resources between buildings.
+
 This post is what happens when you take that literally: the engine that runs my game does not know what beer is. It routes agents and balances books. Every noun lives somewhere else.
 
 ---
