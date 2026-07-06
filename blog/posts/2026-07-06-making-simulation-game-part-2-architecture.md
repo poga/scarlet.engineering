@@ -9,7 +9,6 @@ image: https://scarlet.engineering/blog/images/post2.png
   <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
     <source src="/blog/images/post2.mp4" type="video/mp4">
   </video>
-  <figcaption>Yes this is a brewery game. but I'm a programmer. I always make it generic.</figcaption>
 </figure>
 
 In [part 1](/blog/making-simulation-game-part-1-the-engine/) I said everything is agents moving resources between buildings.
