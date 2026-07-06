@@ -89,3 +89,11 @@ Besides some common helpers, every content-side scene is an isolated scene tree 
 A registry automatically discovers content from directory structure conventions.
 
 Therefore, when I'm wearing the content designer hat, I can focus on the building, the resource, or the event I want to tweak without caring about the overall system.
+
+---
+
+## Brews & Kings
+
+This engine powers **Brews & Kings**, a roguelike medieval city builder where your whole city feeds one sprawling brewing operation — and kings rise or fall on the strength of your beer. Wishlist it on Steam to follow along.
+
+<iframe src="https://store.steampowered.com/widget/4845040/" frameborder="0" width="646" height="190"></iframe>
