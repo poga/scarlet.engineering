@@ -142,7 +142,7 @@
             outline-offset: 2px;
         }
 
-        /* Dimmed thumb brightens on hover; soot frame keeps dark shots legible */
+        /* Soot frame warms to gaslight on hover */
         .post-card-thumb {
             flex: 0 0 160px;
             width: 160px;
@@ -152,12 +152,10 @@
             border: 1px solid var(--color-soot);
             background-color: var(--color-soot);
             margin: 0;
-            filter: brightness(0.85) saturate(0.95);
-            transition: filter 0.2s ease, border-color 0.2s ease;
+            transition: border-color 0.2s ease;
         }
 
         .post-card:hover .post-card-thumb {
-            filter: none;
             border-color: rgba(212, 168, 87, 0.4);
         }
 
