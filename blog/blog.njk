@@ -7,14 +7,20 @@ permalink: /blog/
     <a href="/">&larr; Home</a>
 </nav>
 <h1 class="blog-eyebrow">Scarlet Engineering - Devlog</h1>
-<div class="blog-list" style="margin-top: 32px;">
+<div class="blog-list">
     {%- for post in collections.posts %}
-    <article style="margin-bottom: 32px;">
-        <a href="{{ post.url }}" style="text-decoration: none;">
-            <h2>{{ post.data.title }}</h2>
-        </a>
-        <time style="color: var(--color-fog); font-size: 0.85rem;">{{ post.date | dateDisplay }}</time>
-    </article>
+    <a class="post-card" href="{{ post.url }}">
+        {%- if post.data.image %}
+        {% thumbnail post.data.image, "", "post-card-thumb" %}
+        {%- endif %}
+        <div class="post-card-body">
+            <h2 class="post-card-title">{{ post.data.title }}</h2>
+            <time class="post-card-date" datetime="{{ post.date | dateToRfc3339 }}">{{ post.date | dateDisplay }}</time>
+            {%- if post.data.description %}
+            <p class="post-card-desc">{{ post.data.description }}</p>
+            {%- endif %}
+        </div>
+    </a>
     {%- endfor %}
     {%- if collections.posts.length == 0 %}
     <p style="color: var(--color-fog);">No posts yet.</p>

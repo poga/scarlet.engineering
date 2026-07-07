@@ -117,11 +117,79 @@
             margin-bottom: 32px;
         }
 
-        .blog-list h2 {
-            font-size: 1.5rem;
+        /* Blog index — each post is a ledger row: thumbnail + title + description */
+        .blog-list { margin-top: 32px; }
+
+        .post-card {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 28px 16px;
+            margin: 0 -16px;
+            border-top: 1px solid var(--color-soot);
+            border-radius: 2px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s ease;
+        }
+
+        .post-card:first-child { border-top: none; }
+
+        .post-card:hover { background-color: rgba(212, 168, 87, 0.06); }
+
+        .post-card:focus-visible {
+            outline: 2px solid var(--color-gaslight);
+            outline-offset: 2px;
+        }
+
+        /* Dimmed thumb brightens on hover; soot frame keeps dark shots legible */
+        .post-card-thumb {
+            flex: 0 0 160px;
+            width: 160px;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            border-radius: 2px;
+            border: 1px solid var(--color-soot);
+            background-color: var(--color-soot);
+            margin: 0;
+            filter: brightness(0.85) saturate(0.95);
+            transition: filter 0.2s ease, border-color 0.2s ease;
+        }
+
+        .post-card:hover .post-card-thumb {
+            filter: none;
+            border-color: rgba(212, 168, 87, 0.4);
+        }
+
+        .post-card-body { flex: 1 1 auto; min-width: 0; }
+
+        .post-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
             font-weight: 500;
-            margin-top: 0;
-            margin-bottom: 8px;
+            line-height: 1.3;
+            color: var(--color-parchment);
+            margin: 0 0 6px;
+            transition: color 0.2s ease;
+        }
+
+        .post-card:hover .post-card-title { color: var(--color-gaslight); }
+
+        .post-card-date {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-fog);
+            margin-bottom: 10px;
+        }
+
+        .post-card-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--color-fog);
+            margin: 0;
         }
 
         a { color: var(--color-gaslight); transition: color 0.2s ease; }
@@ -277,7 +345,9 @@
             h1 { font-size: 1.5rem; }
             h2 { font-size: 1.25rem; }
             .blog-eyebrow { font-size: 0.7rem; }
-            .blog-list h2 { font-size: 1.25rem; }
+            .post-card { flex-direction: column; gap: 14px; padding: 24px 16px; }
+            .post-card-thumb { flex-basis: auto; width: 100%; aspect-ratio: 16 / 9; }
+            .post-card-title { font-size: 1.2rem; }
         }
 
         .post-subscribe { margin-top: 24px; }
