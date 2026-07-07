@@ -6,17 +6,17 @@ image: https://scarlet.engineering/blog/images/post2_engine.png
 draft: true
 ---
 
-In an early build of Brews & Kings, you could demolish a house while its worker was out hauling grain. The delivery finished. The worker headed home. The home wasn't there. The engine shrugged and deleted them.
+In an early build of Brews & Kings, demolishing a house while its worker was out on a delivery deleted the worker. The game didn't crash. It kept running with one less worker, and nothing reported the loss.
 
-No error. No corpse. The town just got a little quieter.
+Resource bugs in a builder sim are hard to find because nothing crashes. A playtester tells you the brewery feels slow. There is no stack trace for that.
 
-That's the thing about resource bugs in a builder sim: nothing crashes. The game keeps running, slightly wrong, and twenty minutes later a playtester says "the brewery feels slow?" — and there's no stack trace for *the brewery feels slow*.
+Every builder sim eventually dupes or leaks a resource.
 
-Every builder sim eventually dupes or leaks a resource, because everything is a chance for the books to drift:
+- Spawning and draining resources.
+- building buffers and agents in flight.
+- and every transmute, arrival, refund, and demolition.
 
-- spawning and draining resources,
-- buffers in buildings and agents in flight,
-- every transmute, arrival, refund, and demolition.
+...is a chance for the books to drift.
 
 ---
 
@@ -24,7 +24,7 @@ Every builder sim eventually dupes or leaks a resource, because everything is a 
 
 Accountants solved this in the 1400s.
 
-The rule: **value is never created or destroyed — it only moves between accounts**. So every transaction is written down twice: once in the account the value leaves, once in the account it enters. The two entries cancel out.
+The rule: **value is never created or destroyed. It only moves between accounts.** So every transaction is written down twice: once in the account the value leaves, once in the account it enters. The two entries cancel out.
 
 Say a bookstore buys $100 of books from a supplier. One transaction, two entries:
 
@@ -38,31 +38,29 @@ flowchart LR
     Cash -- "one transaction<br/>credit −$100 · debit +$100" --> Books
 ```
 
-Before: $500 + $300 = $800. After: $400 + $400 = $800. The total never changes — money just moved.
+Before: $500 + $300 = $800. After: $400 + $400 = $800. The total never changes. Money just moved.
 
-Now swap money for logs, grain, and beer. In my engine the accounts are:
+In my engine, the accounts are:
 
-- every building's buffer (logs stacked at the sawmill),
-- every agent in flight (a courier carrying grain *is* an account — value in transit),
-- plus two derived columns per building, `reserved` and `pending`: promises about deliveries that haven't landed yet.
+- every building's buffer,
+- every agent in flight (a courier carrying grain is an account: value in transit),
+- and two derived columns per building, `reserved` and `pending`, for deliveries that haven't landed yet.
 
-A brewery ordering grain debits the field's `reserved` and its own `pending`. The courier arriving cancels both and moves the actual grain. At any tick, the promises must exactly match the agents in flight, and the totals must balance.
-
-That's the invariant. The rest of this post is about how I enforce it.
+At any tick, `reserved` and `pending` must match the agents in flight exactly, and the totals must balance. That's the invariant my engine checks every tick.
 
 ---
 
 ## The fuzzer
 
-In [part 2](/blog/making-simulation-game-part-2-architecture/) I said the engine doesn't know what beer is. That has a nice side effect: the engine runs headless. No renderer, no player, no view layer — just ticks.
+In [part 2](/blog/making-simulation-game-part-2-architecture/) I said the engine doesn't know what beer is. A side effect: the engine runs headless. No renderer, no view layer, just ticks.
 
-So I pointed a fuzzer at it:
+So I built a fuzzer with three parts:
 
-1. **A skeleton village.** Scripted setups built from the real production chains — forest → woodcutter camp, grain field → farm, well → brewery → town. The biggest one tiles the whole economy across the map.
-2. **A chaos player.** A random command generator layered on top. Every fifty-ish ticks it does something a messy player might do: place a random building, demolish one (courier mid-route? too bad), pause a building, resume it.
+1. **A skeleton village.** Scripted setups from the real production chains: forest → woodcutter camp, grain field → farm, well → brewery → town.
+2. **A chaos player.** A random command generator. Every ~50 ticks it places a random building, demolishes one, pauses one, or resumes one.
 3. **An auditor.** Two levels of checks:
-    - **Every tick:** no account goes negative; every `reserved`/`pending` promise traces back to a real agent in flight; no building holds a reference to a demolished building.
-    - **End of run:** the full conservation ledger, per resource: Δ(stock + in-flight) = produced − consumed − delivered − construction − lost. Off by a single unit and the run fails, dumping the command log.
+    - Every tick: no account goes negative, every `reserved`/`pending` entry traces back to a real agent in flight, no references to demolished buildings.
+    - End of run: a conservation ledger per resource: Δ(stock + in-flight) = produced - consumed - delivered - construction - lost. If it's off by one unit, the run fails and dumps the command log.
 
 ```mermaid
 flowchart LR
@@ -72,37 +70,36 @@ flowchart LR
     T --> L2["end of run:<br/>conservation ledger closes"]
 ```
 
-Two design details do most of the work:
+Two design details:
 
-- **The chaos player only makes legal moves.** It peeks at the state first and never emits a command the game would reject. I'm fuzzing the bookkeeping, not the input validation.
-- **Its dice are separate from the sim's dice, and seeded.** Chaos is layered on top of a deterministic engine, so any failure replays exactly, tick for tick. A fuzz failure isn't a shrug — it's a repro.
+- The chaos player only makes legal moves. It checks the state before emitting a command. I'm fuzzing the bookkeeping, not the input validation.
+- It has its own seeded RNG, separate from the sim's. The engine is deterministic (part 1), so every failure replays exactly.
 
 ### What it caught
 
-- **The pause button did nothing.** Pause and resume commands fired a signal and mutated no state. Found before the fuzzer even ran — just from writing down what it should press.
-- **Demolition left dangling references.** Destroy a building while its courier is mid-route, and the courier keeps pointing at a building that no longer exists.
-- **The vanishing worker** from the intro. The refund path for a homeless worker had nowhere to send them, so it dropped them on the floor. The ledger expected 0 and got −1.
-- **Two logs leaked.** The wood ledger expected −1 and closed at −3 — two units of wood genuinely lost down a town-order path that no hand-written test had ever exercised.
+- Pause and resume commands were no-ops. They fired a signal and mutated nothing. I found this while writing the fuzzer spec, before it even ran.
+- Demolishing a building left dangling references on couriers that were mid-route.
+- The vanishing worker from the intro. The refund path for a worker without a home dropped the worker. The ledger expected 0 and got -1.
+- The wood ledger expected -1 and closed at -3. Two units of wood were lost in a town-order path that no hand-written test covered.
 
-Each of these had survived the unit tests, because unit tests check scenarios I could imagine. The fuzzer's job is the scenarios I can't.
+All of these passed the unit tests, because unit tests only cover scenarios I could think of.
 
 ### The auditor had bugs too
 
-Here's the part I didn't expect: the first imbalances weren't engine bugs. They were holes in the auditor.
+The first ledger imbalances were bugs in the auditor itself:
 
-Grain fields regrow by writing directly into their own buffer — no production event. The meter never saw the grain appear, so it cried *dupe!* over honest farming. Workers riding along on return deliveries weren't counted as in flight, so they read as *leaked*.
+- Grain fields regrow by writing into their own buffer directly, without a production event. The meter never saw the grain appear and reported a dupe.
+- Workers riding along on return deliveries weren't counted as in flight, so they showed up as leaks.
 
-Same lesson every time: **double-entry only works if every mutation goes through a path the books can see.** A silent write is indistinguishable from a bug, even when the state ends up correct.
+The lesson: double-entry bookkeeping only works if every mutation goes through a path the books can see.
 
-Which led to the real fix. Some losses are legitimate — demolish a house with workers inside and they're gone, that's the game. But the engine is no longer allowed to drop a resource silently: every lossy path now emits a `resource_lost` event, and the ledger has a `lost` column.
-
-Losses are fine. Unbooked losses are not.
+This led to one engine change: a `resource_lost` event. Some losses are intentional (demolishing a house with workers inside destroys the workers). That's fine, but the engine has to record it. Every lossy path now emits the event, and the ledger has a `lost` column.
 
 ---
 
 ## Wrap-up
 
-A builder sim is an economy. Treat it like one, and a 600-year-old accounting trick becomes a debugger: bugs no playtester could describe — *the brewery feels slow?* — turn into a failing assert with a tick number, a resource name, and a seed that replays the whole crime.
+A builder sim is an economy. Double-entry bookkeeping turns vague reports like "the brewery feels slow" into a failing assert with a tick number, a resource name, and a seed that replays the run.
 
 ---
 
