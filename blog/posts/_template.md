@@ -3,6 +3,7 @@ title: ""
 date: YYYY-MM-DD
 description: ""
 image: https://scarlet.engineering/blog/images/PLACEHOLDER.png
+draft: true
 ---
 
 <!-- Delete everything below before publishing. -->
