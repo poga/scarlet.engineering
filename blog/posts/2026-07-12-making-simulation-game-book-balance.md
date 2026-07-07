@@ -10,23 +10,23 @@ In an early build of Brews & Kings, demolishing a house while its worker was out
 
 Resource bugs in a builder sim are hard to find because nothing crashes. A playtester tells you the brewery feels slow. There is no stack trace for that.
 
-Every resource mutations, such as:
+Every resource mutation, such as:
 
-- Spawning and draining resources.
-- building buffers and agents in flight.
-- and every transmute, arrival, refund, and demolition.
+- spawning and draining resources,
+- building buffers and agents in flight,
+- every transmute, arrival, refund, and demolition,
 
 ...is a chance for the books to drift.
 
-This is the story of how I harden the engine to avoid such errors.
+This is the story of how I hardened the engine to avoid such errors.
 
 ---
 
-## Engine is a Long Term Investment
+## The Engine is a Long-Term Investment
 
-In [part 2](/blog/making-simulation-game-part-2-architecture/) we splited the system into views, contents, and engine. Since only engine can mutate resources, we can focus our effort on the engine side and build lots of tooling for it.
+In [part 2](/blog/making-simulation-game-part-2-architecture/) we split the system into views, contents, and engine. Since only the engine can mutate resources, we can focus our effort on the engine side and build lots of tooling for it.
 
-That's another benefit of the split: **the engine rarely changes**. and every investment towards it pays off long term.
+That's another benefit of the split: **the engine rarely changes**, and every investment in it pays off long term.
 
 ---
 
