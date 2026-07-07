@@ -18,7 +18,7 @@ Every resource mutation, such as:
 
 ...is a chance for the books to drift.
 
-This is the story of how I hardened the engine to avoid such errors.
+This is how I hardened the engine to avoid such errors.
 
 ---
 
@@ -87,23 +87,11 @@ Two design details:
 
 ### What it caught
 
-- Pause and resume commands were no-ops. They fired a signal and mutated nothing. I found this while writing the fuzzer spec, before it even ran.
+- Incorrectly implemented commands.
 - Demolishing a building left dangling references on couriers that were mid-route.
-- The vanishing worker from the intro. The refund path for a worker without a home dropped the worker. The ledger expected 0 and got -1.
-- The wood ledger expected -1 and closed at -3. Two units of wood were lost in a town-order path that no hand-written test covered.
+- ... and some subtle bugs.
 
 All of these passed the unit tests, because unit tests only cover scenarios I could think of.
-
-### The auditor had bugs too
-
-The first ledger imbalances were bugs in the auditor itself:
-
-- Grain fields regrow by writing into their own buffer directly, without a production event. The meter never saw the grain appear and reported a dupe.
-- Workers riding along on return deliveries weren't counted as in flight, so they showed up as leaks.
-
-The lesson: double-entry bookkeeping only works if every mutation goes through a path the books can see.
-
-This led to one engine change: a `resource_lost` event. Some losses are intentional (demolishing a house with workers inside destroys the workers). That's fine, but the engine has to record it. Every lossy path now emits the event, and the ledger has a `lost` column.
 
 ---
 
