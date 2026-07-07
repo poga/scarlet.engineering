@@ -2,7 +2,7 @@
 title: "Making a Simulation Game - Part 3: The Books must Balance"
 date: 2026-07-12
 description: There's a Double-entry Bookkeeping system in my game?
-image: https://scarlet.engineering/blog/images/post2_engine.png
+image: https://scarlet.engineering/blog/images/PLACEHOLDER.png
 draft: true
 ---
 
@@ -10,13 +10,21 @@ In an early build of Brews & Kings, demolishing a house while its worker was out
 
 Resource bugs in a builder sim are hard to find because nothing crashes. A playtester tells you the brewery feels slow. There is no stack trace for that.
 
-Every builder sim eventually dupes or leaks a resource.
+Every resource mutations, such as:
 
 - Spawning and draining resources.
 - building buffers and agents in flight.
 - and every transmute, arrival, refund, and demolition.
 
 ...is a chance for the books to drift.
+
+---
+
+## Engine is a Long Term Investment
+
+In [part 2](/blog/making-simulation-game-part-2-architecture/) we splited the system into views, contents, and engine. Since only engine can mutate resources, we can focus our effort on the engine side and build lots of tooling for it.
+
+That's another benefit of the split: **the engine rarely changes**. and every investment towards it pays off long term.
 
 ---
 
@@ -38,7 +46,7 @@ flowchart LR
     Cash -- "one transaction<br/>credit −$100 · debit +$100" --> Books
 ```
 
-Before: $500 + $300 = $800. After: $400 + $400 = $800. The total never changes. Money just moved.
+Before: `$500` + `$300` = `$800`. After: `$400` + `$400` = `$800`. The total never changes. Money just moved.
 
 In my engine, the accounts are:
 
@@ -96,8 +104,6 @@ The lesson: double-entry bookkeeping only works if every mutation goes through a
 This led to one engine change: a `resource_lost` event. Some losses are intentional (demolishing a house with workers inside destroys the workers). That's fine, but the engine has to record it. Every lossy path now emits the event, and the ledger has a `lost` column.
 
 ---
-
-## Wrap-up
 
 A builder sim is an economy. Double-entry bookkeeping turns vague reports like "the brewery feels slow" into a failing assert with a tick number, a resource name, and a seed that replays the run.
 
