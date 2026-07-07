@@ -43,14 +43,14 @@ sequenceDiagram
 
     Player->>View: input (click, hotkey)
     View->>Engine: submit_command(cmd)
-    Note right of View: view never mutates sim state —<br/>commands are the only door
+    Note right of View: view never mutates sim state:<br/>commands are the only door
 
     rect rgb(128, 128, 128, 0.1)
-        Note over Engine,Content: _tick_once() — same loop every tick, 20 Hz
+        Note over Engine,Content: _tick_once(): same loop every tick, 20 Hz
         Engine->>Engine: apply queued commands
-        Engine->>Content: on_receive() — agent arrivals deposit resources
-        Engine->>Content: on_physical_agent_arrived() — workers land
-        Engine->>Content: on_tick() — every enabled building
+        Engine->>Content: on_receive(): agent arrivals deposit resources
+        Engine->>Content: on_physical_agent_arrived(): workers land
+        Engine->>Content: on_tick(): every enabled building
         Engine->>Content: tick policies (Workforce, Orders, Quests, …)
         Content-->>Engine: engine verbs only<br/>(spawn_agent, dispatch_*, consume_buffer)
         Content-->>Engine: queue_event(name, args)
@@ -74,9 +74,9 @@ flowchart TB
     c1["1 · apply queued commands"] --> c2["2 · deliver Agent arrivals"]
     c2 --> c3["3 · advance every PhysicalAgent"]
     c3 --> c4["4 · pre-building policies (stats)"]
-    c4 --> c5["5 · building.on_tick — all enabled"]
+    c4 --> c5["5 · building.on_tick (all enabled)"]
     c5 --> c6["6 · post-building policies<br/>Workforce · Factions · Quests · Orders · Relics"]
-    c6 --> c7["7 · game hook — _post_policy_tick"]
+    c6 --> c7["7 · game hook: _post_policy_tick"]
     c7 --> c8["8 · queue sim_tick events, tick++"]
     c8 --> c9["9 · flush event queue"]
     c3 -. "a PA landing IDLE is dispatchable this same tick" .-> c5
@@ -106,6 +106,6 @@ Therefore, when I'm wearing the content designer hat, I can focus on the buildin
 
 ## Brews & Kings
 
-This engine powers **Brews & Kings**, a roguelike medieval city builder where your whole city feeds one sprawling brewing operation — and kings rise or fall on the strength of your beer. Wishlist it on Steam to follow along.
+This engine powers **Brews & Kings**, a roguelike medieval city builder where your whole city feeds one sprawling brewing operation, and kings rise or fall on the strength of your beer. Wishlist it on Steam to follow along.
 
 <iframe src="https://store.steampowered.com/widget/4845040/" frameborder="0" width="646" height="190"></iframe>
