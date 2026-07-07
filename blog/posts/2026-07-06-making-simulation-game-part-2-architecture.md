@@ -5,10 +5,19 @@ description: How does my simulation game work?
 image: https://scarlet.engineering/blog/images/post2.png
 ---
 
-<figure>
-  <video autoplay loop muted playsinline style="max-width: 100%; height: auto;">
-    <source src="/blog/images/post2.mp4" type="video/mp4">
-  </video>
+<figure style="display: flex; flex-wrap: wrap; gap: 16px; margin: 0;">
+  <span style="flex: 1 1 320px; margin: 0;">
+    <video autoplay loop muted playsinline poster="/blog/images/post2_engine.png" style="width: 100%; height: auto;">
+      <source src="/blog/images/post2_engine.mp4" type="video/mp4">
+    </video>
+    <figcaption>What the engine sees.</figcaption>
+  </span>
+  <span style="flex: 1 1 320px; margin: 0;">
+    <video autoplay loop muted playsinline poster="/blog/images/post2_player.png" style="width: 100%; height: auto;">
+      <source src="/blog/images/post2_player.mp4" type="video/mp4">
+    </video>
+    <figcaption>What the player sees.</figcaption>
+  </span>
 </figure>
 
 In [part 1](/blog/making-simulation-game-part-1-the-engine/) I said everything is agents moving resources between buildings.
