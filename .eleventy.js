@@ -27,9 +27,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("blog/images");
   eleventyConfig.addPassthroughCopy("press/assets");
 
-  // Blog post collection sorted by date descending
+  // Blog post collection sorted by date descending, drafts excluded
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("blog/posts/**/*.md").sort((a, b) => b.date - a.date);
+    return collectionApi.getFilteredByGlob("blog/posts/**/*.md")
+      .filter((post) => !post.data.draft)
+      .sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addFilter("dateDisplay", (date) => {
