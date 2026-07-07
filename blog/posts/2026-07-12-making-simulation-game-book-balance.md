@@ -1,7 +1,7 @@
 ---
-title: "Making a Simulation Game - Part 3: The Books must Balance"
+title: "Making a Simulation Game - Part 3: The Books Must Balance"
 date: 2026-07-12
-description: There's a Double-entry Bookkeeping system in my game?
+description: There's a Double-Entry Bookkeeping system in my game?
 image: https://scarlet.engineering/blog/images/PLACEHOLDER.png
 draft: true
 ---
@@ -17,6 +17,8 @@ Every resource mutations, such as:
 - and every transmute, arrival, refund, and demolition.
 
 ...is a chance for the books to drift.
+
+This is the story of how I harden the engine to avoid such errors.
 
 ---
 
