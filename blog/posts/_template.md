@@ -8,7 +8,7 @@ draft: true
 
 <!-- Delete everything below before publishing. -->
 
-Opening hook — what problem or moment kicked this post off.
+Opening hook: what problem or moment kicked this post off.
 
 ---
 
