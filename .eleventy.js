@@ -3,6 +3,7 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -32,6 +33,24 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("blog/posts/**/*.md")
       .filter((post) => !post.data.draft)
       .sort((a, b) => b.date - a.date);
+  });
+
+  // WebP thumbnails at build time so the index avoids multi-MB source images
+  eleventyConfig.addAsyncShortcode("thumbnail", async (src, alt, className) => {
+    const source = src.replace(/^https?:\/\/scarlet\.engineering/, "").replace(/^\//, "");
+    const metadata = await Image(source, {
+      widths: [160, 320, 480, 800],
+      formats: ["webp"],
+      outputDir: "./_site/img/",
+      urlPath: "/img/",
+    });
+    return Image.generateHTML(metadata, {
+      alt,
+      class: className,
+      sizes: "(max-width: 480px) calc(100vw - 32px), 160px",
+      loading: "lazy",
+      decoding: "async",
+    });
   });
 
   eleventyConfig.addFilter("dateDisplay", (date) => {
