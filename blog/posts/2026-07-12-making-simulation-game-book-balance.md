@@ -3,7 +3,6 @@ title: "Making a Simulation Game - Part 3: The Books Must Balance"
 date: 2026-07-12
 description: There's a Double-Entry Bookkeeping system in my game?
 image: https://scarlet.engineering/blog/images/PLACEHOLDER.png
-draft: true
 ---
 
 In an early build of Brews & Kings, demolishing a house while its worker was out on a delivery deleted the worker. The game didn't crash. It kept running with one less worker, and nothing reported the loss.
