@@ -2,8 +2,7 @@
 title: "Making a Simulation Game - Part 3: The Books Must Balance"
 date: 2026-07-12
 description: There's a Double-Entry Bookkeeping system in my game?
-image: https://scarlet.engineering/blog/images/PLACEHOLDER.png
-draft: true
+image: https://scarlet.engineering/blog/images/brews_and_kings_building_menu.png
 series: Making a Simulation Game
 seriesPart: 3
 seriesTitle: The Books Must Balance
@@ -51,7 +50,7 @@ flowchart LR
     Cash -- "one transaction<br/>credit −$100 · debit +$100" --> Books
 ```
 
-Before: `$500` + `$300` = `$800`. After: `$400` + `$400` = `$800`. The total never changes. Money just moved.
+Before: `$500` + `$300` = `$800`. After: `$400` + `$400` = `$800`. The total never changes. Value moved.
 
 In my engine, the accounts are:
 
