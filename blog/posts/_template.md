@@ -4,6 +4,10 @@ date: YYYY-MM-DD
 description: ""
 image: https://scarlet.engineering/blog/images/PLACEHOLDER.png
 draft: true
+# Part of a series? Set all three and the post list renders itself.
+# series: Making a Simulation Game
+# seriesPart: 4
+# seriesTitle: Short label shown in the series list
 ---
 
 <!-- Delete everything below before publishing. -->

@@ -3,6 +3,9 @@ title: "Making a Simulation Game - Part 2: The Engine Doesn't Know What Beer is"
 date: 2026-07-06
 description: How does my simulation game work?
 image: https://scarlet.engineering/blog/images/post2_engine.png
+series: Making a Simulation Game
+seriesPart: 2
+seriesTitle: The Engine Doesn't Know What Beer is
 ---
 
 <figure style="display: flex; flex-wrap: wrap; gap: 16px; margin: 0;">

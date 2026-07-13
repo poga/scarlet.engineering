@@ -10,6 +10,24 @@ ogType: article
         <h1>{{ title }}</h1>
         <time style="color: var(--color-fog); font-size: 0.9rem;">{{ date | dateDisplay }}</time>
     </header>
+    {% set parts = collections.series[series] %}
+    {% if parts %}
+    <nav class="post-series" aria-label="{{ series }} series">
+        <p class="post-series-label">Part {{ seriesPart }} of the series <strong>{{ series }}</strong></p>
+        <ul class="post-series-list">
+            {% for part in parts %}
+            <li class="post-series-item">
+                <span class="post-series-num">Part {{ part.data.seriesPart }}</span>
+                {% if part.url == page.url %}
+                <span class="post-series-current" aria-current="page">{{ part.data.seriesTitle or part.data.title }} <em>(you are here)</em></span>
+                {% else %}
+                <a href="{{ part.url }}">{{ part.data.seriesTitle or part.data.title }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    {% endif %}
     <div style="margin-top: 32px;">
         {{ content | safe }}
     </div>

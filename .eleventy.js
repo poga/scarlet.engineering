@@ -35,6 +35,22 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
+  // Posts grouped by `series` front matter, ordered by `seriesPart`
+  eleventyConfig.addCollection("series", function(collectionApi) {
+    // drafts have no permalink on production builds — linking to one would 404
+    const hideDrafts = process.env.ELEVENTY_RUN_MODE === "build";
+    const grouped = {};
+    for (const post of collectionApi.getFilteredByGlob("blog/posts/**/*.md")) {
+      if (!post.data.series) continue;
+      if (post.data.draft && hideDrafts) continue;
+      (grouped[post.data.series] ||= []).push(post);
+    }
+    for (const posts of Object.values(grouped)) {
+      posts.sort((a, b) => a.data.seriesPart - b.data.seriesPart);
+    }
+    return grouped;
+  });
+
   // WebP thumbnails at build time so the index avoids multi-MB source images
   eleventyConfig.addAsyncShortcode("thumbnail", async (src, alt, className) => {
     const source = src.replace(/^https?:\/\/scarlet\.engineering/, "").replace(/^\//, "");
