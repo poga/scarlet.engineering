@@ -1,8 +1,11 @@
 ---
-title: "Making a Simulation game - Part 1: The Agent Simulation Engine"
+title: "Making a Simulation Game - Part 1: The Agent Simulation Engine"
 date: 2026-06-30
 description: How does a simulation game actually work?
 image: https://scarlet.engineering/blog/images/brews_and_kings_building_menu.png
+series: Making a Simulation Game
+seriesPart: 1
+seriesTitle: The Agent Simulation Engine
 ---
 
 <figure>
