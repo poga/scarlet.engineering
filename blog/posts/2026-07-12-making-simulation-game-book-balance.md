@@ -47,7 +47,7 @@ flowchart LR
     Cash -- "one transaction<br/>credit −$100 · debit +$100" --> Books
 ```
 
-Before: `$500` + `$300` = `$800`. After: `$400` + `$400` = `$800`. The total never changes. Money just moved.
+Before: `$500` + `$300` = `$800`. After: `$400` + `$400` = `$800`. The total never changes. Value moved.
 
 In my engine, the accounts are:
 
