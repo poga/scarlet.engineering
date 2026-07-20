@@ -23,6 +23,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("*.png");
   eleventyConfig.addPassthroughCopy("*.webp");
   eleventyConfig.addPassthroughCopy("*.svg");
+  eleventyConfig.addPassthroughCopy("*.gif");
   // publish design plans only; keep internal superpowers specs off the site
   eleventyConfig.addPassthroughCopy("docs/plans");
   eleventyConfig.addPassthroughCopy("blog/images");
