@@ -14,18 +14,18 @@
 
   "descriptionShort": "Brews & Kings is a roguelike medieval city builder where your whole city feeds one sprawling brewing operation. Scout for rare ingredients and resources, raise the farms, mills, and workshops that keep it running, and supply the factions you want to win over. Kings rise or fall on the strength of your beer.",
   "descriptionLong": [
-    "You are the Brewmaster, risen from the cellars to build a city that lives and breathes beer. Four factions hold power in the realm — the Workers who labor, the Merchants who trade, the King who rules, and the Spirits who watch from beyond. Every farm, mill, and workshop you raise feeds one purpose: the sprawling production chain that turns grain and water into the finest ale in the kingdom.",
-    "Each faction sends orders, and filling them earns their favor — and the rewards that favor unlocks. Choose whose demands you serve and whose you let go, because no city can please everyone. Scout the map for rare ingredients and resources, and route every barrel to where it buys you the most influence.",
+    "You are the Brewmaster, risen from the cellars to build a city that lives and breathes beer. Four factions hold power in the realm: the Workers who labor, the Merchants who trade, the King who rules, and the Spirits who watch from beyond. Every farm, mill, and workshop you raise feeds one purpose: the sprawling production chain that turns grain and water into the finest ale in the kingdom.",
+    "Each faction sends orders, and filling them earns their favor and the rewards that favor unlocks. Choose whose demands you serve and whose you let go, because no city can please everyone. Scout the map for rare ingredients and resources, and route every barrel to where it buys you the most influence.",
     "Brews & Kings is a roguelike city builder: the relics, recipes, and hard-won upgrades you gather carry forward into each new run, so every kingdom you build leaves you stronger for the next. Made by Scarlet Engineering, a Taipei studio building systems-driven games where simple rules produce surprising play."
   ],
 
   "features": [
     "Roguelike city builder: relics, recipes, and hard-won upgrades carry forward, so every run leaves you stronger for the next.",
-    "One city, one purpose — every farm, mill, and workshop feeds a sprawling brewing chain that turns grain and water into ale.",
+    "One city, one purpose. every farm, mill, and workshop feeds a sprawling brewing chain that turns grain and water into ale.",
     "Four factions, divided favor: the Workers, Merchants, the King, and the Spirits each send orders, and no city can please them all.",
     "Fill orders to earn favor and the rewards it unlocks; choose whose demands you serve and whose you let go.",
     "Scout the map for rare ingredients and resources to brew the finest beer in the kingdom.",
-    "A cozy, hand-painted low-poly kingdom you can read at a glance — kings rise or fall on the strength of your beer."
+    "A cozy, hand-painted low-poly kingdom you can read at a glance. kings rise or fall on the strength of your beer."
   ],
 
   "trailer": {
@@ -59,8 +59,8 @@
   ],
 
   "about": [
-    "Scarlet Engineering is an indie studio that engineers emergence — systems-driven games where simple rules produce surprising play.",
-    "Brews & Kings is the studio's take on the city builder: a roguelike where a medieval kingdom lives and breathes beer, and the factions you please — and the ones you don't — shape every run."
+    "Scarlet Engineering is an indie studio that engineers emergence: systems-driven games where simple rules produce surprising play.",
+    "Brews & Kings is the studio's take on the city builder: a roguelike where a medieval kingdom lives and breathes beer, and the factions you please, and the ones you don't, shape every run."
   ],
 
   "credits": [
