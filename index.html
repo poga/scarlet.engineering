@@ -44,6 +44,8 @@
             --color-verdigris-hover: #5A867E;
             --color-itch: #C23B3B;
             --color-itch-hover: #A83232;
+            --color-steam: #1B6AA5;
+            --color-steam-hover: #165A8C;
             --font-heading: 'Alfa Slab One', 'Rockwell', serif;
             --font-body: 'Lora', 'Georgia', serif;
         }
@@ -228,14 +230,26 @@
             font-size: 0.9375rem;
             font-weight: 700;
             color: #FFFFFF;
-            background: var(--color-itch);
             border-radius: 2px;
             text-decoration: none;
             transition: all 0.2s ease;
         }
 
-        .game-link:hover {
+        /* Each store CTA carries its own platform's brand color */
+        .game-link--itch {
+            background: var(--color-itch);
+        }
+
+        .game-link--itch:hover {
             background: var(--color-itch-hover);
+        }
+
+        .game-link--steam {
+            background: var(--color-steam);
+        }
+
+        .game-link--steam:hover {
+            background: var(--color-steam-hover);
         }
 
         /* Responsive styles */
@@ -377,25 +391,25 @@
                 <img src="/press/assets/brews-and-kings/EN_920x430.jpg" alt="Brews & Kings" class="game-thumbnail" width="920" height="430">
                 <h4 class="game-name">Brews & Kings</h4>
                 <p class="game-description">A roguelike city builder where your kingdom lives and breathes beer.</p>
-                <a href="https://store.steampowered.com/app/4845040/Brews__Kings/" target="_blank" class="game-link"><i class="fa-brands fa-steam" aria-hidden="true"></i>Wishlist on Steam</a>
+                <a href="https://store.steampowered.com/app/4845040/Brews__Kings/" target="_blank" class="game-link game-link--steam"><i class="fa-brands fa-steam" aria-hidden="true"></i>Wishlist on Steam</a>
             </div>
             <div class="game-card">
                 <img src="books-for-bad-neighbors.gif" alt="Books for Bad Neighbors" class="game-thumbnail" width="640" height="480" loading="lazy">
                 <h4 class="game-name">Books for Bad Neighbors</h4>
                 <p class="game-description">The book you read reveal a lot about you.</p>
-                <a href="https://devpoga.itch.io/books-for-bad-neighbors" target="_blank" class="game-link"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
+                <a href="https://devpoga.itch.io/books-for-bad-neighbors" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
             </div>
             <div class="game-card">
                 <img src="murderhorn.png" alt="Murderhorn" class="game-thumbnail" width="315" height="250">
                 <h4 class="game-name">Murderhorn</h4>
                 <p class="game-description">A mountain watches humans come and go.</p>
-                <a href="https://devpoga.itch.io/murderhorn" target="_blank" class="game-link"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
+                <a href="https://devpoga.itch.io/murderhorn" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
             </div>
             <div class="game-card">
                 <img src="blocks10-thumb.png" alt="BLOCKS 10" class="game-thumbnail" width="315" height="250">
                 <h4 class="game-name">BLOCKS 10</h4>
                 <p class="game-description">Clear numbers that add to ten.</p>
-                <a href="https://devpoga.itch.io/blocks" target="_blank" class="game-link"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
+                <a href="https://devpoga.itch.io/blocks" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
             </div>
         </section>
     </div>
