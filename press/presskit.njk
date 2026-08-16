@@ -83,7 +83,7 @@ eleventyComputed:
     <p style="color: var(--color-fog); font-size: 0.9rem;">Click any image for full resolution, or grab everything in the .zip above.</p>
     <div class="asset-grid">
         {%- for shot in kit.screenshots %}
-        <a href="{{ base }}/{{ shot }}" target="_blank" download><img src="{{ base }}/{{ shot }}" alt="{{ kit.title }} screenshot" loading="lazy"></a>
+        <a href="{{ base }}/{{ shot }}" target="_blank" rel="noopener"><img src="{{ base }}/{{ shot }}" alt="{{ kit.title }} screenshot" loading="lazy"></a>
         {%- endfor %}
     </div>
 </section>
@@ -94,7 +94,7 @@ eleventyComputed:
     <h2>Logo &amp; icon</h2>
     <div class="logo-grid">
         {%- for logo in kit.logos %}
-        <a href="{{ base }}/{{ logo }}" target="_blank" download><img src="{{ base }}/{{ logo }}" alt="{{ kit.title }} logo"></a>
+        <a href="{{ base }}/{{ logo }}" target="_blank" rel="noopener"><img src="{{ base }}/{{ logo }}" alt="{{ kit.title }} logo"></a>
         {%- endfor %}
     </div>
 </section>
