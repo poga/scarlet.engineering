@@ -12,11 +12,13 @@
 
   "keyArt": "EN_1232x706.jpg",
 
-  "descriptionShort": "Brews & Kings is a roguelike medieval city builder where your whole city feeds one sprawling brewing operation. Scout for rare ingredients and resources, raise the farms, mills, and workshops that keep it running, and supply the factions you want to win over. Kings rise or fall on the strength of your beer.",
+  "descriptionShort": "A roguelike city builder where every farm, mill, and road exists to brew beer. Explore a wilderness that's different each run, claim the rare ingredients you find there, and grow an economy rich enough to pay the King's taxes.",
   "descriptionLong": [
-    "You are the Brewmaster, risen from the cellars to build a city that lives and breathes beer. Four factions hold power in the realm: the Workers who labor, the Merchants who trade, the King who rules, and the Spirits who watch from beyond. Every farm, mill, and workshop you raise feeds one purpose: the sprawling production chain that turns grain and water into the finest ale in the kingdom.",
-    "Each faction sends orders, and filling them earns their favor and the rewards that favor unlocks. Choose whose demands you serve and whose you let go, because no city can please everyone. Scout the map for rare ingredients and resources, and route every barrel to where it buys you the most influence.",
-    "Brews & Kings is a roguelike city builder: the relics, recipes, and hard-won upgrades you gather carry forward into each new run, so every kingdom you build leaves you stronger for the next. Made by Scarlet Engineering, a Taipei studio building systems-driven games where simple rules produce surprising play."
+    "You are a brewmaster with a royal permit. Build a city where every field, road, and building serves one industry. Turn a wilderness into a beer economy strong enough to keep the King happy.",
+    "The King is fickle, and a new one sits on the throne each run. One wants quantity and forgives almost anything if the barrels arrive on time. Another cares about appearance and expects your city to look rich. Each King changes what a good strategy looks like before you place a single building.",
+    "Plan your run around a procedurally generated world full of resources and events. Place buildings, assign workers, and respond to whatever the map sends you. Group related buildings into specialized districts to raise production across the city, and turn a scattered settlement into a city with a purpose.",
+    "Every run ends with one big event. A royal festival that demands more beer in one season than you normally brew in five. A hard winter that freezes your fields and stops your gathering. A spirit that looms over your city and drains your population until you find a way to satisfy it. You know it is coming from the start.",
+    "Every run leaves you with more than you started with. New buildings, new events, and new merchants join the world. Then you place your first foundation on fresh ground, under a new King, and begin again."
   ],
 
   "features": [
@@ -29,7 +31,7 @@
   ],
 
   "trailer": {
-    "youtube": "0ZIHAIy9AYI",
+    "youtube": "oPr54sJr_LI",
     "embedUrl": "",
     "file": "trailer.mp4",
     "download": ""
@@ -41,6 +43,14 @@
     "screenshot-02.jpg",
     "screenshot-03.jpg",
     "screenshot-04.jpg"
+  ],
+
+  "videos": [
+    { "file": "animated_buildings.mov", "label": "Animated buildings" },
+    { "file": "building.mov", "label": "Building" },
+    { "file": "districts.mov", "label": "Districts" },
+    { "file": "events.mov", "label": "Events" },
+    { "file": "weather.mov", "label": "Weather" }
   ],
 
   "logos": [
