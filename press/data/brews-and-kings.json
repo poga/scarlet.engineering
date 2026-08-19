@@ -14,20 +14,19 @@
 
   "descriptionShort": "A roguelike city builder where every farm, mill, and road exists to brew beer. Explore a wilderness that's different each run, claim the rare ingredients you find there, and grow an economy rich enough to pay the King's taxes.",
   "descriptionLong": [
-    "You are a brewmaster with a royal permit. Build a city where every field, road, and building serves one industry. Turn a wilderness into a beer economy strong enough to keep the King happy.",
-    "The King is fickle, and a new one sits on the throne each run. One wants quantity and forgives almost anything if the barrels arrive on time. Another cares about appearance and expects your city to look rich. Each King changes what a good strategy looks like before you place a single building.",
-    "Plan your run around a procedurally generated world full of resources and events. Place buildings, assign workers, and respond to whatever the map sends you. Group related buildings into specialized districts to raise production across the city, and turn a scattered settlement into a city with a purpose.",
-    "Every run ends with one big event. A royal festival that demands more beer in one season than you normally brew in five. A hard winter that freezes your fields and stops your gathering. A spirit that looms over your city and drains your population until you find a way to satisfy it. You know it is coming from the start.",
-    "Every run leaves you with more than you started with. New buildings, new events, and new merchants join the world. Then you place your first foundation on fresh ground, under a new King, and begin again."
+    "Brews & Kings is a roguelike city builder where every farm, mill, and road exists to brew beer. You are a brewmaster with a royal permit. Each run starts in a procedurally generated wilderness full of rare ingredients, resources, and events. Turn it into a beer economy strong enough to keep the King happy.",
+    "The King is fickle, and a new one sits on the throne each run. One wants quantity and forgives almost anything if the barrels arrive on time. Another cares about appearance and expects your city to look rich. Every run ends with one big event you know about from the start: a royal festival, a hard winter, or a spirit that drains your population until you satisfy it. Each King changes what a good strategy looks like before you place a single building.",
+    "Every run leaves the world with more than it started with. New buildings, new events, and new merchants join the pool, then you place your first foundation on fresh ground under a new King. Brews & Kings is made by Scarlet Engineering, a Taipei studio building systems-driven games where simple rules produce surprising play."
   ],
 
   "features": [
-    "Roguelike city builder: relics, recipes, and hard-won upgrades carry forward, so every run leaves you stronger for the next.",
-    "One city, one purpose. every farm, mill, and workshop feeds a sprawling brewing chain that turns grain and water into ale.",
-    "Four factions, divided favor: the Workers, Merchants, the King, and the Spirits each send orders, and no city can please them all.",
-    "Fill orders to earn favor and the rewards it unlocks; choose whose demands you serve and whose you let go.",
-    "Scout the map for rare ingredients and resources to brew the finest beer in the kingdom.",
-    "A cozy, hand-painted low-poly kingdom you can read at a glance. kings rise or fall on the strength of your beer."
+    "One city, one industry: every field, road, and building serves the brewing chain that pays the King's taxes.",
+    "A new King each run: one wants quantity, another wants a city that looks rich — each changes what a good strategy is before you place a single building.",
+    "A procedurally generated wilderness, different every run, full of rare ingredients, resources, and events to plan around.",
+    "Group related buildings into specialized districts to raise production and turn a scattered settlement into a city with a purpose.",
+    "Every run builds toward one big event you know about from the start: a royal festival, a hard winter, or a hungry spirit.",
+    "Every run leaves the world richer: new buildings, events, and merchants carry forward into the next.",
+    "A cozy, hand-painted low-poly kingdom you can read at a glance."
   ],
 
   "trailer": {
@@ -38,19 +37,20 @@
   },
 
   "screenshots": [
-    "gameplay.gif",
-    "screenshot-01.jpg",
-    "screenshot-02.jpg",
-    "screenshot-03.jpg",
-    "screenshot-04.jpg"
+    "Screenshot_bird_eye_view.png",
+    "Screenshot_fall.png",
+    "Screenshot_water.png",
+    "Screenshot_traveling_merchant.png",
+    "Screenshot_building_menu.png",
+    "Screenshot_main_menu.png"
   ],
 
   "videos": [
-    { "file": "animated_buildings.mov", "label": "Animated buildings" },
-    { "file": "building.mov", "label": "Building" },
-    { "file": "districts.mov", "label": "Districts" },
-    { "file": "events.mov", "label": "Events" },
-    { "file": "weather.mov", "label": "Weather" }
+    { "file": "animated_buildings.mov", "gif": "animated_buildings.gif", "label": "Animated buildings" },
+    { "file": "building.mov", "gif": "building.gif", "label": "Building" },
+    { "file": "districts.mov", "gif": "districts.gif", "label": "Districts" },
+    { "file": "events.mov", "gif": "events.gif", "label": "Events" },
+    { "file": "weather.mov", "gif": "weather.gif", "label": "Weather" }
   ],
 
   "logos": [

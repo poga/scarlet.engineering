@@ -97,7 +97,7 @@ eleventyComputed:
         {%- for v in kit.videos %}
         <figure>
             <video controls preload="metadata" src="{{ base }}/{{ v.file }}"></video>
-            <figcaption>{{ v.label or v.file }} &middot; <a href="{{ base }}/{{ v.file }}" download>Download</a></figcaption>
+            <figcaption>{{ v.label or v.file }} &middot; <a href="{{ base }}/{{ v.file }}" download>.mov</a>{% if v.gif %} &middot; <a href="{{ base }}/{{ v.gif }}" download>.gif</a>{% endif %}</figcaption>
         </figure>
         {%- endfor %}
     </div>

@@ -25,7 +25,7 @@ plus a folder of assets — Eleventy builds a polished, press-ready page per gam
    | `features` | Bullet list |
    | `trailer` | One of `youtube` (video id), `embedUrl`, or `file` (local); plus optional `download` |
    | `screenshots`, `logos` | Arrays of filenames in your asset folder |
-   | `videos` | Array of `{ file, label }` gameplay clips in your asset folder |
+   | `videos` | Array of `{ file, gif, label }` gameplay clips; `gif` is an optional GIF version |
    | `awards`, `quotes`, `additionalLinks`, `buyLinks` | Optional sections |
    | `about`, `credits`, `social`, `monetizationNote` | Studio + contact |
 
