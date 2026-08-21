@@ -39,7 +39,6 @@
 
   "additionalLinks": [
     { "label": "Steam page", "url": "https://store.steampowered.com/app/4995520/Books_for_Bad_Neighbors/", "note": "wishlist now" },
-    { "label": "Original itch.io release", "url": "https://devpoga.itch.io/books-for-bad-neighbors", "note": "play the original jam version free" },
     { "label": "Devlog", "url": "https://scarlet.engineering/blog/", "note": "development updates" }
   ],
 
