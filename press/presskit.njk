@@ -89,6 +89,21 @@ eleventyComputed:
 </section>
 {%- endif %}
 
+{%- if kit.videos %}
+<section class="section">
+    <h2>Video clips</h2>
+    <p style="color: var(--color-fog); font-size: 0.9rem;">Short gameplay clips — download individually or grab the .zip above.</p>
+    <div class="clip-grid">
+        {%- for v in kit.videos %}
+        <figure>
+            <video controls preload="metadata" src="{{ base }}/{{ v.file }}"></video>
+            <figcaption>{{ v.label or v.file }} &middot; <a href="{{ base }}/{{ v.file }}" download>.mov</a>{% if v.gif %} &middot; <a href="{{ base }}/{{ v.gif }}" download>.gif</a>{% endif %}</figcaption>
+        </figure>
+        {%- endfor %}
+    </div>
+</section>
+{%- endif %}
+
 {%- if kit.logos %}
 <section class="section">
     <h2>Logo &amp; icon</h2>

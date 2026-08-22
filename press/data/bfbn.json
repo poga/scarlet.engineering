@@ -1,0 +1,64 @@
+{
+  "title": "Books for Bad Neighbors",
+  "tagline": "A narrative bookshop sim set in 199X, where the mail orders you fill reveal your neighbors' secrets.",
+  "developer": "Scarlet Engineering",
+  "basedIn": "Taipei, Taiwan",
+  "releaseDate": "Coming soon",
+  "platforms": ["PC (Steam)"],
+  "price": "TBA",
+  "languages": ["English"],
+  "website": "https://scarlet.engineering",
+  "pressContact": "press@scarlet.engineering",
+
+  "keyArt": "EN_1232x706.jpg",
+
+  "descriptionShort": "Books for Bad Neighbors is a narrative-based bookshop simulation game where you're a bookshop clerk, fulfill mail orders, and discover everyone's secrets.",
+  "descriptionLong": [
+    "It's 199X. This is the only bookshop for forty miles, and you work the counter now. The register is old, the computer screen glows orange, and the mail comes every day whether you want it or not. A priest hears the confession. A doctor sees the wound. You get a list of what people read at two in the morning, and it tells you more than both of them put together.",
+    "The work is simple. Order new books every day. Read the letters. Find the books you have. Pack the boxes. Hit your quota, close the shop. Then do it again tomorrow. What the supplier sells changes every week, and some books sell out and never come back, so what you can give people is not always your choice.",
+    "Fill enough orders for one person and their letters get longer. They start telling you things. By then you've read enough of their mail to finish their sentences. Some orders you should not fill. You still have a quota to hit, and if you say no to someone, they will want to know why — and they know where you work. The shop closes at six. You walk home the same way every night.",
+    "Books for Bad Neighbors is made by Scarlet Engineering, a Taipei studio building systems-driven games where simple rules produce surprising play."
+  ],
+
+  "features": [
+    "Multiple mysteries to uncover, one order at a time.",
+    "Different endings based on what you sold and who you sold it to.",
+    "Everything happens on the shop computer, built to feel like a real 199X machine.",
+    "The supplier's stock changes every week, and some books sell out and never come back — what you can give people is not always your choice.",
+    "Fill enough orders for one person and their letters get longer. Some orders you should not fill."
+  ],
+
+  "logos": [
+    "title.png",
+    "256x256.png"
+  ],
+
+  "buyLinks": [
+    { "label": "Wishlist on Steam", "url": "https://store.steampowered.com/app/4995520/Books_for_Bad_Neighbors/" }
+  ],
+
+  "additionalLinks": [
+    { "label": "Steam page", "url": "https://store.steampowered.com/app/4995520/Books_for_Bad_Neighbors/", "note": "wishlist now" },
+    { "label": "Devlog", "url": "https://scarlet.engineering/blog/", "note": "development updates" }
+  ],
+
+  "about": [
+    "Scarlet Engineering is an indie studio that engineers emergence: systems-driven games where simple rules produce surprising play.",
+    "Books for Bad Neighbors is the studio's take on interactive fiction: a bookshop, a mail queue, and a town's worth of secrets read one order slip at a time."
+  ],
+
+  "credits": [
+    { "role": "Design & Code", "name": "Poga" },
+    { "role": "Studio", "name": "Scarlet Engineering" }
+  ],
+
+  "social": {
+    "Twitter / X": "https://x.com/scarlet_eng",
+    "Bluesky": "https://bsky.app/profile/scarletengineering.bsky.social",
+    "Instagram": "https://www.instagram.com/scarlet.engineering/",
+    "YouTube": "https://www.youtube.com/@scarlet.engineering",
+    "Discord": "https://discord.gg/FFymAKhRzD"
+  },
+
+  "monetizationNote": "You are free to capture, stream, and monetize video of this game. No permission needed — coverage is always welcome."
+}

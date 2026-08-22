@@ -227,6 +227,25 @@
             border: 0;
         }
 
+        .clip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .clip-grid figure { margin: 0; }
+        .clip-grid video {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--color-soot);
+            border-radius: 2px;
+        }
+        .clip-grid figcaption {
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: var(--color-fog);
+        }
+
         .quote {
             border-left: 3px solid var(--color-alizarin);
             padding-left: 20px;
