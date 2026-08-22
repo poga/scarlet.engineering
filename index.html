@@ -344,6 +344,118 @@
             }
         }
 
+
+        /* Wide layouts: header band above, games in a grid */
+        @media (min-width: 768px) {
+            body {
+                padding-top: 6vh;
+            }
+
+            .form-container {
+                max-width: 1100px;
+                padding: 40px 32px;
+            }
+
+            .logo {
+                max-width: 320px;
+            }
+
+            .tagline {
+                font-size: 1.125rem;
+            }
+
+            .form-description {
+                font-size: 1rem;
+            }
+
+            .embeddable-buttondown-form {
+                display: flex;
+                gap: 12px;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .embeddable-buttondown-form input[type="email"] {
+                flex: 1;
+            }
+
+            .embeddable-buttondown-form input[type="submit"] {
+                width: auto;
+                margin-top: 0;
+            }
+
+            .link-stack {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .link-button {
+                width: auto;
+                min-width: 150px;
+            }
+
+            .games-title {
+                font-size: 1.75rem;
+                margin-bottom: 24px;
+            }
+
+            .game-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            /* Thumbnails differ in shape, so crop them to one ratio in a row */
+            .game-grid .game-thumbnail {
+                aspect-ratio: 16 / 10;
+                object-fit: cover;
+            }
+
+            /* Cards share a row, so the CTA sits on the bottom edge of each */
+            .game-card {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 0;
+            }
+
+            .game-card .game-link {
+                margin-top: auto;
+            }
+
+            .game-card--featured {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .game-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .game-card--featured {
+                flex-direction: row;
+                align-items: center;
+                gap: 24px;
+                padding: 24px;
+            }
+
+            .game-card--featured .game-thumbnail {
+                width: 55%;
+                margin-bottom: 0;
+            }
+
+            .game-card--featured .featured-body {
+                flex: 1;
+                text-align: left;
+            }
+
+            .game-card--featured .game-link {
+                width: auto;
+                margin-top: 0;
+            }
+        }
+
         /* Prevent zoom on input focus for iOS */
         @supports (-webkit-touch-callout: none) {
             .embeddable-buttondown-form input[type="email"] {
@@ -387,29 +499,33 @@
         </nav>
         <section class="games-section">
             <h3 class="games-title">Our Games</h3>
-            <div class="game-card">
+            <div class="game-card game-card--featured">
                 <img src="/press/assets/brews-and-kings/EN_920x430.jpg" alt="Brews & Kings" class="game-thumbnail" width="920" height="430">
-                <h4 class="game-name">Brews & Kings</h4>
-                <p class="game-description">A roguelike city builder where your kingdom lives and breathes beer.</p>
-                <a href="https://store.steampowered.com/app/4845040/Brews__Kings/" target="_blank" class="game-link game-link--steam"><i class="fa-brands fa-steam" aria-hidden="true"></i>Wishlist on Steam</a>
+                <div class="featured-body">
+                    <h4 class="game-name">Brews & Kings</h4>
+                    <p class="game-description">A roguelike city builder where your kingdom lives and breathes beer.</p>
+                    <a href="https://store.steampowered.com/app/4845040/Brews__Kings/" target="_blank" class="game-link game-link--steam"><i class="fa-brands fa-steam" aria-hidden="true"></i>Wishlist on Steam</a>
+                </div>
             </div>
-            <div class="game-card">
-                <img src="books-for-bad-neighbors.gif" alt="Books for Bad Neighbors" class="game-thumbnail" width="640" height="480" loading="lazy">
-                <h4 class="game-name">Books for Bad Neighbors</h4>
-                <p class="game-description">The book you read reveal a lot about you.</p>
-                <a href="https://devpoga.itch.io/books-for-bad-neighbors" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
-            </div>
-            <div class="game-card">
-                <img src="murderhorn.png" alt="Murderhorn" class="game-thumbnail" width="315" height="250">
-                <h4 class="game-name">Murderhorn</h4>
-                <p class="game-description">A mountain watches humans come and go.</p>
-                <a href="https://devpoga.itch.io/murderhorn" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
-            </div>
-            <div class="game-card">
-                <img src="blocks10-thumb.png" alt="BLOCKS 10" class="game-thumbnail" width="315" height="250">
-                <h4 class="game-name">BLOCKS 10</h4>
-                <p class="game-description">Clear numbers that add to ten.</p>
-                <a href="https://devpoga.itch.io/blocks" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
+            <div class="game-grid">
+                <div class="game-card">
+                    <img src="books-for-bad-neighbors.gif" alt="Books for Bad Neighbors" class="game-thumbnail" width="640" height="480" loading="lazy">
+                    <h4 class="game-name">Books for Bad Neighbors</h4>
+                    <p class="game-description">The book you read reveal a lot about you.</p>
+                    <a href="https://devpoga.itch.io/books-for-bad-neighbors" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
+                </div>
+                <div class="game-card">
+                    <img src="murderhorn.png" alt="Murderhorn" class="game-thumbnail" width="315" height="250">
+                    <h4 class="game-name">Murderhorn</h4>
+                    <p class="game-description">A mountain watches humans come and go.</p>
+                    <a href="https://devpoga.itch.io/murderhorn" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
+                </div>
+                <div class="game-card">
+                    <img src="blocks10-thumb.png" alt="BLOCKS 10" class="game-thumbnail" width="315" height="250">
+                    <h4 class="game-name">BLOCKS 10</h4>
+                    <p class="game-description">Clear numbers that add to ten.</p>
+                    <a href="https://devpoga.itch.io/blocks" target="_blank" class="game-link game-link--itch"><i class="fa-brands fa-itch-io" aria-hidden="true"></i>Play on itch.io</a>
+                    </div>
             </div>
         </section>
     </div>
