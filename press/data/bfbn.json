@@ -1,6 +1,6 @@
 {
   "title": "Books for Bad Neighbors",
-  "tagline": "A narrative bookshop sim set in 199X, where the mail orders you fill reveal your neighbors' secrets.",
+  "tagline": "A deduction thriller set in a 199X mail-order bookshop, where your only move is what you put in the box.",
   "developer": "Scarlet Engineering",
   "basedIn": "Taipei, Taiwan",
   "releaseDate": "Coming soon",
@@ -12,11 +12,11 @@
 
   "keyArt": "EN_1232x706.jpg",
 
-  "descriptionShort": "Books for Bad Neighbors is a narrative-based bookshop simulation game where you're a bookshop clerk, fulfill mail orders, and discover everyone's secrets.",
+  "descriptionShort": "Run a 199X bookshop by mail. Every order tells you what someone plans to do. Decide what to sell, and to whom.",
   "descriptionLong": [
-    "It's 199X. This is the only bookshop for forty miles, and you work the counter now. The register is old, the computer screen glows orange, and the mail comes every day whether you want it or not. A priest hears the confession. A doctor sees the wound. You get a list of what people read at two in the morning, and it tells you more than both of them put together.",
+    "It's 199X. You run the mail-order counter at the only bookshop for forty miles. Books for Bad Neighbors is a deduction thriller where your only move is what you put in the box. Fill the order, send the wrong book, or refuse, and live with what happens next.",
     "The work is simple. Order new books every day. Read the letters. Find the books you have. Pack the boxes. Hit your quota, close the shop. Then do it again tomorrow. What the supplier sells changes every week, and some books sell out and never come back, so what you can give people is not always your choice.",
-    "Fill enough orders for one person and their letters get longer. They start telling you things. By then you've read enough of their mail to finish their sentences. Some orders you should not fill. You still have a quota to hit, and if you say no to someone, they will want to know why — and they know where you work. The shop closes at six. You walk home the same way every night.",
+    "Fill enough orders for one person and their letters get longer. They start telling you things. By then you've read enough of their mail to finish their sentences. Some orders you should not fill. If you say no to someone, they will want to know why, and they know where you work. The shop closes at six. You walk home the same way every night.",
     "Books for Bad Neighbors is made by Scarlet Engineering, a Taipei studio building systems-driven games where simple rules produce surprising play."
   ],
 
@@ -26,6 +26,18 @@
     "Everything happens on the shop computer, built to feel like a real 199X machine.",
     "The supplier's stock changes every week, and some books sell out and never come back — what you can give people is not always your choice.",
     "Fill enough orders for one person and their letters get longer. Some orders you should not fill."
+  ],
+
+  "screenshots": [
+    "screen_01.jpg",
+    "screen_02.jpg",
+    "screen_03.jpg",
+    "screen_04.jpg",
+    "iris_screen.png"
+  ],
+
+  "videos": [
+    { "file": "gameplay.mov", "label": "Gameplay" }
   ],
 
   "logos": [
