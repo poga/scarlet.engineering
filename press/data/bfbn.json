@@ -2,11 +2,11 @@
   "title": "Books for Bad Neighbors",
   "tagline": "A deduction thriller set in a 199X mail-order bookshop, where your only move is what you put in the box.",
   "developer": "Scarlet Engineering",
-  "basedIn": "Taipei, Taiwan",
+  "basedIn": "Taiwan",
   "releaseDate": "Coming soon",
   "platforms": ["PC (Steam)"],
   "price": "TBA",
-  "languages": ["English"],
+  "languages": ["English", "Traditional Chinese"],
   "website": "https://scarlet.engineering",
   "pressContact": "press@scarlet.engineering",
 
