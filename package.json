@@ -2,13 +2,14 @@
   "name": "scarlet-engineering",
   "private": true,
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy && node tools/protect-design-system.js",
     "dev": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "staticrypt": "^3.5.4"
   },
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^3.0.0"

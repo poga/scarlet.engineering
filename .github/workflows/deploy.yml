@@ -27,6 +27,8 @@ jobs:
       - run: npm ci
 
       - run: npm run build
+        env:
+          DESIGN_SYSTEM_PASSWORD: ${{ secrets.DESIGN_SYSTEM_PASSWORD }}
 
       - uses: actions/upload-pages-artifact@v5
         with:

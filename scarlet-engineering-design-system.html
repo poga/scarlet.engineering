@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>scarlet.engineering design system v2</title>
+  <title>scarlet.engineering design system v2.1</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@400;700&family=Rubik+Distressed&display=swap" rel="stylesheet">
   <style>
     :root {
       --color-basalt: #0E1116;
@@ -15,7 +15,7 @@
       --color-bone: #E8E2D3;
       --color-scarlet: #D1202A;
 
-      --font-display: 'Gelasio', 'Noto Sans TC', 'Georgia', serif;
+      --font-display: 'Rubik Distressed', Impact, sans-serif;
       --font-body: 'Gelasio', 'Noto Sans TC', 'Georgia', serif;
       --font-mono: 'JetBrains Mono', 'Noto Sans TC', 'Consolas', monospace;
 
@@ -135,7 +135,7 @@
     }
 
     h2 {
-      font-family: var(--font-display);
+      font-family: var(--font-body);
       font-weight: 700;
       font-size: var(--text-h2);
       letter-spacing: var(--track-display);
@@ -155,7 +155,7 @@
     }
 
     h3 {
-      font-family: var(--font-display);
+      font-family: var(--font-body);
       font-weight: 700;
       font-size: var(--text-h3);
       letter-spacing: var(--track-display);
@@ -259,16 +259,61 @@
       margin-bottom: var(--space-sm);
     }
 
-    .type-display {
+    /* Punk display: bone or scarlet on basalt only. Never basalt on bone. */
+    .type-punk {
       font-family: var(--font-display);
-      font-weight: 700;
+      font-weight: 400;
       font-size: var(--text-display);
-      letter-spacing: var(--track-display);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--color-bone);
+    }
+
+    .type-punk.tilt {
+      display: inline-block;
+      transform: rotate(-2deg);
+    }
+
+    .type-punk.scarlet {
+      color: var(--color-scarlet);
+    }
+
+    .crop-frame {
+      border: 1px solid var(--color-slate);
+      overflow: hidden;
+      padding: var(--space-md) 0 0;
+      max-width: 520px;
+    }
+
+    .crop-frame .type-punk {
+      display: block;
+      font-size: 4.5rem;
+      line-height: 0.85;
+      margin: 0 -0.15em -0.2em -0.12em;
+      transform: rotate(-2deg);
+      white-space: nowrap;
+    }
+
+    .type-name {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      line-height: 1;
+      text-transform: uppercase;
+      display: inline-block;
+      transform: rotate(1.5deg);
+    }
+
+    .type-slogan {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
       line-height: 1.1;
+      text-transform: uppercase;
+      color: var(--color-scarlet);
     }
 
     .type-h2 {
-      font-family: var(--font-display);
+      font-family: var(--font-body);
       font-weight: 700;
       font-size: var(--text-h2);
       letter-spacing: var(--track-display);
@@ -276,7 +321,7 @@
     }
 
     .type-h3 {
-      font-family: var(--font-display);
+      font-family: var(--font-body);
       font-weight: 700;
       font-size: var(--text-h3);
       letter-spacing: var(--track-display);
@@ -632,7 +677,7 @@
     }
 
     .card h4 {
-      font-family: var(--font-display);
+      font-family: var(--font-body);
       font-weight: 700;
       font-size: var(--text-h3);
       letter-spacing: var(--track-display);
@@ -822,6 +867,132 @@
       color: var(--color-slate);
     }
 
+    /* Character cards */
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .char-card {
+      position: relative;
+      border: 1px solid var(--color-slate);
+      padding: var(--space-lg);
+      overflow: hidden;
+    }
+
+    .char-card.paper {
+      border: none;
+    }
+
+    .char-card .fig {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      aspect-ratio: 1;
+      margin: 0 auto var(--space-md);
+    }
+
+    .char-card .fig .ink {
+      fill: var(--color-bone);
+    }
+
+    .char-card .fig .cut {
+      fill: var(--color-basalt);
+    }
+
+    .char-card .fig .red {
+      fill: var(--color-scarlet);
+    }
+
+    .char-card.paper .fig .ink {
+      fill: var(--color-basalt);
+    }
+
+    .char-card.paper .fig .cut {
+      fill: var(--color-bone);
+    }
+
+    .char-card .name {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      line-height: 1;
+      text-transform: uppercase;
+      display: inline-block;
+      transform: rotate(-1.5deg);
+      margin-bottom: var(--space-md);
+      color: var(--color-bone);
+    }
+
+    /* On paper the name sits on a basalt strip: display never prints basalt on bone. */
+    .char-card.paper .name {
+      background: var(--color-basalt);
+      padding: 4px 10px;
+    }
+
+    .char-card dl {
+      font-family: var(--font-mono);
+      font-size: var(--text-small);
+      line-height: 1.5;
+    }
+
+    .char-card dt {
+      color: var(--color-slate);
+      font-size: var(--text-label);
+      letter-spacing: var(--track-label);
+      margin-top: var(--space-sm);
+    }
+
+    .char-card dd {
+      margin: 0;
+    }
+
+    .char-card dd.contradiction {
+      font-style: italic;
+    }
+
+    .template-list {
+      list-style: none;
+      counter-reset: part;
+      max-width: 70ch;
+      margin-bottom: var(--space-xl);
+    }
+
+    .template-list li {
+      display: grid;
+      grid-template-columns: 3ch 1fr;
+      gap: var(--space-md);
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--color-slate);
+      font-family: var(--font-mono);
+      font-size: var(--text-small);
+    }
+
+    .template-list li::before {
+      counter-increment: part;
+      content: "0" counter(part);
+      color: var(--color-slate);
+    }
+
+    .template-list b {
+      font-weight: 700;
+      color: var(--color-bone);
+    }
+
+    .voice-pair {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .voice-pair .voice p.sample-narration {
+      font-family: var(--font-mono);
+      font-size: var(--text-body);
+      color: var(--color-bone);
+      margin-bottom: var(--space-sm);
+    }
+
     footer {
       padding: var(--space-2xl) var(--space-lg);
       font-family: var(--font-mono);
@@ -869,8 +1040,8 @@
   <header>
     <div class="inner">
       <div class="wordmark">scarlet<span class="dot">.</span>engineering</div>
-      <div class="sub">design system v2.0 · cold world, punk print</div>
-      <p class="lede">a basalt world with one scarlet thing in it. the world is cold. the mark is hot. scarlet is rationed: never more than one scarlet element per composition.</p>
+      <div class="sub">design system v2.1 · cold world, punk print, hot people</div>
+      <p class="lede">the world does not care. the characters answer that with attitude. distance lives in the landscape, the palette, and the narration. punk lives in the materials, the type, and the characters. backgrounds are never punk. characters are never cold.</p>
     </div>
   </header>
 
@@ -885,7 +1056,7 @@
           <div class="color-info">
             <div class="color-name">basalt</div>
             <div class="color-hex">#0E1116</div>
-            <div class="color-role">base · ~60%</div>
+            <div class="color-role">base · ~55%</div>
           </div>
         </div>
         <div class="color-card">
@@ -893,7 +1064,7 @@
           <div class="color-info">
             <div class="color-name">slate</div>
             <div class="color-hex">#4A5A66</div>
-            <div class="color-role">cold mid · ~25%</div>
+            <div class="color-role">cold mid · ~20%</div>
           </div>
         </div>
         <div class="color-card">
@@ -901,7 +1072,7 @@
           <div class="color-info">
             <div class="color-name">bone</div>
             <div class="color-hex">#E8E2D3</div>
-            <div class="color-role">paper, type · ~10%</div>
+            <div class="color-role">paper, type · ~15%</div>
           </div>
         </div>
         <div class="color-card">
@@ -909,22 +1080,40 @@
           <div class="color-info">
             <div class="color-name">scarlet</div>
             <div class="color-hex">#D1202A</div>
-            <div class="color-role">the one accent · ≤5%</div>
+            <div class="color-role">mark, light, characters · ≤10%</div>
           </div>
         </div>
       </div>
 
       <div class="share-bar" aria-hidden="true">
-        <div style="width: 60%; background: #0E1116;"></div>
-        <div style="width: 25%; background: #4A5A66;"></div>
-        <div style="width: 10%; background: #E8E2D3;"></div>
-        <div style="width: 5%; background: #D1202A;"></div>
+        <div style="width: 55%; background: #0E1116;"></div>
+        <div style="width: 20%; background: #4A5A66;"></div>
+        <div style="width: 15%; background: #E8E2D3;"></div>
+        <div style="width: 10%; background: #D1202A;"></div>
       </div>
       <div class="share-legend">
-        <span>basalt 60</span><span>slate 25</span><span>bone 10</span><span>scarlet 5</span>
+        <span>basalt 55</span><span>slate 20</span><span>bone 15</span><span>scarlet 10</span>
       </div>
 
-      <p class="note">four colors. no tints, no shades, no opacity ramps. texture is made of dots, not of alpha. store brand colors (steam, itch) do not appear in studio compositions; store links are bone outline buttons.</p>
+      <div class="rules" style="margin-top: var(--space-xl);">
+        <div class="rule-block">
+          <h3>where scarlet goes</h3>
+          <ul>
+            <li>the mark and the light source.</li>
+            <li>characters: a scarf, a blade, a stain.</li>
+            <li>one scarlet subject per composition. a character may carry several red marks if they read as one gesture.</li>
+          </ul>
+        </div>
+        <div class="rule-block avoid">
+          <h3>where it never goes</h3>
+          <ul>
+            <li>the landscape. sky, ground, rock, and water stay basalt, slate, bone.</li>
+            <li>a second red. punk comes from contrast and misregistration, not from adding orange.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note">four colors, under any circumstances. no tints, no shades, no opacity ramps. texture is made of dots, not of alpha. store brand colors (steam, itch) do not appear in studio compositions; store links are bone outline buttons.</p>
     </section>
 
     <section id="typography">
@@ -932,14 +1121,19 @@
 
       <div class="voices">
         <div class="voice">
-          <span class="label">voice 1 · print · gelasio</span>
-          <div class="sample type-h2">we build in the cold</div>
-          <p>titles, body, buttons, flavor. same usage as brews &amp; kings: 700 with tracking for headers, 400 for body, 600 for buttons, italic for flavor. noto sans tc as the cjk fallback.</p>
+          <span class="label">voice 1 · punk display · rubik distressed</span>
+          <div class="sample type-punk" style="font-size: 1.75rem;">nobody is coming</div>
+          <p>titles, character names, one-line slogans, dialogue. rough, uneven, may tilt 1 to 3 degrees, may overlap or be cropped by the frame. always bone or scarlet on basalt. never basalt on bone.</p>
         </div>
         <div class="voice">
-          <span class="label">voice 2 · engineering · jetbrains mono</span>
+          <span class="label">voice 2 · print · gelasio</span>
+          <div class="sample type-h2">we build in the cold</div>
+          <p>headings, body, buttons, flavor. same usage as brews &amp; kings: 700 with tracking for headings, 400 for body, 600 for buttons, italic for flavor. noto sans tc as the cjk fallback.</p>
+        </div>
+        <div class="voice">
+          <span class="label">voice 3 · engineering · jetbrains mono</span>
           <div class="sample type-mono" style="font-size: 1.5rem;">scarlet<span style="color: var(--color-scarlet);">.</span>engineering</div>
-          <p>wordmark, labels, meta, logs, code, form input. lowercase. the period in the wordmark is the mark.</p>
+          <p>wordmark, ui, labels, meta, logs, code, and all narration. lowercase. the cold voice. mono is never distressed.</p>
         </div>
       </div>
 
@@ -949,8 +1143,28 @@
       </div>
 
       <div class="type-sample">
-        <span class="label">display · gelasio 700 · +0.04em · 2.75rem</span>
-        <div class="type-display">the land was here first</div>
+        <span class="label">display · rubik distressed · 2.75rem · bone on basalt</span>
+        <div class="type-punk">the land was here first</div>
+      </div>
+
+      <div class="type-sample">
+        <span class="label">display · tilted 2° · scarlet on basalt · the composition's scarlet subject</span>
+        <div class="type-punk tilt scarlet">we build in the cold</div>
+      </div>
+
+      <div class="type-sample">
+        <span class="label">display · cropped by the frame · letters may run off the edge</span>
+        <div class="crop-frame"><div class="type-punk">no one came back</div></div>
+      </div>
+
+      <div class="type-sample">
+        <span class="label">character name · rubik distressed · 1.75rem · tilt allowed</span>
+        <div class="type-name">halla of the rib-hook</div>
+      </div>
+
+      <div class="type-sample">
+        <span class="label">slogan · rubik distressed · 1.5rem · caps allowed · may be rude</span>
+        <div class="type-slogan">i didn't come for the view.</div>
       </div>
 
       <div class="type-sample">
@@ -993,7 +1207,7 @@
         <p>game titles are logotypes, not type: hand-cut, torn edge, ink speckle, one per project. they sit on the print voice and never replace it. the studio wordmark stays in mono.</p>
       </div>
 
-      <p class="note">no other serif. no lora, no cormorant, no georgia in the stack except as the metric fallback for gelasio. no slab. lowercase everywhere except proper nouns and game titles.</p>
+      <p class="note">no other serif. no lora, no cormorant, no georgia in the stack except as the metric fallback for gelasio. no slab. lowercase everywhere except proper nouns, game titles, and display slogans. display is never used for body or narration. mono is never distressed, tilted, or cropped.</p>
     </section>
 
     <section id="spacing">
@@ -1133,34 +1347,91 @@
     <section id="rules">
       <h2><span class="num">05</span>rules</h2>
 
+      <h3>composition</h3>
       <div class="rules">
         <div class="rule-block">
-          <h3>composition</h3>
+          <h3>world shots</h3>
           <ul>
+            <li>landscape, structures, the mark.</li>
             <li>low horizon or none.</li>
             <li>subject small or monolithic, never medium.</li>
-            <li>large empty fields.</li>
-            <li>figures as silhouettes, backs turned, masks. no faces.</li>
+            <li>large empty field.</li>
             <li>one light source, drawn as a flat disc or concentric bands.</li>
             <li>prefer vertical and square formats.</li>
           </ul>
         </div>
         <div class="rule-block">
-          <h3>texture</h3>
+          <h3>character shots</h3>
           <ul>
-            <li>texture comes from print: halftone, ink spatter, paper grain, tape, misregistration.</li>
-            <li>all texture in black or scarlet only.</li>
-            <li>hard edges. torn edges are cut, not blurred.</li>
-            <li>motion, if any: hard cuts, stamped frames, registration jitter. scarlet lands last.</li>
+            <li>close and cropped. head and shoulders, or a single hand and object.</li>
+            <li>cut off by the frame edge.</li>
+            <li>high contrast, flat black shapes.</li>
+            <li>no background, or a single flat field.</li>
+            <li>never a full-body medium shot in a landscape. that reads as neither cold nor punk.</li>
           </ul>
         </div>
         <div class="rule-block">
-          <h3>print logic</h3>
+          <h3>combined shots</h3>
+          <ul>
+            <li>character silhouette in the foreground, cropped and large.</li>
+            <li>world small and far behind.</li>
+            <li>the character is the only thing with detail.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--space-2xl);">texture</h3>
+      <div class="rules">
+        <div class="rule-block">
+          <h3>print damage, encouraged</h3>
+          <ul>
+            <li>ink spatter and drips.</li>
+            <li>stencil bridges and overspray.</li>
+            <li>tape, staples, torn edges, folded-paper creases.</li>
+            <li>misregistration up to 2 to 3px between black and scarlet layers.</li>
+            <li>photocopy contrast crush on characters: pure black, pure bone, no midtone.</li>
+            <li>all texture in black or scarlet only.</li>
+          </ul>
+        </div>
+        <div class="rule-block avoid">
+          <h3>the paper test</h3>
+          <ul>
+            <li>damage must look like it happened to paper.</li>
+            <li>no gradients, drop shadows, glow, chromatic aberration.</li>
+            <li>no digital noise filters.</li>
+            <li>motion, if any: hard cuts, stamped frames, registration jitter. scarlet lands last.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--space-2xl);">faces</h3>
+      <div class="rules">
+        <div class="rule-block">
+          <h3>characters</h3>
+          <ul>
+            <li>faces are allowed.</li>
+            <li>eyes may be hidden by hair, hood, mask, shadow, goggles. they do not have to be.</li>
+            <li>masks and partial coverings are preferred where the choice is free.</li>
+            <li>expressions stay minimal. angry, tired, or amused. never surprised, never crying.</li>
+          </ul>
+        </div>
+        <div class="rule-block avoid">
+          <h3>the world</h3>
+          <ul>
+            <li>no faces on the world. structures, weather, and animals stay silhouettes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--space-2xl);">print logic</h3>
+      <div class="rules">
+        <div class="rule-block">
+          <h3>one duplicator</h3>
           <ul>
             <li>everything is two-color riso: black plus scarlet on bone paper.</li>
             <li>site, steam banner, business card come off the same duplicator.</li>
             <li>the page is basalt. bone is for type and paper elements, not the page.</li>
-            <li>one scarlet element per composition. count before you ship.</li>
+            <li>one scarlet subject per composition. count before you ship.</li>
           </ul>
         </div>
         <div class="rule-block avoid">
@@ -1169,8 +1440,12 @@
             <li>orange, ochre, warm browns, gold.</li>
             <li>gradients, glow, rays, lens flare, drop shadows, chromatic aberration.</li>
             <li>smooth vector illustration.</li>
-            <li>faces.</li>
-            <li>more than one red per frame.</li>
+            <li>faces on the world. emotional expressions on characters.</li>
+            <li>full-body characters standing in landscapes.</li>
+            <li>characters in slate or bone with no black.</li>
+            <li>distressed mono text.</li>
+            <li>scarlet on sky, ground, or water.</li>
+            <li>more than one red per frame. more than four colors under any circumstances.</li>
             <li>easing and fades.</li>
             <li>detective or victorian references.</li>
           </ul>
@@ -1178,19 +1453,98 @@
       </div>
 
       <h3 style="margin-top: var(--space-2xl);">copy voice</h3>
-      <p class="body-copy">saga register. short declaratives. concrete nouns. no adjectives that tell the reader how to feel. lowercase. it should read like a log entry or a field report.</p>
-      <div class="code-block"><span class="comment">// yes</span>
+      <p class="body-copy">two voices. the narration never adopts the dialogue voice. the dialogue never adopts the narration voice.</p>
+      <div class="voice-pair">
+        <div class="voice">
+          <span class="label">narration · studio text, ui, world · mono · saga register</span>
+          <p class="sample-narration">the pass closed in the ninth week. we burned the sledge for heat. the tower stands.</p>
+          <p>short declaratives. concrete nouns. no adjectives that tell the reader how to feel. lowercase. never describes what a character feels.</p>
+        </div>
+        <div class="voice">
+          <span class="label">dialogue and slogans · characters, posters · display or mono · punk register</span>
+          <div class="sample type-punk" style="font-size: 1.5rem;">i didn't come for the view.</div>
+          <p>may be funny, may be rude, may be in caps. still short. the only place a character gets to talk back.</p>
+        </div>
+      </div>
+      <div class="code-block" style="margin-top: var(--space-md);"><span class="comment">// narration, yes</span>
 the land was here first.
 we build in the cold.
-the tower stands. the signal is weak.
 
-<span class="comment">// no</span>
+<span class="comment">// dialogue, yes</span>
+NOBODY IS COMING. GOOD.
+
+<span class="comment">// no, either voice</span>
 an epic journey awaits!
-beautifully crafted, deeply atmospheric.</div>
+she felt a deep sorrow as the snow fell.</div>
+    </section>
+
+    <section id="characters">
+      <h2><span class="num">06</span>characters</h2>
+
+      <p class="body-copy">cold world, hot people. every character is built from four parts. this is a hard template, not a suggestion. characters are stated, not explored. narration never describes what they feel. everything is shown through the object and the rule.</p>
+
+      <ol class="template-list">
+        <li><span><b>silhouette.</b> readable in solid black at 32px. scavenged, wrong-sized, spiky, or asymmetric. built from found parts.</span></li>
+        <li><span><b>rule.</b> one thing they will not do, or will always do, stated in under eight words.</span></li>
+        <li><span><b>object.</b> one tool or weapon they made or took. it appears in every depiction.</span></li>
+        <li><span><b>contradiction.</b> the thing that makes the rule cost them something. may be funny.</span></li>
+      </ol>
+
+      <h3>character card</h3>
+      <div class="char-grid">
+        <div class="char-card">
+          <svg class="fig" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="hooded figure, head and shoulders, cropped by the frame, scarlet scarf">
+            <g class="ink">
+              <path d="M10 160 L24 104 L44 70 L56 42 L66 58 L74 28 L86 50 L98 32 L106 60 L124 66 L136 106 L152 160 Z"/>
+              <path d="M146 0 L154 0 L160 160 L150 160 Z"/>
+            </g>
+            <g class="cut">
+              <path d="M60 78 L100 72 L104 106 L86 118 L62 112 Z"/>
+              <path d="M26 122 L138 114 L142 134 L22 142 Z"/>
+            </g>
+            <g class="ink"><rect x="66" y="86" width="36" height="7"/></g>
+            <g class="red" transform="translate(2 1)"><path d="M26 122 L138 114 L142 134 L22 142 Z"/></g>
+          </svg>
+          <div class="name">halla</div>
+          <dl>
+            <dt>rule</dt>
+            <dd>never sleeps under a roof.</dd>
+            <dt>object</dt>
+            <dd>a whale-rib hook, hafted twice.</dd>
+            <dt>contradiction</dt>
+            <dd class="contradiction">she is building a roof.</dd>
+          </dl>
+        </div>
+
+        <div class="char-card paper">
+          <svg class="fig" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="a fist gripping a bent blade, cropped by the frame, scarlet edge">
+            <g class="ink">
+              <path d="M0 160 L0 98 L28 84 L70 76 L98 84 L106 102 L98 124 L72 134 L42 142 L22 160 Z"/>
+              <path d="M90 92 L146 28 L160 40 L110 102 Z"/>
+            </g>
+            <g class="cut">
+              <path d="M34 98 L62 94 L64 104 L36 108 Z"/>
+              <path d="M40 114 L68 110 L70 120 L42 124 Z"/>
+            </g>
+            <g class="red" transform="translate(2 1)"><path d="M118 20 L160 0 L160 26 L128 44 Z"/></g>
+          </svg>
+          <div class="name">the ferryman</div>
+          <dl>
+            <dt>rule</dt>
+            <dd>takes payment before the crossing.</dd>
+            <dt>object</dt>
+            <dd>a bent bone blade. no sheath.</dd>
+            <dt>contradiction</dt>
+            <dd class="contradiction">nobody has paid in years. he still waits.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <p class="note">black silhouette on a flat field, basalt or bone. name in display, rule and object in mono, contradiction in mono italic. one scarlet accent per card, on the character, misregistered 2px. on bone the name sits on a basalt strip: display never prints basalt on bone.</p>
     </section>
 
     <section id="components">
-      <h2><span class="num">06</span>components</h2>
+      <h2><span class="num">07</span>components</h2>
 
       <div class="demo">
         <span class="label">buttons · gelasio 600 · hard edges · no transition</span>
@@ -1241,7 +1595,7 @@ beautifully crafted, deeply atmospheric.</div>
     </section>
 
     <section id="hierarchy">
-      <h2><span class="num">07</span>page hierarchy</h2>
+      <h2><span class="num">08</span>page hierarchy</h2>
 
       <p class="body-copy">the landing page order. one scarlet on the whole page: the subscribe button. game cards drop their scarlet rule and use bone outline store links.</p>
 
@@ -1301,7 +1655,7 @@ beautifully crafted, deeply atmospheric.</div>
     </section>
 
     <section id="variables">
-      <h2><span class="num">08</span>css variables</h2>
+      <h2><span class="num">09</span>css variables</h2>
 
       <div class="code-block"><span class="comment">/* palette */</span>
 <span class="property">--color-basalt:</span> <span class="value">#0E1116</span>;
@@ -1310,8 +1664,8 @@ beautifully crafted, deeply atmospheric.</div>
 <span class="property">--color-scarlet:</span> <span class="value">#D1202A</span>;
 
 <span class="comment">/* type */</span>
-<span class="property">--font-display:</span> <span class="value">'Gelasio', 'Noto Sans TC', Georgia, serif</span>;  <span class="comment">/* 700, +0.04em */</span>
-<span class="property">--font-body:</span> <span class="value">'Gelasio', 'Noto Sans TC', Georgia, serif</span>;     <span class="comment">/* 400; 600 buttons; italic flavor */</span>
+<span class="property">--font-display:</span> <span class="value">'Rubik Distressed', Impact, sans-serif</span>;      <span class="comment">/* titles, names, slogans; bone or scarlet on basalt */</span>
+<span class="property">--font-body:</span> <span class="value">'Gelasio', 'Noto Sans TC', Georgia, serif</span>;     <span class="comment">/* 400; 700 headings; 600 buttons; italic flavor */</span>
 <span class="property">--font-mono:</span> <span class="value">'JetBrains Mono', 'Noto Sans TC', monospace</span>;
 
 <span class="property">--text-display:</span> <span class="value">2.75rem</span>;
@@ -1337,13 +1691,13 @@ beautifully crafted, deeply atmospheric.</div>
 <span class="property">box-shadow:</span> <span class="value">none</span>;
 <span class="property">transition:</span> <span class="value">none</span>;</div>
 
-      <p class="note">font import: <span style="color: var(--color-bone);">Gelasio:ital,wght@0,400;0,600;0,700;1,400 · JetBrains+Mono:wght@400;700 · Noto+Sans+TC:wght@400;700</span></p>
+      <p class="note">font import: <span style="color: var(--color-bone);">Gelasio:ital,wght@0,400;0,600;0,700;1,400 · JetBrains+Mono:ital,wght@0,400;0,700;1,400 · Noto+Sans+TC:wght@400;700 · Rubik+Distressed</span></p>
     </section>
 
   </div>
 
   <footer>
-    <div class="inner">scarlet<span class="dot">.</span>engineering · design system v2.0</div>
+    <div class="inner">scarlet<span class="dot">.</span>engineering · design system v2.1</div>
   </footer>
 
 </body>

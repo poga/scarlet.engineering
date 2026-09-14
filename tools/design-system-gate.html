@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="staticrypt-html" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>/*[|template_title|]*/0</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex" />
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+        <style>
+            :root {
+                --color-basalt: #0e1116;
+                --color-slate: #4a5a66;
+                --color-bone: #e8e2d3;
+                --color-scarlet: #d1202a;
+                --font-mono: "JetBrains Mono", "Consolas", monospace;
+            }
+
+            .staticrypt-html {
+                height: 100%;
+                background: var(--color-basalt);
+            }
+
+            .staticrypt-body {
+                height: 100%;
+                margin: 0;
+                background: var(--color-basalt);
+                color: var(--color-bone);
+                font-family: var(--font-mono);
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .staticrypt-content {
+                min-height: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 14vh 24px 48px;
+                box-sizing: border-box;
+            }
+
+            .staticrypt-form {
+                width: 100%;
+                max-width: 400px;
+                border: 1px solid var(--color-slate);
+                padding: 32px;
+                box-sizing: border-box;
+            }
+
+            .staticrypt-wordmark {
+                font-size: 1.25rem;
+                margin: 0 0 4px;
+            }
+
+            .staticrypt-wordmark span {
+                color: var(--color-scarlet);
+            }
+
+            .staticrypt-title {
+                margin: 0;
+                color: var(--color-slate);
+                font-size: 0.75rem;
+                letter-spacing: 0.08em;
+            }
+
+            .staticrypt-instructions p {
+                margin: 16px 0 0;
+                color: var(--color-slate);
+                font-size: 0.875rem;
+            }
+
+            .staticrypt-hr {
+                margin: 24px 0;
+                border: 0;
+                border-top: 1px solid var(--color-slate);
+            }
+
+            .staticrypt-password-container {
+                position: relative;
+                margin: 0 0 8px;
+            }
+
+            .staticrypt-form input[type="password"],
+            .staticrypt-form input[type="text"] {
+                width: 100%;
+                box-sizing: border-box;
+                font-family: var(--font-mono);
+                font-size: 16px;
+                color: var(--color-bone);
+                background: var(--color-basalt);
+                border: 1px solid var(--color-slate);
+                border-radius: 0;
+                padding: 13px 44px 13px 16px;
+                outline: 0;
+            }
+
+            .staticrypt-form input::placeholder {
+                color: var(--color-slate);
+            }
+
+            .staticrypt-form input:focus {
+                border-color: var(--color-bone);
+            }
+
+            .staticrypt-toggle-password-visibility {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: 44px;
+                cursor: pointer;
+                background: transparent;
+                border: 0;
+                color: var(--color-slate);
+                font-family: var(--font-mono);
+                font-size: 0.75rem;
+                letter-spacing: 0.08em;
+            }
+
+            .staticrypt-error {
+                min-height: 1.4em;
+                margin: 0 0 8px;
+                font-size: 0.75rem;
+                letter-spacing: 0.08em;
+                color: var(--color-slate);
+            }
+
+            label.staticrypt-remember {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin: 0 0 16px;
+                color: var(--color-slate);
+                font-size: 0.75rem;
+                letter-spacing: 0.08em;
+                cursor: pointer;
+            }
+
+            .staticrypt-remember input[type="checkbox"] {
+                accent-color: var(--color-bone);
+                margin: 0;
+            }
+
+            .staticrypt-form .staticrypt-decrypt-button {
+                width: 100%;
+                font-family: var(--font-mono);
+                font-size: 0.875rem;
+                letter-spacing: 0.08em;
+                padding: 14px 24px;
+                border: 1px solid var(--color-scarlet);
+                border-radius: 0;
+                background: var(--color-scarlet);
+                color: var(--color-bone);
+                cursor: pointer;
+                transition: none;
+            }
+
+            .staticrypt-form .staticrypt-decrypt-button:hover,
+            .staticrypt-form .staticrypt-decrypt-button:focus {
+                background: var(--color-bone);
+                border-color: var(--color-bone);
+                color: var(--color-basalt);
+                outline: 0;
+            }
+
+            .hidden {
+                display: none !important;
+            }
+
+            .staticrypt-spinner-container {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-slate);
+                font-size: 0.75rem;
+                letter-spacing: 0.08em;
+            }
+        </style>
+    </head>
+
+    <body class="staticrypt-body">
+        <div id="staticrypt_loading" class="staticrypt-spinner-container">
+            <div>loading</div>
+        </div>
+
+        <div id="staticrypt_content" class="staticrypt-content hidden">
+            <div class="staticrypt-form">
+                <div class="staticrypt-instructions">
+                    <p class="staticrypt-wordmark">scarlet<span>.</span>engineering</p>
+                    <p class="staticrypt-title">/*[|template_title|]*/0</p>
+                    <p>/*[|template_instructions|]*/0</p>
+                </div>
+
+                <hr class="staticrypt-hr" />
+
+                <form id="staticrypt-form" action="#" method="post">
+                    <div class="staticrypt-password-container">
+                        <input
+                            id="staticrypt-password"
+                            type="password"
+                            name="password"
+                            placeholder="/*[|template_placeholder|]*/0"
+                            autocomplete="current-password"
+                            autofocus
+                        />
+                        <button
+                            type="button"
+                            class="staticrypt-toggle-password-visibility"
+                            aria-label="/*[|template_toggle_show|]*/0"
+                            title="/*[|template_toggle_show|]*/0"
+                        >show</button>
+                    </div>
+
+                    <p id="staticrypt-error" class="staticrypt-error" aria-live="polite"></p>
+
+                    <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
+                        <input id="staticrypt-remember" type="checkbox" name="remember" />
+                        /*[|template_remember|]*/0
+                    </label>
+
+                    <input type="submit" class="staticrypt-decrypt-button" value="/*[|template_button|]*/0" />
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // filled in by staticrypt at build time; the format is '/*[|variable_name|]*/0'
+            const staticryptInitiator = /*[|js_staticrypt|]*/ 0;
+            const templateError = "/*[|template_error|]*/0",
+                templateToggleAltShow = "/*[|template_toggle_show|]*/0",
+                templateToggleAltHide = "/*[|template_toggle_hide|]*/0",
+                isRememberEnabled = /*[|is_remember_enabled|]*/ 0,
+                staticryptConfig = /*[|staticrypt_config|]*/ 0;
+
+            const templateConfig = {
+                rememberExpirationKey: "staticrypt_expiration",
+                rememberPassphraseKey: "staticrypt_passphrase",
+                replaceHtmlCallback: null,
+                clearLocalStorageCallback: null,
+            };
+
+            const staticrypt = staticryptInitiator.init(staticryptConfig, templateConfig);
+
+            window.onload = async function () {
+                const { isSuccessful } = await staticrypt.handleDecryptOnLoad();
+                if (!isSuccessful) {
+                    document.getElementById("staticrypt_loading").classList.add("hidden");
+                    document.getElementById("staticrypt_content").classList.remove("hidden");
+                    document.getElementById("staticrypt-password").focus();
+                    if (isRememberEnabled) {
+                        document.getElementById("staticrypt-remember-label").classList.remove("hidden");
+                    }
+                }
+            };
+
+            const toggle = document.querySelector(".staticrypt-toggle-password-visibility");
+            toggle.addEventListener("click", function () {
+                const input = document.getElementById("staticrypt-password");
+                const show = input.type === "password";
+                input.type = show ? "text" : "password";
+                toggle.textContent = show ? "hide" : "show";
+                toggle.title = show ? templateToggleAltHide : templateToggleAltShow;
+                toggle.setAttribute("aria-label", toggle.title);
+            });
+
+            document.getElementById("staticrypt-form").addEventListener("submit", async function (e) {
+                e.preventDefault();
+                const password = document.getElementById("staticrypt-password").value,
+                    isRememberChecked = document.getElementById("staticrypt-remember").checked;
+                const { isSuccessful } = await staticrypt.handleDecryptionOfPage(password, isRememberChecked);
+                if (!isSuccessful) {
+                    document.getElementById("staticrypt-error").textContent = templateError;
+                }
+            });
+        </script>
+    </body>
+</html>
