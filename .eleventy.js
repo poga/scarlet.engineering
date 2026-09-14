@@ -19,6 +19,7 @@ module.exports = function(eleventyConfig) {
   // Pass through existing static files untouched
   eleventyConfig.addPassthroughCopy("index.html");
   eleventyConfig.addPassthroughCopy("scarlet-engineering-design-system.html");
+  eleventyConfig.addPassthroughCopy("scarlet-engineering-design-system-v2.html");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("*.png");
   eleventyConfig.addPassthroughCopy("*.webp");
