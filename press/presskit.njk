@@ -104,16 +104,16 @@ eleventyComputed:
 </section>
 {%- endif %}
 
-{%- if kit.logos %}
+{%- set studioLogo = "/press/assets/studio/scarlet-engineering-logo.png" %}
 <section class="section">
     <h2>Logo &amp; icon</h2>
     <div class="logo-grid">
         {%- for logo in kit.logos %}
         <a href="{{ base }}/{{ logo }}" target="_blank" rel="noopener"><img src="{{ base }}/{{ logo }}" alt="{{ kit.title }} logo"></a>
         {%- endfor %}
+        <a href="{{ studioLogo }}" target="_blank" rel="noopener"><img src="{{ studioLogo }}" alt="Scarlet Engineering studio logo"></a>
     </div>
 </section>
-{%- endif %}
 
 {%- if kit.awards %}
 <section class="section">

@@ -91,8 +91,10 @@ module.exports = function(eleventyConfig) {
       const outZip = path.join(outRoot, `${slug}.zip`);
       fs.mkdirSync(outRoot, { recursive: true });
       fs.rmSync(outZip, { force: true });
+      // studio assets ship in every kit's zip
+      const folders = fs.existsSync(path.join(assetsRoot, "studio")) ? [slug, "studio"] : [slug];
       try {
-        execFileSync("zip", ["-r", "-q", "-X", outZip, slug], { cwd: assetsRoot });
+        execFileSync("zip", ["-r", "-q", "-X", outZip, ...folders], { cwd: assetsRoot });
       } catch (err) {
         console.warn(`[press] skipped ${slug}.zip — is the 'zip' binary installed?`);
       }

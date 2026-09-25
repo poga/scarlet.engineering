@@ -34,6 +34,11 @@ plus a folder of assets — Eleventy builds a polished, press-ready page per gam
    this needs the `zip` command on the build machine (preinstalled on macOS and
    the GitHub Actions runner).
 
+## Studio logo
+
+`assets/studio/scarlet-engineering-logo.png` appears on every kit page and in
+every kit's zip. Replace that file to update the studio logo everywhere.
+
 ## Asset tips for press
 
 - **Screenshots:** 1920×1080 or 1280×720 PNG, no UI debug overlays.
