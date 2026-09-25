@@ -10,7 +10,7 @@
   "website": "https://scarlet.engineering",
   "pressContact": "press@scarlet.engineering",
 
-  "keyArt": "EN_1232x706.jpg",
+  "keyArt": "brews_and_kings_main_capsule_1232x706_english.png",
 
   "descriptionShort": "A roguelike city builder where every farm, mill, and road exists to brew beer. Explore a wilderness that's different each run, claim the rare ingredients you find there, and grow an economy rich enough to pay the King's taxes.",
   "descriptionLong": [
@@ -54,7 +54,7 @@
   ],
 
   "logos": [
-    "title_EN.png",
+    "brews_and_kings_library_logo_1280x720_english.png",
     "title_zh-tw.png",
     "256x256.jpg"
   ],
