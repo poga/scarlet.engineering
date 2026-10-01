@@ -1,10 +1,10 @@
 {
   "title": "Brews & Kings",
-  "tagline": "A roguelike city builder where every farm, mill, and road exists to brew beer.",
+  "tagline": "A roguelite city builder about beer and wine.",
   "developer": "Scarlet Engineering",
   "basedIn": "Taiwan",
   "releaseDate": "Coming soon",
-  "platforms": ["PC (Steam)"],
+  "platforms": ["Windows", "macOS", "Linux"],
   "price": "TBA",
   "languages": ["English", "Traditional Chinese"],
   "website": "https://scarlet.engineering",
@@ -12,20 +12,24 @@
 
   "keyArt": "EN_1232x706.jpg",
 
-  "descriptionShort": "A roguelike city builder where every farm, mill, and road exists to brew beer. Explore a wilderness that's different each run, claim the rare ingredients you find there, and grow an economy rich enough to pay the King's taxes.",
+  "descriptionShort": "A roguelite city builder about beer and wine. Raise a city where every field and building exists to fill the King's cup, learn what he loves, and survive the trial that ends each run. Then lay a new foundation under a new King.",
   "descriptionLong": [
-    "Brews & Kings is a roguelike city builder where every farm, mill, and road exists to brew beer. You are a brewmaster with a royal permit. Each run starts in a procedurally generated wilderness full of rare ingredients, resources, and events. Turn it into a beer economy strong enough to keep the King happy.",
-    "The King is fickle, and a new one sits on the throne each run. One wants quantity and forgives almost anything if the barrels arrive on time. Another cares about appearance and expects your city to look rich. Every run ends with one big event you know about from the start: a royal festival, a hard winter, or a spirit that drains your population until you satisfy it. Each King changes what a good strategy looks like before you place a single building.",
-    "Every run leaves the world with more than it started with. New buildings, new events, and new merchants join the pool, then you place your first foundation on fresh ground under a new King. Brews & Kings is made by Scarlet Engineering, a Taipei studio building systems-driven games where simple rules produce surprising play."
+    "You are the King's cellarmaster, holding a royal permit and a patch of wilderness. Build a city where every field, road, and building exists for one purpose: filling the realm's cups with the finest beer and wine. Each run hands you fresh ground and a new King to please.",
+    "Grow your grain, hops, and herbs, and plant your vines. Raise a brewhouse and a winepress, dig cellars for the casks, and fill the taverns with customers who came for what you make. Turn the wilderness into an economy strong enough to keep them coming back.",
+    "Search the world for the purest water and the richest soil. Take on quests to win rare ingredients and lost recipes, then combine them into beers and wines of your own and give them your name.",
+    "Learn what the King loves and what he cannot stand. The finest drink in the realm means nothing if it is the wrong one. When he tastes your work, the whole court is watching.",
+    "Every run ends in a trial. A royal festival that demands more casks in one season than you fill in five. A winter that freezes your fields and halts your gathering. A spirit that looms over your city and drains your people until you find what satisfies it.",
+    "No run ends empty-handed. New buildings, merchants, and challenges join the world, and the recipes you discovered stay in your book. Then you lay your first foundation on fresh ground and begin again, under a new King with tastes of his own.",
+    "Brews & Kings is made by Scarlet Engineering, a Taipei studio building systems-driven games where simple rules produce surprising play."
   ],
 
   "features": [
-    "Build a thriving brewing city and make your King happy.",
-    "A new King each run: the King's preference changes what a good strategy is before you place a single building.",
-    "A procedurally generated wilderness, different every run, full of rare ingredients, resources, and events to plan around.",
-    "Build specialized districts to raise production and turn a scattered settlement into a city with a purpose.",
-    "Every run builds toward one big event you know about from the start: a royal festival, a hard winter, or a hungry spirit.",
-    "Every run leaves the world richer: new buildings, events, and merchants carry forward into the next.",
+    "Build a city that exists to brew and ferment: fields, vines, brewhouses, winepresses, cellars, and taverns.",
+    "Explore for what the realm cannot grow: the purest water, the richest soil, rare ingredients, and lost recipes.",
+    "Combine your discoveries into beers and wines of your own, and give them your name.",
+    "Please a fickle King: learn what he loves and what he cannot stand.",
+    "Survive the trial that ends every run: a royal festival, a freezing winter, or a spirit that drains your people.",
+    "Begin again: new buildings, merchants, and challenges join the world, and your recipes stay in your book.",
     "A cozy, hand-painted, delightful kingdom you can read at a glance."
   ],
 
@@ -63,7 +67,7 @@
 
   "about": [
     "Scarlet Engineering is an indie studio that engineers emergence: systems-driven games where simple rules produce surprising play.",
-    "Brews & Kings is the studio's take on the city builder: a roguelike where a medieval kingdom lives and breathes beer, and the factions you please, and the ones you don't, shape every run."
+    "Brews & Kings is the studio's take on the city builder: a roguelite where a medieval kingdom runs on beer and wine, and each new King's tastes reshape the run."
   ],
 
   "credits": [
