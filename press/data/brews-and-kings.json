@@ -10,7 +10,7 @@
   "website": "https://scarlet.engineering",
   "pressContact": "press@scarlet.engineering",
 
-  "keyArt": "brews_and_kings_main_capsule_1232x706_english.png",
+  "keyArt": "EN_1232x706.jpg",
 
   "descriptionShort": "A roguelike city builder where every farm, mill, and road exists to brew beer. Explore a wilderness that's different each run, claim the rare ingredients you find there, and grow an economy rich enough to pay the King's taxes.",
   "descriptionLong": [
@@ -30,27 +30,20 @@
   ],
 
   "trailer": {
-    "youtube": "YOe_c715io8",
+    "youtube": "gDwc00ISzmE",
     "embedUrl": "",
-    "file": "",
-    "download": "https://drive.google.com/file/d/1nb-BGw05hbf4XT1ImP-nkyaqha7OKX6W/view?usp=sharing"
+    "file": "brewsandkings_trailer_20261001.mp4",
+    "download": ""
   },
 
   "screenshots": [
-    "Screenshot_bird_eye_view.png",
-    "Screenshot_fall.png",
-    "Screenshot_water.png",
-    "Screenshot_traveling_merchant.png",
-    "Screenshot_building_menu.png",
-    "Screenshot_main_menu.png"
-  ],
-
-  "videos": [
-    { "file": "animated_buildings.mov", "gif": "animated_buildings.gif", "label": "Animated buildings" },
-    { "file": "building.mov", "gif": "building.gif", "label": "Building" },
-    { "file": "districts.mov", "gif": "districts.gif", "label": "Districts" },
-    { "file": "events.mov", "gif": "events.gif", "label": "Events" },
-    { "file": "weather.mov", "gif": "weather.gif", "label": "Weather" }
+    "ss_gameplay.png",
+    "ss_brewery.png",
+    "ss_king.png",
+    "ss_building_preview.png",
+    "ss_research.png",
+    "ss_blizzard.png",
+    "ss_emberfall.png"
   ],
 
   "logos": [
