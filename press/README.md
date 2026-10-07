@@ -23,7 +23,7 @@ plus a folder of assets — Eleventy builds a polished, press-ready page per gam
    | `keyArt` | Hero image filename (used for the page and social preview) |
    | `descriptionShort`, `descriptionLong` | Copy-paste blurbs (long is an array of paragraphs) |
    | `features` | Bullet list |
-   | `trailer` | One of `youtube` (video id), `embedUrl`, or `file` (local); plus optional `download` |
+   | `trailer` | One of `youtube` (video id), `embedUrl`, or `file` (local); plus optional `download` and `cover` (thumbnail image) |
    | `screenshots`, `logos` | Arrays of filenames in your asset folder |
    | `videos` | Array of `{ file, gif, label }` gameplay clips; `gif` is an optional GIF version |
    | `awards`, `quotes`, `additionalLinks`, `buyLinks` | Optional sections |
