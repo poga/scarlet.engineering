@@ -70,10 +70,13 @@ eleventyComputed:
     <div class="video-wrap">
         {%- if kit.trailer.youtube %}<iframe src="https://www.youtube.com/embed/{{ kit.trailer.youtube }}" title="{{ kit.title }} trailer" allowfullscreen></iframe>
         {%- elif kit.trailer.embedUrl %}<iframe src="{{ kit.trailer.embedUrl }}" title="{{ kit.title }} trailer" allowfullscreen></iframe>
-        {%- elif kit.trailer.file %}<video controls preload="metadata" src="{{ base }}/{{ kit.trailer.file }}"></video>{% endif %}
+        {%- elif kit.trailer.file %}<video controls preload="metadata" src="{{ base }}/{{ kit.trailer.file }}"{% if kit.trailer.cover %} poster="{{ base }}/{{ kit.trailer.cover }}"{% endif %}></video>{% endif %}
     </div>
-    {%- if kit.trailer.download %}<a class="btn" href="{{ kit.trailer.download }}" download>&#8595; Download trailer</a>
-    {%- elif kit.trailer.file %}<a class="btn" href="{{ base }}/{{ kit.trailer.file }}" download>&#8595; Download trailer</a>{% endif %}
+    <div class="actions">
+        {%- if kit.trailer.download %}<a class="btn" href="{{ kit.trailer.download }}" download>&#8595; Download trailer</a>
+        {%- elif kit.trailer.file %}<a class="btn" href="{{ base }}/{{ kit.trailer.file }}" download>&#8595; Download trailer</a>{% endif %}
+        {%- if kit.trailer.cover %}<a class="btn" href="{{ base }}/{{ kit.trailer.cover }}" download>&#8595; Download video cover</a>{% endif %}
+    </div>
 </section>
 {%- endif %}
 
