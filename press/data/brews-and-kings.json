@@ -33,20 +33,24 @@
   ],
 
   "trailer": {
-    "youtube": "gDwc00ISzmE",
+    "youtube": "2aR3a2WN-h4",
     "embedUrl": "",
-    "file": "brewsandkings_trailer_20261001.mp4",
+    "file": "brewsandkings_trailer_20261007.mp4",
     "download": ""
   },
 
   "screenshots": [
-    "ss_gameplay.png",
-    "ss_brewery.png",
-    "ss_king.png",
-    "ss_building_preview.png",
-    "ss_research.png",
-    "ss_blizzard.png",
-    "ss_emberfall.png"
+    "Screenshot_brews_and_kings_20261007_1.png",
+    "Screenshot_brews_and_kings_20261007_2.png",
+    "Screenshot_brews_and_kings_20261007_3.png",
+    "Screenshot_brews_and_kings_20261007_4.png",
+    "Screenshot_brews_and_kings_20261007_5.png"
+  ],
+
+  "videos": [
+    { "file": "gif_brews_and_kings_20261007_1.mov", "gif": "gif_brews_and_kings_20261007_1.gif", "label": "Building" },
+    { "file": "gif_brews_and_kings_20261007_2.mov", "gif": "gif_brews_and_kings_20261007_2.gif", "label": "Windmill" },
+    { "file": "gif_brews_and_kings_20261007_3.mov", "gif": "gif_brews_and_kings_20261007_3.gif", "label": "City overview" }
   ],
 
   "logos": [
