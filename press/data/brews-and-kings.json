@@ -14,13 +14,11 @@
 
   "descriptionShort": "A city builder about beer and wine. Grow grain and vines, scout the wilderness for pure water and rare ingredients, brew and ferment in your own cellars, and keep the taverns pouring. Every building in your city exists to fill the next cask.",
   "descriptionLong": [
-    "You are the King's cellarmaster, holding a royal permit and a patch of wilderness. Build a city where every field, road, and building exists for one purpose: filling the realm's cups with the finest beer and wine. Each run hands you fresh ground and a new King to please.",
-    "Grow your grain, hops, and herbs, and plant your vines. Raise a brewhouse and a winepress, dig cellars for the casks, and fill the taverns with customers who came for what you make. Turn the wilderness into an economy strong enough to keep them coming back.",
-    "Search the world for the purest water and the richest soil. Take on quests to win rare ingredients and lost recipes, then combine them into beers and wines of your own and give them your name.",
-    "Learn what the King loves and what he cannot stand. The finest drink in the realm means nothing if it is the wrong one. When he tastes your work, the whole court is watching.",
-    "Every run ends in a trial. A royal festival that demands more casks in one season than you fill in five. A winter that freezes your fields and halts your gathering. A spirit that looms over your city and drains your people until you find what satisfies it.",
-    "No run ends empty-handed. New buildings, merchants, and challenges join the world, and the recipes you discovered stay in your book. Then you lay your first foundation on fresh ground and begin again, under a new King with tastes of his own.",
-    "Brews & Kings is made by Scarlet Engineering, a Taipei studio building systems-driven games where simple rules produce surprising play."
+    "You are the King's cellarmaster, holding a royal permit and a patch of wilderness. Build a city to fill the realm's cups with the finest beer and wine. Each run hands you fresh ground and a new King to please.",
+    "Grow your grain, raise a brewhouse, and fill the taverns with customers who come for what you make. Turn the wilderness into an economy strong enough to keep them coming back.",
+    "Search the world for the purest water and the richest soil. Take on quests to win rare ingredients and lost recipes, then combine them into beers and wines that carry your name.",
+    "Learn what the King loves and what he cannot stand. The finest drink in the realm means nothing if it is the wrong one.",
+    "No run ends empty-handed. New buildings, merchants, and challenges join the world, and the recipes you've discovered stay in your book. Then you lay your first foundation on fresh ground and begin again, under a new King with tastes of his own."
   ],
 
   "features": [
