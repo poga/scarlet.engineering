@@ -1,6 +1,6 @@
 {
   "title": "Brews & Kings",
-  "tagline": "A roguelite city builder about beer and wine.",
+  "tagline": "A city builder about beer and wine.",
   "developer": "Scarlet Engineering",
   "basedIn": "Taiwan",
   "releaseDate": "Coming soon",
@@ -71,7 +71,7 @@
 
   "about": [
     "Scarlet Engineering is an indie studio that engineers emergence: systems-driven games where simple rules produce surprising play.",
-    "Brews & Kings is the studio's take on the city builder: a roguelite where a medieval kingdom runs on beer and wine, and each new King's tastes reshape the run."
+    "Brews & Kings is the studio's take on the city builder: a medieval kingdom that runs on beer and wine."
   ],
 
   "credits": [
