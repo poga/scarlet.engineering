@@ -28,6 +28,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("docs/plans");
   eleventyConfig.addPassthroughCopy("blog/images");
   eleventyConfig.addPassthroughCopy("press/assets");
+  // A self-contained game page, built in the zuma-1b repo: copy, never template
+  eleventyConfig.addPassthroughCopy("CRKaresansui1B");
 
   // Blog post collection sorted by date descending, drafts excluded
   eleventyConfig.addCollection("posts", function(collectionApi) {
