@@ -46,6 +46,10 @@
             --color-itch-hover: #A83232;
             --color-steam: #1B6AA5;
             --color-steam-hover: #165A8C;
+            --color-discord: #5865F2;
+            --color-discord-hover: #4752C4;
+            --color-gaslight-hover: #E2BC72;
+            --color-claret-hover: #85304A;
             --font-heading: 'Alfa Slab One', 'Rockwell', serif;
             --font-body: 'Lora', 'Georgia', serif;
         }
@@ -174,6 +178,49 @@
 
         .link-button i {
             margin-right: 8px;
+        }
+
+        /* Each link carries its own color so they read apart at a glance */
+        .link-button--discord {
+            color: #FFFFFF;
+            background: var(--color-discord);
+            border-color: var(--color-discord);
+        }
+
+        .link-button--discord:hover {
+            background: var(--color-discord-hover);
+            border-color: var(--color-discord-hover);
+        }
+
+        .link-button--press {
+            color: var(--color-ink);
+            background: var(--color-gaslight);
+            border-color: var(--color-gaslight);
+        }
+
+        .link-button--press:hover {
+            background: var(--color-gaslight-hover);
+            border-color: var(--color-gaslight-hover);
+        }
+
+        .link-button--email {
+            background: var(--color-verdigris);
+            border-color: var(--color-verdigris);
+        }
+
+        .link-button--email:hover {
+            background: var(--color-verdigris-hover);
+            border-color: var(--color-verdigris-hover);
+        }
+
+        .link-button--devlog {
+            background: var(--color-claret);
+            border-color: var(--color-claret);
+        }
+
+        .link-button--devlog:hover {
+            background: var(--color-claret-hover);
+            border-color: var(--color-claret-hover);
         }
 
         .games-section {
@@ -492,10 +539,10 @@
             <input type="submit" value="Subscribe" />
         </form>
         <nav class="link-stack">
-            <a href="/blog/" class="link-button" title="Devlog"><i class="fa-solid fa-book" aria-hidden="true"></i>Devlog</a>
-            <a href="https://discord.gg/FFymAKhRzD" target="_blank" class="link-button" title="Join our Discord"><i class="fa-brands fa-discord" aria-hidden="true"></i>Discord</a>
-            <a href="/press/" class="link-button" title="Press Kit"><i class="fa-solid fa-newspaper" aria-hidden="true"></i>Press Kit</a>
-            <a href="mailto:hi@scarlet.engineering" class="link-button" title="Email us"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email</a>
+            <a href="https://discord.gg/FFymAKhRzD" target="_blank" class="link-button link-button--discord" title="Join our Discord"><i class="fa-brands fa-discord" aria-hidden="true"></i>Discord</a>
+            <a href="/press/" class="link-button link-button--press" title="Press Kit"><i class="fa-solid fa-newspaper" aria-hidden="true"></i>Press Kit</a>
+            <a href="mailto:hi@scarlet.engineering" class="link-button link-button--email" title="Email us"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email</a>
+            <a href="/blog/" class="link-button link-button--devlog" title="Devlog"><i class="fa-solid fa-book" aria-hidden="true"></i>Devlog</a>
         </nav>
         <section class="games-section">
             <h3 class="games-title">Our Games</h3>
