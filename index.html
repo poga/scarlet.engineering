@@ -299,6 +299,15 @@
             background: var(--color-steam-hover);
         }
 
+        /* Games hosted on this site take the house red */
+        .game-link--web {
+            background: var(--color-alizarin);
+        }
+
+        .game-link--web:hover {
+            background: var(--color-madder);
+        }
+
         /* Responsive styles */
         @media (max-width: 480px) {
             body {
@@ -555,6 +564,12 @@
                 </div>
             </div>
             <div class="game-grid">
+                <div class="game-card">
+                    <img src="/CRKaresansui1B/og.jpg" alt="CR 枯山水" class="game-thumbnail" width="1200" height="630" loading="lazy">
+                    <h4 class="game-name" lang="ja">CR 枯山水</h4>
+                    <p class="game-description">A pachinko machine in a Zen rock garden.</p>
+                    <a href="/CRKaresansui1B/" class="game-link game-link--web"><i class="fa-solid fa-play" aria-hidden="true"></i>Play in browser</a>
+                </div>
                 <div class="game-card">
                     <img src="/press/assets/bfbn/EN_920x430.jpg" alt="Books for Bad Neighbors" class="game-thumbnail" width="920" height="430" loading="lazy">
                     <h4 class="game-name">Books for Bad Neighbors</h4>
