@@ -13,11 +13,25 @@
   "keyArt": "EN_1232x706.jpg",
 
   "descriptionShort": "A city builder about brewing. Grow barley and hops, and scout the wilderness for pure water and rare ingredients. Hire a team of masters, each with recipes of their own, and turn their workshops into a production chain. Keep the barrels flowing to your own crew, the Merchant, and the Queen, who all want something different.",
-  "descriptionLong": [
-    "One island, one year, and a name to build from scratch. Brews & Kings is coming to PC in 2027 from Scarlet Engineering, a small studio in Taiwan. It is a city builder about brewing where the land is half the recipe. Players gather from clear springs, sunny hills, and full fruit orchards. They turn these local flavors into a drink the whole kingdom will remember.",
-    "Of course, grain and fruit do not fill barrels on their own. Players hire a lively group of master brewers. Each one is a character with special recipes of their own. Players connect their workshops into busy production chains across the island. Barrel by barrel, simple harvests become crisp cider, rich ale, fine wine, and strong spirits made to test any cellar.",
-    "Filling the barrels is only half the job. Deciding who drinks them is where the real trouble starts. The workers need their share to keep the island running. A merchant brings gold for the right drink. The queen wants both her gifts and her taxes on time. No brewer can please them all. Every choice leaves its mark until the year ends and the island finally prints its own beer label.",
-    "Brews & Kings is made by Scarlet Engineering, a Taiwan studio building systems-driven games where simple rules produce surprising play."
+  "copy": [
+    {
+      "title": "Press",
+      "paragraphs": [
+        "One island, one year, and a name to build from scratch. Brews & Kings is coming to PC in 2027 from Scarlet Engineering, a small studio in Taiwan. It is a city builder about brewing where the land is half the recipe. Players gather from clear springs, sunny hills, and full fruit orchards. They turn these local flavors into a drink the whole kingdom will remember.",
+        "Of course, grain and fruit do not fill barrels on their own. Players hire a lively group of master brewers. Each one is a character with special recipes of their own. Players connect their workshops into busy production chains across the island. Barrel by barrel, simple harvests become crisp cider, rich ale, fine wine, and strong spirits made to test any cellar.",
+        "Filling the barrels is only half the job. Deciding who drinks them is where the real trouble starts. The workers need their share to keep the island running. A merchant brings gold for the right drink. The queen wants both her gifts and her taxes on time. No brewer can please them all. Every choice leaves its mark until the year ends and the island finally prints its own beer label.",
+        "Brews & Kings is made by Scarlet Engineering, a Taiwan studio building systems-driven games where simple rules produce surprising play."
+      ]
+    },
+    {
+      "title": "Steam page",
+      "paragraphs": [
+        "You have one island and one year to make its beer famous. The land gives you everything a brewer needs: clear springs, sunny hills for hops and vines, wild apple orchards, and old forests for barrels. Where you build shapes the taste in every glass.",
+        "Of course, drinks do not brew themselves. You hire master brewers, each a character with their own recipes. Build their workshops, connect them into busy production chains, and watch fresh grain and fruit turn into ale, cider, wine, and stronger spirits.",
+        "Then the barrels start rolling, and everyone wants a share. Your own workers need a drink to keep the island running. A merchant ship brings gold for your best brews. And every season, the queen expects her gifts and her taxes. Each one wants something different, and you cannot please them all.",
+        "Gather from the land, hire your masters, build your brewing chains, and decide who gets the next pour. At the end of the year, your island's own beer label goes to print. Make it one the kingdom will remember."
+      ]
+    }
   ],
 
   "features": [

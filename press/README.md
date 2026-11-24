@@ -22,6 +22,7 @@ plus a folder of assets — Eleventy builds a polished, press-ready page per gam
    | `website`, `pressContact` | Links journalists need |
    | `keyArt` | Hero image filename (used for the page and social preview) |
    | `descriptionShort`, `descriptionLong` | Copy-paste blurbs (long is an array of paragraphs) |
+   | `copy` | More copy-paste texts, each its own section: array of `{ title, paragraphs }` (e.g. Press, Steam page) |
    | `features` | Bullet list |
    | `trailer` | One of `youtube` (video id), `embedUrl`, or `file` (local); plus optional `download` and `cover` (thumbnail image) |
    | `screenshots`, `logos` | Arrays of filenames in your asset folder |
