@@ -12,10 +12,10 @@
 
   "keyArt": "EN_1232x706.jpg",
 
-  "descriptionShort": "A city builder about brewing beer. Grow wheat and hops, scout the wilderness for pure water and rare ingredients, run your own breweries, and keep the taverns pouring and the king happy.",
+  "descriptionShort": "A city builder about beer and wine. Recruit a team of masters, each with recipes of their own, and turn their workshops into a production chain. Grow wheat and hops, scout the wilderness for pure water and rare ingredients, and keep the taverns pouring and the king happy.",
   "descriptionLong": [
     "You are the King's cellarmaster, holding a royal permit and a patch of wilderness. Build a city to fill the realm's cups with the finest beer and wine. Each run hands you fresh ground and a new King to please.",
-    "Grow your grain, raise a brewhouse, and fill the taverns with customers who come for what you make. Turn the wilderness into an economy strong enough to keep them coming back.",
+    "Grow your grain and recruit a team of masters, each with recipes of their own: one makes malt, another turns it into wort. Give them workshops, and their recipes become your production chain. Fill the taverns with customers who come for what you make, and turn the wilderness into an economy strong enough to keep them coming back.",
     "Search the world for the purest water and the richest soil. Take on quests to win rare ingredients and lost recipes, then combine them into beers and wines that carry your name.",
     "Learn what the King loves and what he cannot stand. The finest drink in the realm means nothing if it is the wrong one.",
     "No run ends empty-handed. New buildings, merchants, and challenges join the world, and the recipes you've discovered stay in your book. Then you lay your first foundation on fresh ground and begin again, under a new King with tastes of his own.",
@@ -24,6 +24,7 @@
 
   "features": [
     "Build a city that exists to brew and ferment: fields, vines, brewhouses, winepresses, cellars, and taverns.",
+    "Recruit a team of masters, each with recipes of their own, and build your production chain around them.",
     "Explore for what the realm cannot grow: the purest water, the richest soil, rare ingredients, and lost recipes.",
     "Combine your discoveries into beers and wines of your own, and give them your name.",
     "Please a fickle King: learn what he loves and what he cannot stand.",
