@@ -57,6 +57,16 @@ eleventyComputed:
 </section>
 {%- endif %}
 
+{%- for block in kit.copy %}
+<section class="section">
+    <h2>{{ block.title }}</h2>
+    <div class="copy-block">
+        <button class="copy-btn" data-copy-target="#copy-{{ loop.index }}">Copy</button>
+        <div class="copy-body" id="copy-{{ loop.index }}">{% for para in block.paragraphs %}<p>{{ para }}</p>{% endfor %}</div>
+    </div>
+</section>
+{%- endfor %}
+
 {%- if kit.features %}
 <section class="section">
     <h2>Features</h2>
