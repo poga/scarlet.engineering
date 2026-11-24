@@ -12,7 +12,7 @@
 
   "keyArt": "EN_1232x706.jpg",
 
-  "descriptionShort": "A city builder about brewing. Grow wheat and hops, scout the wilderness for pure water and rare ingredients, run your own breweries, and keep the taverns pouring and the king happy.",
+  "descriptionShort": "A city builder about brewing. Recruit a team of masters, each with recipes of their own, and turn their workshops into a production chain. Grow wheat and hops, scout the wilderness for pure water and rare ingredients, and keep the taverns pouring and the king happy.",
   "descriptionLong": [
     "You are the King's cellarmaster, holding a royal permit and a patch of wilderness. Build a city to fill the realm's cups with the finest beer and wine. Each run hands you fresh ground and a new King to please.",
     "Grow your grain and raise a brewhouse. Turn the wilderness into an economy strong enough to keep your customers coming back.",
@@ -24,6 +24,7 @@
 
   "features": [
     "Build a city that exists to brew and ferment: fields, vines, brewhouses, winepresses, cellars, and taverns.",
+    "Recruit a team of masters, each with recipes of their own, and build your production chain around them.",
     "Explore for what the realm cannot grow: the purest water, the richest soil, rare ingredients, and lost recipes.",
     "Combine your discoveries into beers and wines of your own, and give them your name.",
     "You can't please everyone: merchants, the Queen, and workers each want something different from your drinks.",
