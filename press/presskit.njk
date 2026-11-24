@@ -6,7 +6,7 @@ pagination:
 layout: press-base.njk
 permalink: "/press/{{ kit.slug }}/"
 eleventyComputed:
-  title: "{{ kit.title | safe }} — Press Kit"
+  title: "{{ kit.title | safe }} Press Kit"
   description: "{{ (kit.tagline or kit.descriptionShort) | safe }}"
   image: "{{ kit.keyArt and ('https://scarlet.engineering/press/assets/' + kit.slug + '/' + kit.keyArt) or 'https://scarlet.engineering/logo-v2.png' }}"
 ---
@@ -62,7 +62,7 @@ eleventyComputed:
     <h2>{{ block.title }}</h2>
     <div class="copy-block">
         <button class="copy-btn" data-copy-target="#copy-{{ loop.index }}">Copy</button>
-        <div class="copy-body" id="copy-{{ loop.index }}">{% for para in block.paragraphs %}{% if para.heading %}<h3>{{ para.heading }}</h3>{% else %}<p>{{ para }}</p>{% endif %}{% endfor %}</div>
+        <div class="copy-body" id="copy-{{ loop.index }}"{% if block.lang %} lang="{{ block.lang }}"{% endif %}>{% for para in block.paragraphs %}{% if para.heading %}<h3>{{ para.heading }}</h3>{% else %}<p>{{ para }}</p>{% endif %}{% endfor %}</div>
     </div>
 </section>
 {%- endfor %}
@@ -105,7 +105,7 @@ eleventyComputed:
 {%- if kit.videos %}
 <section class="section">
     <h2>Video clips</h2>
-    <p style="color: var(--color-fog); font-size: 0.9rem;">Short gameplay clips — download individually or grab the .zip above.</p>
+    <p style="color: var(--color-fog); font-size: 0.9rem;">Short gameplay clips: download individually or grab the .zip above.</p>
     <div class="clip-grid">
         {%- for v in kit.videos %}
         <figure>
@@ -131,7 +131,7 @@ eleventyComputed:
 {%- if kit.awards %}
 <section class="section">
     <h2>Awards &amp; recognition</h2>
-    <ul class="award-list">{% for a in kit.awards %}<li>{{ a.title }}{% if a.source %} — {{ a.source }}{% endif %}{% if a.year %}, {{ a.year }}{% endif %}</li>{% endfor %}</ul>
+    <ul class="award-list">{% for a in kit.awards %}<li>{{ a.title }}{% if a.source %}, {{ a.source }}{% endif %}{% if a.year %}, {{ a.year }}{% endif %}</li>{% endfor %}</ul>
 </section>
 {%- endif %}
 
@@ -141,7 +141,7 @@ eleventyComputed:
     {%- for q in kit.quotes %}
     <blockquote class="quote">
         <p>&ldquo;{{ q.text }}&rdquo;</p>
-        <cite>— {{ q.author }}{% if q.outlet %}, {% if q.url %}<a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.outlet }}</a>{% else %}{{ q.outlet }}{% endif %}{% endif %}</cite>
+        <cite>{{ q.author }}{% if q.outlet %}, {% if q.url %}<a href="{{ q.url }}" target="_blank" rel="noopener">{{ q.outlet }}</a>{% else %}{{ q.outlet }}{% endif %}{% endif %}</cite>
     </blockquote>
     {%- endfor %}
 </section>
@@ -150,7 +150,7 @@ eleventyComputed:
 {%- if kit.additionalLinks %}
 <section class="section">
     <h2>Additional links</h2>
-    <ul>{% for link in kit.additionalLinks %}<li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% if link.note %} — {{ link.note }}{% endif %}</li>{% endfor %}</ul>
+    <ul>{% for link in kit.additionalLinks %}<li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% if link.note %}: {{ link.note }}{% endif %}</li>{% endfor %}</ul>
 </section>
 {%- endif %}
 
