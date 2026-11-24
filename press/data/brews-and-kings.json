@@ -26,10 +26,18 @@
     {
       "title": "Steam page",
       "paragraphs": [
-        "You have one island. Make its beer famous. The land gives you everything a brewer needs: clear springs, sunny hills for hops and vines, wild apple orchards, and old forests for barrels. Where you build shapes the taste in every glass.",
-        "Of course, drinks do not brew themselves. You hire master brewers, each a character with their own recipes. Build their workshops, connect them into busy production chains, and watch fresh grain and fruit turn into ale, cider, wine, and stronger spirits.",
-        "Then the barrels start rolling, and everyone wants a share. Your own workers need a drink to keep the island running. A merchant ship brings gold for your best brews. And every season, the queen expects her gifts and her taxes. Each one wants something different, and you cannot please them all.",
-        "Gather from the land, hire your masters, build your brewing chains, and decide who gets the next pour. In the end, your island's own beer label goes to print. Make it one the kingdom will remember."
+        "Have you ever been to a little island where you can smell ripe fruit on the wind?",
+        "Brews & Kings is really just the story of making a brew from scratch on a place like that.",
+        {"heading": "The island decides how the brew turns out"},
+        "Old-timers like to say a drink never lies. Whether the mountain water runs sweet, whether the fruit ripened right, whether the hillside caught enough sun—one sip and you can tell. Every patch of ground on this island has a mind of its own. Which spring pours smooth, which slope grows fruit with a little bite—you have to walk the land and see for yourself. Move down the road to new soil and new water, and even the same brew comes out different.",
+        {"heading": "Hire the right masters, and tie the workshops together"},
+        "Of course, the land can only take you so far. At the end of the day, brewing comes down to people. You'll hire masters, each with their own way of doing things—one guarding a secret recipe, another picky about the heat and the ferment, every last one stubborn in their own right. Your job is to build their workshops one by one and tie them into a line that runs smooth. Where the fruit goes, which step feeds the next—get it right, and the whole island smells like fresh brew. Get it wrong, and they sit around waiting inside while you pace outside, tearing your hair out.",
+        {"heading": "Once the casks are full, the real trouble starts"},
+        "You'd think once a good batch finally comes out of the barrel, you could sit back and catch your breath. It's funny, really—that's when the hard part actually begins.",
+        "The workers come off a hard shift waiting for a cup to take the edge off. Sharp-nosed merchants catch wind of a good vintage and show up with coin in hand. Even the Queen up on high sends word, asking for her share. Everybody wants a pour, and you can't afford to cross any of them. Keep the Queen happy, and the workers go thirsty and sour. Sell to the merchants, and the cellar runs dry—so what do you put on the table tomorrow? There's only so much in the barrel. No matter how you slice it, somebody walks away empty-handed.",
+        "In Brews & Kings, there's no having it all. You have to read the island, understand your masters, and in the end, make your own call between the workers, the merchants, and the Queen.",
+        "Brewing's a lot like life, after all—try to please everybody, and you usually end up pleasing no one.",
+        "Come on in. The barrels are ready. Who gets the first cup?"
       ]
     }
   ],

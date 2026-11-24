@@ -62,7 +62,7 @@ eleventyComputed:
     <h2>{{ block.title }}</h2>
     <div class="copy-block">
         <button class="copy-btn" data-copy-target="#copy-{{ loop.index }}">Copy</button>
-        <div class="copy-body" id="copy-{{ loop.index }}">{% for para in block.paragraphs %}<p>{{ para }}</p>{% endfor %}</div>
+        <div class="copy-body" id="copy-{{ loop.index }}">{% for para in block.paragraphs %}{% if para.heading %}<h3>{{ para.heading }}</h3>{% else %}<p>{{ para }}</p>{% endif %}{% endfor %}</div>
     </div>
 </section>
 {%- endfor %}
