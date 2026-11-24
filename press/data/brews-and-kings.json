@@ -12,7 +12,7 @@
 
   "keyArt": "EN_1232x706.jpg",
 
-  "descriptionShort": "Brew on an island where the hills, springs, and fruit decide how the drink tastes. Hire masters and link their workshops into a line. When the brew's ready, the workers, the merchants, and even the Queen come calling—but that's life. You can't please everyone.",
+  "descriptionShort": "Brew on an island where the hills, springs, and fruit decide how the drink tastes. Hire masters and link their workshops into a line. When the brew's ready, the workers, the merchants, and even the Queen come calling, but that's life. You can't please everyone.",
   "copy": [
     {
       "title": "Press",
@@ -29,15 +29,51 @@
         "Have you ever been to a little island where you can smell ripe fruit on the wind?",
         "Brews & Kings is really just the story of making a brew from scratch on a place like that.",
         {"heading": "The island decides how the brew turns out"},
-        "Old-timers like to say a drink never lies. Whether the mountain water runs sweet, whether the fruit ripened right, whether the hillside caught enough sun—one sip and you can tell. Every patch of ground on this island has a mind of its own. Which spring pours smooth, which slope grows fruit with a little bite—you have to walk the land and see for yourself. Move down the road to new soil and new water, and even the same brew comes out different.",
+        "Old-timers like to say a drink never lies. Whether the mountain water runs sweet, whether the fruit ripened right, whether the hillside caught enough sun, one sip and you can tell. Every patch of ground on this island has a mind of its own. Which spring pours smooth, which slope grows fruit with a little bite, you have to walk the land and see for yourself. Move down the road to new soil and new water, and even the same brew comes out different.",
         {"heading": "Hire the right masters, and tie the workshops together"},
-        "Of course, the land can only take you so far. At the end of the day, brewing comes down to people. You'll hire masters, each with their own way of doing things—one guarding a secret recipe, another picky about the heat and the ferment, every last one stubborn in their own right. Your job is to build their workshops one by one and tie them into a line that runs smooth. Where the fruit goes, which step feeds the next—get it right, and the whole island smells like fresh brew. Get it wrong, and they sit around waiting inside while you pace outside, tearing your hair out.",
+        "Of course, the land can only take you so far. At the end of the day, brewing comes down to people. You'll hire masters, each with their own way of doing things: one guarding a secret recipe, another picky about the heat and the ferment, every last one stubborn in their own right. Your job is to build their workshops one by one and tie them into a line that runs smooth. Where the fruit goes, which step feeds the next: get it right, and the whole island smells like fresh brew. Get it wrong, and they sit around waiting inside while you pace outside, tearing your hair out.",
         {"heading": "Once the casks are full, the real trouble starts"},
-        "You'd think once a good batch finally comes out of the barrel, you could sit back and catch your breath. It's funny, really—that's when the hard part actually begins.",
-        "The workers come off a hard shift waiting for a cup to take the edge off. Sharp-nosed merchants catch wind of a good vintage and show up with coin in hand. Even the Queen up on high sends word, asking for her share. Everybody wants a pour, and you can't afford to cross any of them. Keep the Queen happy, and the workers go thirsty and sour. Sell to the merchants, and the cellar runs dry—so what do you put on the table tomorrow? There's only so much in the barrel. No matter how you slice it, somebody walks away empty-handed.",
+        "You'd think once a good batch finally comes out of the barrel, you could sit back and catch your breath. It's funny, really. That's when the hard part actually begins.",
+        "The workers come off a hard shift waiting for a cup to take the edge off. Sharp-nosed merchants catch wind of a good vintage and show up with coin in hand. Even the Queen up on high sends word, asking for her share. Everybody wants a pour, and you can't afford to cross any of them. Keep the Queen happy, and the workers go thirsty and sour. Sell to the merchants, and the cellar runs dry, so what do you put on the table tomorrow? There's only so much in the barrel. No matter how you slice it, somebody walks away empty-handed.",
         "In Brews & Kings, there's no having it all. You have to read the island, understand your masters, and in the end, make your own call between the workers, the merchants, and the Queen.",
-        "Brewing's a lot like life, after all—try to please everybody, and you usually end up pleasing no one.",
+        "Brewing's a lot like life, after all. Try to please everybody, and you usually end up pleasing no one.",
         "Come on in. The barrels are ready. Who gets the first cup?"
+      ]
+    },
+    {
+      "title": "Short description (繁體中文)",
+      "lang": "zh-Hant-TW",
+      "paragraphs": [
+        "在這座島上釀酒，山坡、泉水和果子，早就替你決定了酒的味道。你找來各有獨門手路的師傅，把工坊慢慢串成產線；好不容易酒釀好了，工人要、商人要、連女王也來要。只是啊，這世上的事就是這樣，你終究顧不了每一個人。"
+      ]
+    },
+    {
+      "title": "Press (繁體中文)",
+      "lang": "zh-Hant-TW",
+      "paragraphs": [
+        "台灣獨立遊戲工作室 Scarlet Engineering 近日公開了新作《Brews & Kings》，預計於 2027 年登上 PC 平台。這是一款以釀酒為核心的城市建造遊戲，不過說穿了，它談的不只是怎麼把城蓋大、把產量衝高，更像是在講一座島上的人，怎麼靠著一口酒過日子。",
+        "故事從一座島開始。在《Brews & Kings》裡，釀酒不是隨便找塊空地蓋幾間廠房就算數的事。島上的水質清不清、果子熟得甜不甜、山坡向著哪一邊，這些土地本來就有的條件，最後都會老老實實進到酒桶裡，決定了這批酒的味道。玩家得先看懂這座島的脾氣，順著山坡與水土的性子去安排，才有辦法釀出真正站得住腳的好酒。",
+        "有了好料，還得找對人來做。玩家必須延攬各有獨門配方的師傅進駐，再把大大小小的工坊一步步串成順手的產線。從採收、釀造到熟成，每一個環節都得接得上氣，就像替這座小島理出一套安穩的工作節奏：哪裡慢了，後面就跟著卡；哪裡順了，整座島才真正活了起來。",
+        "只是酒還沒釀出來時煩惱沒著落，等酒真的釀好了、香氣飄出去了，真正的難題才正要開始。做了一整天苦工的工人，下班就指望喝上一杯解解乏；算盤打得精的商人，急著把貨收走換成銀兩；高高在上的女王，更等著人把最好的酒送進宮裡。酒桶就這麼多，伸手來要的人卻排了一長串，給了這邊，那邊就得空著手。在《Brews & Kings》裡，玩家很快就會體會到，很多時候不是不夠努力，而是這世上的事，本來就顧不了每一個。",
+        "Scarlet Engineering 將釀酒的風土講究、城市建造的產線規劃，以及那些難以兩全的取捨，全都揉進了這座小島之中。《Brews & Kings》預計於 2027 年在 PC 平台推出，對喜歡慢慢經營、也喜歡在遊戲裡品嚐一點人世況味的玩家來說，不妨先記在心上，等時候到了，再上島看看這杯酒要怎麼分。"
+      ]
+    },
+    {
+      "title": "Steam page (繁體中文)",
+      "lang": "zh-Hant-TW",
+      "paragraphs": [
+        "你去過那種小小一座、風一吹就聞得到果子香的島嗎？",
+        "《Brews & Kings》講的，其實就是你在這麼一座島上，從頭開始釀酒的故事。",
+        {"heading": "這座島的水土，決定了酒的脾氣"},
+        "老一輩的常講，酒這種東西最誠實，騙不了人。山上的水甜不甜、樹上的果子熟得夠不夠、山坡上的日頭曬得均不均勻，喝進嘴裡，一清二楚。你在這座島上，每一塊地都有它自己的脾氣：哪裡接出來的水最順口、哪片坡種出來的果子帶點微酸，你得自己去走、去試。同樣是釀酒，換個地方、換個水土，味道就是不一樣。",
+        {"heading": "找到對的師傅，把工坊串起來"},
+        "啊不過，光靠這座島還不夠，釀酒終究是靠人。你會陸續找來一群各有門路的師傅，有人手裡藏著獨門配方，有人對火候跟發酵特別講究，個個都有自己的本事跟堅持。你的工作，就是把他們的工坊一間一間蓋起來、串成一條順順噹噹的產線。原料怎麼送、哪一道工序接哪一道，串得好，整座島聞起來都是酒香；串不好，師傅在裡面乾等，你在外面急得跳腳。",
+        {"heading": "酒釀好了，麻煩才正要開始"},
+        "本來以為好酒出桶，終於可以鬆一口氣。有時候你想想，也蠻好笑的，真正考驗人的，其實是在這之後。",
+        "做完粗活的工人，下工就等著喝這一口解解乏；鼻子最靈的商人，聞到好酒馬上帶著錢上門談生意；就連高高在上的女王，也派人來催著要貢酒。每個人都在等你的酒，每一邊都有你得罪不起的理由。給了女王，工人沒酒喝，臉色就難看；顧了商人，庫房見了底，明天拿什麼交差？酒就這麼多，你怎麼算，就是顧不了每一個。",
+        "在《Brews & Kings》裡，沒有什麼兩全其美的好事。你得看這座島的臉色、要懂師傅的手藝，最後還得在工人、商人跟女王之間，自己做決定。",
+        "畢竟釀酒跟做人一樣嘛，你想討好所有人，最後往往誰都沒顧好。",
+        "來吧，酒桶準備好了。這座島上的第一杯酒，你想先倒給誰？"
       ]
     }
   ],
@@ -111,5 +147,5 @@
     "Discord": "https://discord.gg/FFymAKhRzD"
   },
 
-  "monetizationNote": "You are free to capture, stream, and monetize video of this game. No permission needed — coverage is always welcome."
+  "monetizationNote": "You are free to capture, stream, and monetize video of this game. No permission needed. Coverage is always welcome."
 }
