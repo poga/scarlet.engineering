@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ press.locale }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,16 @@
     <meta property="og:title" content="{{ title }} - scarlet.engineering">
     <meta property="og:description" content="{{ description or 'Press kit' }}">
     <meta property="og:image" content="{{ image or 'https://scarlet.engineering/logo-v2.png' }}">
+    <meta property="og:locale" content="{{ press.ogLocale }}">
+    {%- for alt in press.alternates %}
+    {%- if not alt.current %}
+    <meta property="og:locale:alternate" content="{{ alt.ogLocale }}">
+    {%- endif %}
+    <link rel="alternate" hreflang="{{ alt.locale }}" href="https://scarlet.engineering{{ alt.url }}">
+    {%- endfor %}
+    {%- if press.alternates.length > 1 %}
+    <link rel="alternate" hreflang="x-default" href="https://scarlet.engineering{{ press.defaultUrl }}">
+    {%- endif %}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +46,12 @@
             --font-mono: 'JetBrains Mono', 'Consolas', monospace;
         }
 
+        html:lang(zh) {
+            --font-heading: 'Roboto Slab', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            --font-body: 'Lora', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+        }
+        html:lang(zh) .tagline, html:lang(zh) .quote p { font-style: normal; }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -52,7 +68,14 @@
             padding: 60px 24px 96px;
         }
 
-        .press-nav { margin-bottom: 40px; }
+        .press-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px 24px;
+            margin-bottom: 40px;
+        }
         .press-nav a {
             color: var(--color-gaslight);
             text-decoration: none;
@@ -60,6 +83,29 @@
             transition: color 0.2s ease;
         }
         .press-nav a:hover { color: var(--color-parchment); }
+
+        .lang-switch {
+            display: flex;
+            gap: 16px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .lang-switch li { margin: 0; }
+        .lang-switch a { color: var(--color-fog); font-size: inherit; }
+        .lang-switch [aria-current] {
+            color: var(--color-parchment);
+            border-bottom: 1px solid var(--color-gaslight);
+        }
+
+        .hint { color: var(--color-fog); font-size: 0.9rem; }
+
+        .kit-grid { margin-top: 40px; }
+        .kit-grid a { text-decoration: none; color: inherit; }
+        .kit-card { padding: 14px 16px; }
+        .kit-card strong { font-family: var(--font-heading); }
+        .kit-tagline { color: var(--color-fog); font-size: 0.85rem; margin-top: 4px; }
 
         h1, h2, h3, h4 {
             font-family: var(--font-heading);
@@ -287,6 +333,16 @@
 </head>
 <body>
     <div class="press-container">
+        <nav class="press-nav">
+            <a href="{{ press.back.url }}">&larr; {{ press.back.label }}</a>
+            {%- if press.alternates.length > 1 %}
+            <ul class="lang-switch" aria-label="{{ press.t.language }}">
+                {%- for alt in press.alternates %}
+                <li>{% if alt.current %}<span lang="{{ alt.locale }}" aria-current="page">{{ alt.name }}</span>{% else %}<a href="{{ alt.url }}" lang="{{ alt.locale }}" hreflang="{{ alt.locale }}">{{ alt.name }}</a>{% endif %}</li>
+                {%- endfor %}
+            </ul>
+            {%- endif %}
+        </nav>
         {{ content | safe }}
     </div>
 
@@ -299,7 +355,7 @@
                 try {
                     await navigator.clipboard.writeText(el.innerText.trim());
                     const prev = btn.textContent;
-                    btn.textContent = "Copied";
+                    btn.textContent = btn.dataset.copiedLabel;
                     setTimeout(() => { btn.textContent = prev; }, 1500);
                 } catch (e) {}
             });

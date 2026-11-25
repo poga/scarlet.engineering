@@ -26,6 +26,8 @@ jobs:
 
       - run: npm ci
 
+      - run: npm test
+
       - run: npm run build
         env:
           DESIGN_SYSTEM_PASSWORD: ${{ secrets.DESIGN_SYSTEM_PASSWORD }}
