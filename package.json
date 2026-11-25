@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "npx @11ty/eleventy && node tools/protect-design-system.js",
-    "dev": "npx @11ty/eleventy --serve"
+    "dev": "npx @11ty/eleventy --serve",
+    "test": "node --test \"tests/**/*.test.js\""
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

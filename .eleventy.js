@@ -4,6 +4,7 @@ const { execFileSync } = require("child_process");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { rssPlugin } = require("@11ty/eleventy-plugin-rss");
 const Image = require("@11ty/eleventy-img");
+const { loadPress, fill, PRESS_DIRS } = require("./press/lib/presskits");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -72,6 +73,11 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("fill", fill);
+  eleventyConfig.addWatchTarget("./press/data/");
+  eleventyConfig.addWatchTarget("./press/locales/");
+  eleventyConfig.addWatchTarget("./press/lib/");
+
   eleventyConfig.addFilter("dateDisplay", (date) => {
     return new Date(date).toLocaleDateString("en-US", {
       year: "numeric",
@@ -81,14 +87,10 @@ module.exports = function(eleventyConfig) {
   });
 
   // Bundle each kit's assets into a downloadable .zip (static host can't zip live)
-  eleventyConfig.on("eleventy.after", () => {
-    const dataDir = path.join(__dirname, "press", "data");
+  eleventyConfig.on("eleventy.after", ({ dir }) => {
     const assetsRoot = path.join(__dirname, "press", "assets");
-    const outRoot = path.join(__dirname, "_site", "press", "assets");
-    if (!fs.existsSync(dataDir)) return;
-    for (const file of fs.readdirSync(dataDir)) {
-      if (!file.endsWith(".json")) continue;
-      const slug = file.replace(/\.json$/, "");
+    const outRoot = path.resolve(dir.output, "press", "assets");
+    for (const slug of loadPress(PRESS_DIRS).slugs) {
       if (!fs.existsSync(path.join(assetsRoot, slug))) continue;
       const outZip = path.join(outRoot, `${slug}.zip`);
       fs.mkdirSync(outRoot, { recursive: true });
