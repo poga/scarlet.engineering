@@ -91,7 +91,6 @@ eleventyComputed:
 {%- if kit.screenshots %}
 <section class="section">
     <h2>{{ t.screenshots }}</h2>
-    <p class="hint">{{ t.screenshotsHint }}</p>
     <div class="asset-grid">
         {%- for shot in kit.screenshots %}
         <a href="{{ base }}/{{ shot }}" target="_blank" rel="noopener"><img src="{{ base }}/{{ shot }}" alt="{{ kit.captions[shot] or (t.screenshotAlt | fill({ title: kit.title })) }}" loading="lazy"></a>
@@ -103,7 +102,6 @@ eleventyComputed:
 {%- if kit.videos %}
 <section class="section">
     <h2>{{ t.videoClips }}</h2>
-    <p class="hint">{{ t.videoClipsHint }}</p>
     <div class="clip-grid">
         {%- for v in kit.videos %}
         <figure>
