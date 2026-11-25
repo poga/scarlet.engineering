@@ -93,7 +93,6 @@ eleventyComputed:
 {%- if kit.screenshots %}
 <section class="section">
     <h2>Screenshots</h2>
-    <p style="color: var(--color-fog); font-size: 0.9rem;">Click any image for full resolution, or grab everything in the .zip above.</p>
     <div class="asset-grid">
         {%- for shot in kit.screenshots %}
         <a href="{{ base }}/{{ shot }}" target="_blank" rel="noopener"><img src="{{ base }}/{{ shot }}" alt="{{ kit.title }} screenshot" loading="lazy"></a>
@@ -105,7 +104,6 @@ eleventyComputed:
 {%- if kit.videos %}
 <section class="section">
     <h2>Video clips</h2>
-    <p style="color: var(--color-fog); font-size: 0.9rem;">Short gameplay clips: download individually or grab the .zip above.</p>
     <div class="clip-grid">
         {%- for v in kit.videos %}
         <figure>
