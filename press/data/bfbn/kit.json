@@ -1,0 +1,14 @@
+{
+  "title": "Books for Bad Neighbors",
+  "developer": "Scarlet Engineering",
+  "basedIn": "TW",
+  "platforms": ["PC (Steam)"],
+  "languages": ["en", "zh-Hant"],
+  "website": "https://scarlet.engineering",
+  "pressContact": "press@scarlet.engineering",
+  "keyArt": "EN_1232x706.jpg",
+  "screenshots": ["screen_01.jpg", "screen_02.jpg", "screen_03.jpg", "screen_04.jpg", "iris_screen.png"],
+  "videos": [{ "file": "gameplay.mov" }],
+  "logos": ["title.png", "256x256.png"],
+  "social": { "Discord": "https://discord.gg/FFymAKhRzD" }
+}

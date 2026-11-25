@@ -1,23 +1,29 @@
 ---
+pagination:
+  data: presskits.indexes
+  size: 1
+  alias: press
 layout: press-base.njk
-title: Press Kits
-permalink: /press/
+permalink: "{{ press.url }}"
+eleventyComputed:
+  title: "{{ press.t.pressKits | safe }}"
 ---
-<nav class="press-nav"><a href="/">&larr; Home</a></nav>
+{%- set t = press.t %}
 <div class="eyebrow">Scarlet Engineering</div>
-<h1>Press kits</h1>
+<h1>{{ t.pressKits }}</h1>
 
-<div class="asset-grid" style="margin-top: 40px;">
-    {%- for kit in presskits %}
-    <a href="/press/{{ kit.slug }}/" style="text-decoration: none; color: inherit;">
-        {%- if kit.keyArt %}<img src="/press/assets/{{ kit.slug }}/{{ kit.keyArt }}" alt="{{ kit.title }}">{% endif %}
-        <div style="padding: 14px 16px;">
-            <strong style="font-family: var(--font-heading);">{{ kit.title }}</strong>
-            {%- if kit.tagline %}<div style="color: var(--color-fog); font-size: 0.85rem; margin-top: 4px;">{{ kit.tagline }}</div>{% endif %}
+<div class="asset-grid kit-grid">
+    {%- for kit in press.kits %}
+    <a href="{{ kit.url }}">
+        {%- if kit.keyArt %}<img src="{{ kit.assetBase }}/{{ kit.keyArt }}" alt="{{ kit.title }}">{% endif %}
+        <div class="kit-card">
+            <strong>{{ kit.title }}</strong>
+            {%- if kit.tagline %}<div class="kit-tagline">{{ kit.tagline }}</div>{% endif %}
         </div>
     </a>
     {%- endfor %}
-    {%- if presskits.length == 0 %}<p style="color: var(--color-fog);">No press kits yet.</p>{% endif %}
+    {%- if press.kits.length == 0 %}<p class="hint">{{ t.noKits }}</p>{% endif %}
 </div>
 
-<p class="press-footer">For interviews or anything not covered here, email <a href="mailto:press@scarlet.engineering">press@scarlet.engineering</a>.</p>
+{%- set contactLine = t.contactLine.split("{email}") %}
+<p class="press-footer">{{ contactLine[0] }}<a href="mailto:press@scarlet.engineering">press@scarlet.engineering</a>{{ contactLine[1] }}</p>

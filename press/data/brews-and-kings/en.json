@@ -1,0 +1,63 @@
+{
+  "tagline": "A city builder about beer and wine.",
+  "releaseDate": "2027",
+  "price": "TBA",
+  "descriptionShort": "Brew on an island where the hills, springs, and fruit decide how the drink tastes. Hire masters and link their workshops into a line. When the brew's ready, the workers, the merchants, and even the Queen come calling, but that's life. You can't please everyone.",
+  "copy": [
+    {
+      "title": "Press",
+      "paragraphs": [
+        "One island and a name to build from scratch. Brews & Kings is coming to PC in 2027 from Scarlet Engineering, a small studio in Taiwan. It is a city builder about brewing where the land is half the recipe. Players gather from clear springs, sunny hills, and full fruit orchards. They turn these local flavors into a drink the whole kingdom will remember.",
+        "Of course, grain and fruit do not fill barrels on their own. Players hire a lively group of master brewers. Each one is a character with special recipes of their own. Players connect their workshops into busy production chains across the island. Barrel by barrel, simple harvests become crisp cider, rich ale, fine wine, and strong spirits made to test any cellar.",
+        "Filling the barrels is only half the job. Deciding who drinks them is where the real trouble starts. The workers need their share to keep the island running. A merchant brings gold for the right drink. The queen wants both her gifts and her taxes on time. No brewer can please them all. Every choice leaves its mark until the island finally prints its own beer label.",
+        "Brews & Kings is made by Scarlet Engineering, a Taiwan studio building systems-driven games where simple rules produce surprising play."
+      ]
+    },
+    {
+      "title": "Steam page",
+      "paragraphs": [
+        "Have you ever been to a little island where you can smell ripe fruit on the wind?",
+        "Brews & Kings is really just the story of making a brew from scratch on a place like that.",
+        { "heading": "The island decides how the brew turns out" },
+        "Old-timers like to say a drink never lies. Whether the mountain water runs sweet, whether the fruit ripened right, whether the hillside caught enough sun, one sip and you can tell. Every patch of ground on this island has a mind of its own. Which spring pours smooth, which slope grows fruit with a little bite, you have to walk the land and see for yourself. Move down the road to new soil and new water, and even the same brew comes out different.",
+        { "heading": "Hire the right masters, and tie the workshops together" },
+        "Of course, the land can only take you so far. At the end of the day, brewing comes down to people. You'll hire masters, each with their own way of doing things: one guarding a secret recipe, another picky about the heat and the ferment, every last one stubborn in their own right. Your job is to build their workshops one by one and tie them into a line that runs smooth. Where the fruit goes, which step feeds the next: get it right, and the whole island smells like fresh brew. Get it wrong, and they sit around waiting inside while you pace outside, tearing your hair out.",
+        { "heading": "Once the casks are full, the real trouble starts" },
+        "You'd think once a good batch finally comes out of the barrel, you could sit back and catch your breath. It's funny, really. That's when the hard part actually begins.",
+        "The workers come off a hard shift waiting for a cup to take the edge off. Sharp-nosed merchants catch wind of a good vintage and show up with coin in hand. Even the Queen up on high sends word, asking for her share. Everybody wants a pour, and you can't afford to cross any of them. Keep the Queen happy, and the workers go thirsty and sour. Sell to the merchants, and the cellar runs dry, so what do you put on the table tomorrow? There's only so much in the barrel. No matter how you slice it, somebody walks away empty-handed.",
+        "In Brews & Kings, there's no having it all. You have to read the island, understand your masters, and in the end, make your own call between the workers, the merchants, and the Queen.",
+        "Brewing's a lot like life, after all. Try to please everybody, and you usually end up pleasing no one.",
+        "Come on in. The barrels are ready. Who gets the first cup?"
+      ]
+    }
+  ],
+  "features": [
+    "Build a bustling brewing town on an island.",
+    "Shape the taste of every drink with the island's water, fruit, and hillsides.",
+    "Hire master brewers, each bringing their own unique recipes.",
+    "Link workshops into production chains to keep the barrels flowing.",
+    "Decide who gets the supply when the workers, the merchants, and the Queen all want a share, knowing you cannot please everyone.",
+    "Start every new game on a random island with random factions, so no two towns turn out the same."
+  ],
+  "buyLinks": [{ "label": "Wishlist on Steam", "url": "https://store.steampowered.com/app/4845040/Brews__Kings/" }],
+  "additionalLinks": [
+    {
+      "label": "Steam page",
+      "url": "https://store.steampowered.com/app/4845040/Brews__Kings/",
+      "note": "wishlist now"
+    },
+    { "label": "Devlog", "url": "https://scarlet.engineering/blog/", "note": "development updates" }
+  ],
+  "about": [
+    "Scarlet Engineering is an indie studio that engineers emergence: systems-driven games where simple rules produce surprising play.",
+    "Brews & Kings is the studio's take on the city builder: a medieval kingdom that runs on beer and wine."
+  ],
+  "credits": [{ "role": "Design & Code", "name": "Poga" }, { "role": "Studio", "name": "Scarlet Engineering" }],
+  "monetizationNote": "You are free to capture, stream, and monetize video of this game. No permission needed. Coverage is always welcome.",
+  "captions": {
+    "gif_brews_and_kings_20261007_1.mov": "Building",
+    "gif_brews_and_kings_20261007_2.mov": "Windmill",
+    "gif_brews_and_kings_20261007_3.mov": "City overview",
+    "gif_brews_and_kings_20261007_4.mov": "Village growth"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Brews & Kings",
+  "developer": "Scarlet Engineering",
+  "basedIn": "TW",
+  "platforms": ["Windows", "macOS", "Linux"],
+  "languages": ["en", "zh-Hant"],
+  "website": "https://scarlet.engineering",
+  "pressContact": "press@scarlet.engineering",
+  "keyArt": "EN_1232x706.jpg",
+  "trailer": {
+    "youtube": "_IX0_0NcjB4",
+    "embedUrl": "",
+    "file": "brewsandkings_trailer_20261007.mp4",
+    "cover": "brewsandkings_trailer_cover_1600x900.png",
+    "download": ""
+  },
+  "screenshots": [
+    "Screenshot_brews_and_kings_20261124_1.png",
+    "Screenshot_brews_and_kings_20261124_2.png",
+    "Screenshot_brews_and_kings_20261124_3.png",
+    "Screenshot_brews_and_kings_20261124_4.png",
+    "Screenshot_brews_and_kings_20261124_5.png",
+    "Screenshot_brews_and_kings_20261124_6.png"
+  ],
+  "videos": [
+    { "file": "gif_brews_and_kings_20261007_1.mov", "gif": "gif_brews_and_kings_20261007_1.gif" },
+    { "file": "gif_brews_and_kings_20261007_2.mov", "gif": "gif_brews_and_kings_20261007_2.gif" },
+    { "file": "gif_brews_and_kings_20261007_3.mov", "gif": "gif_brews_and_kings_20261007_3.gif" },
+    { "file": "gif_brews_and_kings_20261007_4.mov", "gif": "gif_brews_and_kings_20261007_4.gif" }
+  ],
+  "logos": ["brews_and_kings_library_logo_1280x720_english.png", "title_zh-tw.png", "256x256.jpg"],
+  "social": { "Discord": "https://discord.gg/FFymAKhRzD" }
+}
