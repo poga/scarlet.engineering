@@ -1,7 +1,7 @@
 ---
 title: "Micropolis and the Math behind the 1989 SimCity"
 date: 2026-11-25
-description: A city that never rest
+description: A city that never rests
 image: https://scarlet.engineering/blog/images/micropolis_01.png
 ---
 
@@ -11,11 +11,11 @@ image: https://scarlet.engineering/blog/images/micropolis_01.png
 
 [Micropolis](https://github.com/SimHacker/MicropolisCore) is the open-source release of the 1989 SimCity.
 
-If you never played the game. Here’s the gist:
+If you’ve never played the game, here’s the gist:
 
 1. You set the size of 3 kinds of zone: residential, commercial, and industrial.
 2. Once roads and power reach a zone, the game decides what gets built there and how dense it grows.
-3. The game shows the grows of each zone, and you need to balance them.
+3. The game shows the growth of each zone, and you need to balance them.
 
 Here’s how it’s implemented and the math that makes it fun.
 
