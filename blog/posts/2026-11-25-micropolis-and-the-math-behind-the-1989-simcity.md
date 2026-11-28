@@ -3,6 +3,7 @@ title: "Micropolis and the Math behind the 1989 SimCity"
 date: 2026-11-25
 description: A city that never rests
 image: https://scarlet.engineering/blog/images/micropolis_01.png
+draft: true
 ---
 
 <figure>
